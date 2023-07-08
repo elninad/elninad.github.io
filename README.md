@@ -77,8 +77,8 @@ As a Principal Software Engineer, I hold a senior position with extensive techni
 
 ## Contact Information
 
-- Email: [your-email@example.com](mailto:your-email@example.com)
-- GitHub: [github.com/your-username](https://github.com/your-username)
-- LinkedIn: [linkedin.com/in/your-profile](https://linkedin.com/in/your-profile)
+- Email: [ninad.malvankar23@gmail.com](mailto:ninad.malvankar23@gmail.com)
+- GitHub: [github.com/elninad](https://github.com/elninad)
+- LinkedIn: [linkedin.com/in/ninadmalvankar](https://www.linkedin.com/in/ninadmalvankar)
 
 Thank you for taking the time to review my Software Developer Readme. I look forward to connecting with you!
