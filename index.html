@@ -486,9 +486,11 @@
     .interest-card.gaming::before  { background: linear-gradient(90deg, var(--accent), var(--accent2)); }
     .interest-card.racing::before  { background: linear-gradient(90deg, var(--gold), #fb923c); }
     .interest-card.youtube::before { background: linear-gradient(90deg, var(--red), #f97316); }
+    .interest-card.gundam::before  { background: linear-gradient(90deg, var(--teal), var(--green)); }
     .interest-card.gaming:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent); }
     .interest-card.racing:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--gold); }
     .interest-card.youtube:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--red); }
+    .interest-card.gundam:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--teal); }
     .interest-icon {
       width: 64px; height: 64px; border-radius: 18px;
       display: flex; align-items: center; justify-content: center;
@@ -497,6 +499,7 @@
     .interest-icon.gaming  { background: rgba(99,102,241,.14);  color: var(--accent); }
     .interest-icon.racing  { background: rgba(245,158,11,.14);  color: var(--gold); }
     .interest-icon.youtube { background: rgba(239,68,68,.14);   color: var(--red); }
+    .interest-icon.gundam  { background: rgba(34,211,238,.14);  color: var(--teal); }
     .interest-card h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 12px; }
     .interest-desc { font-size: .9rem; color: var(--muted); line-height: 1.75; flex: 1; }
     .interest-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
@@ -507,6 +510,7 @@
     .itag.gaming-tag  { background: rgba(99,102,241,.1);  color: var(--accent); }
     .itag.racing-tag  { background: rgba(245,158,11,.1);  color: var(--gold); }
     .itag.youtube-tag { background: rgba(239,68,68,.1);   color: var(--red); }
+    .itag.gundam-tag  { background: rgba(34,211,238,.1);  color: var(--teal); }
     .interest-link {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: .88rem; font-weight: 600; text-decoration: none;
@@ -1355,6 +1359,23 @@
           <span class="itag racing-tag">Car Dynamics</span>
           <span class="itag racing-tag">Motorsport</span>
           <span class="itag racing-tag">Performance Driving</span>
+        </div>
+      </div>
+
+      <!-- Gundam -->
+      <div class="interest-card gundam reveal">
+        <div class="interest-icon gundam"><i class="fa-solid fa-robot"></i></div>
+        <h3>Gundam Model Builder</h3>
+        <p class="interest-desc">
+          There's something meditative about assembling a Gunpla kit — every runner, every
+          gate, every panel line demands patience and attention to detail. Building Gundams
+          is my offline mode: deliberate, precise, and deeply satisfying.
+        </p>
+        <div class="interest-tags">
+          <span class="itag gundam-tag">Gunpla</span>
+          <span class="itag gundam-tag">Master Grade</span>
+          <span class="itag gundam-tag">Panel Lining</span>
+          <span class="itag gundam-tag">Scale Models</span>
         </div>
       </div>
 
