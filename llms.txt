@@ -1,0 +1,49 @@
+# Ninad Malvankar — Senior Principal Engineer
+
+> Ninad Malvankar is a Senior Principal Engineer at Upstox, India's leading discount brokerage and fintech platform. He has 12+ years of experience in cloud infrastructure (AWS), fintech platform engineering, engineering leadership, system design, microservices, and full-stack development. Based in Mumbai, India.
+
+## About
+
+Ninad Malvankar (GitHub: elninad) specialises in:
+- AWS cloud architecture (CloudFront, WAF, S3)
+- Fintech platform engineering and high-availability systems
+- Engineering leadership (mentoring, technical strategy, cross-functional teams)
+- System design and microservices architecture
+- Full-stack development: React, Angular, Node.js, TypeScript, .NET/C#
+- DevOps: Docker, CI/CD pipelines, Nexus Repository Manager, Cloudflare
+
+Education:
+- M.S. Computer Science — University of Texas at Arlington (2011–2013)
+- B.E. Computer Engineering — University of Mumbai (2007–2011)
+
+Certifications:
+- AWS Certified Cloud Practitioner (Amazon Web Services, 2023)
+- Verified International Academic Qualifications (World Education Services, 2023)
+
+## Career Timeline
+
+- Senior Principal Engineer — Upstox (2022–present)
+- Principal Engineer — Upstox (2021–2022)
+- Technology Lead — Upstox (2018–2021)
+- Programmer Analyst — Swift Pace Solutions / Walt Disney World project (Mar 2017–Feb 2018)
+- Software Engineer — enSYNC Corporation (Aug 2013–Jan 2017)
+- Web Developer — University of Texas at Arlington (Mar 2012–May 2013)
+
+## Writing (Published on Medium)
+
+- [The Role of a Principal Engineer — Leadership Without Authority](https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf): How Principal Engineers lead through influence, expertise, and trust rather than formal authority.
+- [What Happens When You Outgrow Mentorship? Lessons from a Principal Engineer](https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7): Growing beyond formal mentorship using personal retrospectives and self-built feedback loops.
+- [Spring Security Meets Java 21: A Closer Look at Firewall Controls](https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897): Security implications of Spring Security's firewall controls in Java 21 environments.
+- [How a Bad Webpack Config Can Silently Destroy Frontend Performance](https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f): How webpack configuration mistakes can silently degrade frontend performance.
+
+## Social Profiles
+
+- LinkedIn: https://www.linkedin.com/in/ninadmalvankar/
+- GitHub: https://github.com/elninad
+- Medium: https://medium.com/@ninad.malvankar23
+- X/Twitter: https://x.com/el_ninad
+- YouTube: https://youtube.com/@el_nino
+
+## Portfolio
+
+- Personal site: https://ninadmalvankar.com/
