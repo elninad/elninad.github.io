@@ -1483,7 +1483,7 @@
 </section>
 
 <!-- ─── GitHub ───────────────────────────────────────────────────── -->
-<section id="github" class="section">
+<section id="github">
   <div class="github-inner">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Open Source</div>
@@ -1654,16 +1654,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav on scroll */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
