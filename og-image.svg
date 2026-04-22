@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg1" cx="75%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="15%" cy="80%" r="45%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="roleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(99,102,241,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#060b18"/>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="140" width="4" height="350" rx="2" fill="url(#barGrad)"/>
+
+  <!-- Badge -->
+  <rect x="108" y="148" width="220" height="36" rx="18" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+  <circle cx="130" cy="166" r="5" fill="#6366f1"/>
+  <text x="145" y="171" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="600" fill="#6366f1" letter-spacing="0.08em">SENIOR PRINCIPAL ENGINEER</text>
+
+  <!-- Name -->
+  <text x="108" y="280" font-family="Inter,-apple-system,sans-serif" font-size="76" font-weight="900" letter-spacing="-2" fill="url(#nameGrad)">Ninad Malvankar</text>
+
+  <!-- Role line -->
+  <text x="108" y="340" font-family="Inter,-apple-system,sans-serif" font-size="32" font-weight="600" fill="url(#roleGrad)">@ Upstox · India's Leading Fintech Platform</text>
+
+  <!-- Divider -->
+  <rect x="108" y="368" width="600" height="1" fill="rgba(99,102,241,0.2)"/>
+
+  <!-- Skills -->
+  <text x="108" y="406" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#64748b">AWS · Cloud Architecture · FinTech · Engineering Leadership</text>
+  <text x="108" y="438" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#64748b">React · Node.js · TypeScript · Microservices · DevOps</text>
+
+  <!-- Stats -->
+  <text x="108" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">12+</text>
+  <text x="108" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">YEARS EXP</text>
+
+  <text x="218" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">4+</text>
+  <text x="218" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">COMPANIES</text>
+
+  <text x="318" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">AWS</text>
+  <text x="318" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">CERTIFIED</text>
+
+  <!-- URL -->
+  <text x="108" y="580" font-family="'JetBrains Mono',monospace,sans-serif" font-size="18" fill="rgba(99,102,241,0.7)" letter-spacing="0.04em">elninad.github.io</text>
+
+  <!-- Decorative orb -->
+  <circle cx="1060" cy="315" r="190" fill="none" stroke="rgba(99,102,241,0.07)" stroke-width="1"/>
+  <circle cx="1060" cy="315" r="140" fill="none" stroke="rgba(139,92,246,0.05)" stroke-width="1"/>
+  <circle cx="1060" cy="315" r="90" fill="rgba(99,102,241,0.04)" stroke="rgba(99,102,241,0.08)" stroke-width="1"/>
+  <text x="1060" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="40" fill="rgba(99,102,241,0.25)">&lt;</text>
+  <text x="1060" y="335" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="44" font-weight="700" fill="rgba(139,92,246,0.3)">NM</text>
+  <text x="1060" y="380" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="40" fill="rgba(99,102,241,0.25)">/&gt;</text>
+
+  <!-- Orbit dot -->
+  <circle cx="1060" cy="125" r="6" fill="#f59e0b" opacity="0.6"/>
+</svg>
