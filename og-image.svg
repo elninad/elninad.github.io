@@ -1,0 +1,109 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg1" cx="70%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg2" cx="15%" cy="80%" r="55%">
+      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bg3" cx="85%" cy="90%" r="45%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#e2e8f0"/>
+      <stop offset="45%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="accentBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#060b18"/>
+  <rect width="1200" height="630" fill="url(#bg1)"/>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="url(#bg3)"/>
+
+  <!-- Subtle grid -->
+  <line x1="0" y1="105" x2="1200" y2="105" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="210" x2="1200" y2="210" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="315" x2="1200" y2="315" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="420" x2="1200" y2="420" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="0" y1="525" x2="1200" y2="525" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="200" y1="0" x2="200" y2="630" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="400" y1="0" x2="400" y2="630" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="600" y1="0" x2="600" y2="630" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="800" y1="0" x2="800" y2="630" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+  <line x1="1000" y1="0" x2="1000" y2="630" stroke="#6366f1" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Left accent bar -->
+  <rect x="72" y="130" width="4" height="300" rx="2" fill="url(#accentBar)"/>
+
+  <!-- Badge pill -->
+  <rect x="92" y="118" width="270" height="36" rx="18" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.3" stroke-width="1"/>
+  <circle cx="112" cy="136" r="5" fill="#6366f1"/>
+  <text x="126" y="141" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" font-weight="600" fill="#6366f1" letter-spacing="1.5">SENIOR PRINCIPAL ENGINEER</text>
+
+  <!-- Name -->
+  <text x="92" y="235" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="78" font-weight="900" fill="url(#nameGrad)" letter-spacing="-2">Ninad Malvankar</text>
+
+  <!-- Company -->
+  <text x="94" y="295" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="30" font-weight="700" fill="#f59e0b" letter-spacing="0.5">Upstox · Cloud Infrastructure · FinTech</text>
+
+  <!-- Divider -->
+  <rect x="92" y="326" width="100" height="3" rx="1.5" fill="url(#accentBar)"/>
+
+  <!-- Description -->
+  <text x="92" y="370" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" fill="#94a3b8" letter-spacing="0.2">12+ years building platforms at scale · AWS Certified · Mumbai, India</text>
+
+  <!-- Tech pills -->
+  <rect x="92" y="410" width="72" height="30" rx="8" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="128" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">AWS</text>
+
+  <rect x="176" y="410" width="74" height="30" rx="8" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="213" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">React</text>
+
+  <rect x="262" y="410" width="90" height="30" rx="8" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="307" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">Node.js</text>
+
+  <rect x="364" y="410" width="118" height="30" rx="8" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="423" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">TypeScript</text>
+
+  <rect x="494" y="410" width="148" height="30" rx="8" fill="#6366f1" fill-opacity="0.15" stroke="#6366f1" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="568" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">System Design</text>
+
+  <rect x="654" y="410" width="138" height="30" rx="8" fill="#22d3ee" fill-opacity="0.12" stroke="#22d3ee" stroke-opacity="0.25" stroke-width="1"/>
+  <text x="723" y="430" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="13" font-weight="600" fill="#22d3ee" text-anchor="middle">Microservices</text>
+
+  <!-- Stats row -->
+  <line x1="92" y1="490" x2="900" y2="490" stroke="#1e2d4d" stroke-width="1"/>
+
+  <text x="92" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" fill="#e2e8f0">12+</text>
+  <text x="92" y="558" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b" letter-spacing="1">YRS EXP</text>
+
+  <line x1="190" y1="505" x2="190" y2="565" stroke="#1e2d4d" stroke-width="1"/>
+
+  <text x="210" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" fill="#e2e8f0">4+</text>
+  <text x="210" y="558" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b" letter-spacing="1">COMPANIES</text>
+
+  <line x1="350" y1="505" x2="350" y2="565" stroke="#1e2d4d" stroke-width="1"/>
+
+  <text x="370" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" fill="#f59e0b">AWS</text>
+  <text x="370" y="558" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b" letter-spacing="1">CERTIFIED</text>
+
+  <line x1="500" y1="505" x2="500" y2="565" stroke="#1e2d4d" stroke-width="1"/>
+
+  <text x="520" y="530" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="32" font-weight="800" fill="#22d3ee">FinTech</text>
+  <text x="520" y="558" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="13" fill="#64748b" letter-spacing="1">DOMAIN</text>
+
+  <!-- URL -->
+  <text x="92" y="600" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="18" fill="#64748b">ninadmalvankar.com</text>
+
+  <!-- Logo mark -->
+  <text x="1090" y="590" font-family="'JetBrains Mono', 'Courier New', monospace" font-size="32" font-weight="600" fill="#6366f1" text-anchor="middle">&lt;NM /&gt;</text>
+</svg>
