@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#060b18;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d1526;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e2e8f0;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#818cf8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Grid pattern -->
+  <defs>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(99,102,241,0.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Accent glow blobs -->
+  <ellipse cx="840" cy="252" rx="480" ry="360" fill="rgba(99,102,241,0.09)"/>
+  <ellipse cx="240" cy="504" rx="360" ry="300" fill="rgba(139,92,246,0.07)"/>
+  <ellipse cx="960" cy="540" rx="240" ry="240" fill="rgba(34,211,238,0.05)"/>
+
+  <!-- Left accent bar -->
+  <rect x="80" y="160" width="6" height="310" rx="3" fill="url(#accentGrad)"/>
+
+  <!-- Logo badge top-left -->
+  <rect x="80" y="68" width="96" height="40" rx="8" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+  <text x="128" y="94" font-family="monospace" font-size="16" font-weight="600" fill="#6366f1" text-anchor="middle">&lt;NM /&gt;</text>
+
+  <!-- Live badge top-right -->
+  <rect x="1024" y="68" width="96" height="36" rx="18" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.25)" stroke-width="1"/>
+  <circle cx="1048" cy="86" r="5" fill="#6366f1"/>
+  <text x="1072" y="91" font-family="sans-serif" font-size="13" font-weight="600" fill="#6366f1" text-anchor="middle">LIVE</text>
+
+  <!-- Main name -->
+  <text x="112" y="240" font-family="Inter, Arial, sans-serif" font-size="80" font-weight="900" letter-spacing="-2" fill="url(#nameGrad)">Ninad Malvankar</text>
+
+  <!-- Title line -->
+  <text x="112" y="310" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700" fill="#f59e0b">Senior Principal Engineer</text>
+
+  <!-- Company line -->
+  <text x="112" y="368" font-family="Inter, Arial, sans-serif" font-size="28" font-weight="500" fill="#64748b">@ Upstox · Cloud &amp; FinTech · Mumbai, India</text>
+
+  <!-- Divider -->
+  <rect x="112" y="400" width="480" height="2" rx="1" fill="rgba(99,102,241,0.25)"/>
+
+  <!-- Stats row -->
+  <text x="112" y="450" font-family="monospace" font-size="22" font-weight="600" fill="#e2e8f0">12+ Years</text>
+  <text x="112" y="478" font-family="sans-serif" font-size="14" fill="#64748b">EXPERIENCE</text>
+
+  <rect x="270" y="428" width="1" height="60" fill="rgba(99,102,241,0.2)"/>
+
+  <text x="290" y="450" font-family="monospace" font-size="22" font-weight="600" fill="#22d3ee">AWS Certified</text>
+  <text x="290" y="478" font-family="sans-serif" font-size="14" fill="#64748b">CLOUD PRACTITIONER</text>
+
+  <rect x="490" y="428" width="1" height="60" fill="rgba(99,102,241,0.2)"/>
+
+  <text x="510" y="450" font-family="monospace" font-size="22" font-weight="600" fill="#10b981">M.S. CS</text>
+  <text x="510" y="478" font-family="sans-serif" font-size="14" fill="#64748b">UT ARLINGTON</text>
+
+  <!-- Bottom URL -->
+  <text x="112" y="568" font-family="monospace" font-size="18" fill="#6366f1">elninad.github.io</text>
+
+  <!-- Skills tags right side -->
+  <rect x="780" y="200" width="100" height="34" rx="17" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.25)" stroke-width="1"/>
+  <text x="830" y="222" font-family="sans-serif" font-size="14" fill="#818cf8" text-anchor="middle">AWS</text>
+
+  <rect x="898" y="200" width="156" height="34" rx="17" fill="rgba(99,102,241,0.12)" stroke="rgba(99,102,241,0.25)" stroke-width="1"/>
+  <text x="976" y="222" font-family="sans-serif" font-size="14" fill="#818cf8" text-anchor="middle">Cloud Architect</text>
+
+  <rect x="780" y="250" width="130" height="34" rx="17" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
+  <text x="845" y="272" font-family="sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">Eng Leadership</text>
+
+  <rect x="928" y="250" width="120" height="34" rx="17" fill="rgba(139,92,246,0.12)" stroke="rgba(139,92,246,0.25)" stroke-width="1"/>
+  <text x="988" y="272" font-family="sans-serif" font-size="14" fill="#a78bfa" text-anchor="middle">System Design</text>
+
+  <rect x="780" y="300" width="100" height="34" rx="17" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.2)" stroke-width="1"/>
+  <text x="830" y="322" font-family="sans-serif" font-size="14" fill="#22d3ee" text-anchor="middle">Node.js</text>
+
+  <rect x="898" y="300" width="88" height="34" rx="17" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.2)" stroke-width="1"/>
+  <text x="942" y="322" font-family="sans-serif" font-size="14" fill="#22d3ee" text-anchor="middle">React</text>
+
+  <rect x="1004" y="300" width="96" height="34" rx="17" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.2)" stroke-width="1"/>
+  <text x="1052" y="322" font-family="sans-serif" font-size="14" fill="#22d3ee" text-anchor="middle">DevOps</text>
+
+  <rect x="780" y="350" width="116" height="34" rx="17" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="838" y="372" font-family="sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">Microservices</text>
+
+  <rect x="914" y="350" width="96" height="34" rx="17" fill="rgba(16,185,129,0.1)" stroke="rgba(16,185,129,0.2)" stroke-width="1"/>
+  <text x="962" y="372" font-family="sans-serif" font-size="14" fill="#10b981" text-anchor="middle">FinTech</text>
+
+  <rect x="1028" y="350" width="72" height="34" rx="17" fill="rgba(245,158,11,0.1)" stroke="rgba(245,158,11,0.2)" stroke-width="1"/>
+  <text x="1064" y="372" font-family="sans-serif" font-size="14" fill="#f59e0b" text-anchor="middle">CI/CD</text>
+</svg>
