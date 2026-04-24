@@ -7,10 +7,14 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# AI search & retrieval crawlers — allow so AI systems can cite this site
 User-agent: GPTBot
 Allow: /
 
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: CCBot
@@ -22,6 +26,9 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: Claude-SearchBot
+Allow: /
+
 User-agent: PerplexityBot
 Allow: /
 
@@ -31,4 +38,13 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
+User-agent: Amazonbot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
+
+# AI-readable structured content
+# llms.txt: https://ninadmalvankar.com/llms.txt
