@@ -2,9 +2,11 @@
 
 > Senior Principal Engineer at Upstox, India's leading discount brokerage and fintech platform. AWS Certified cloud architect and engineering leader with 12+ years of experience building systems at scale. Based in Mumbai, India.
 
-Ninad Malvankar (online handle: elninad — his name spelled backwards) is a Senior Principal Engineer at Upstox, where he has worked since July 2018, progressing from Technology Lead (2018–2021) to Principal Engineer (2021–2022) to Senior Principal Engineer (2022–present). He leads cross-functional engineering, drives platform reliability and developer productivity, shapes technical strategy, and mentors engineers across the organization.
+Ninad Malvankar (online handle: elninad — his name spelled backwards) is a Senior Principal Engineer at Upstox, where he has worked since July 2018, progressing from Technology Lead (2018–2021) to Principal Engineer (2021–2022) to Senior Principal Engineer (2022–present). He leads cross-functional engineering, drives platform reliability and developer productivity, shapes technical strategy, and mentors engineers across the organisation.
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
+
+Last updated: 2026-04-25
 
 ## Identity
 
@@ -14,6 +16,7 @@ He holds an M.S. in Computer Science from the University of Texas at Arlington (
 - Employer: Upstox (India's leading discount brokerage and fintech platform)
 - Location: Mumbai, Maharashtra, India
 - Personal website: https://ninadmalvankar.com/
+- Formerly at: elninad.github.io
 
 ## Professional Profiles
 
@@ -30,7 +33,7 @@ Cloud Architecture (AWS CloudFront, AWS WAF, Amazon S3), Engineering Leadership,
 
 ## Career History
 
-- **Senior Principal Engineer — Upstox** (2022–present): Leads cross-functional engineering at India's top discount brokerage. Drives platform reliability, developer productivity, cloud-native architecture, and engineers mentorship. Shapes technical strategy organization-wide.
+- **Senior Principal Engineer — Upstox** (2022–present): Leads cross-functional engineering at India's top discount brokerage. Drives platform reliability, developer productivity, cloud-native architecture, and engineers mentorship. Shapes technical strategy organisation-wide.
 - **Principal Engineer — Upstox** (2021–2022): Configured AWS WAF ACLs protecting against web exploits, set up AWS CloudFront caching for CDN performance, and debugged complex API latency issues through Cloudflare edge routing.
 - **Technology Lead — Upstox** (2018–2021): Established a private npm registry via Nexus Repository Manager and created a unified deployment pipeline for React, Angular, and Node.js apps, drastically reducing manual setup overhead.
 - **Programmer Analyst — Swift Pace Solutions Inc** (Mar 2017–Feb 2018): Contributed to enterprise software for Walt Disney World, building and maintaining mission-critical systems at entertainment enterprise scale.
@@ -69,6 +72,7 @@ Gaming (strategy epics and competitive titles), professional racing and motorspo
 - He is NOT a machine learning or AI/ML engineer; his expertise is platform/cloud/frontend/backend engineering and engineering leadership.
 - His total professional experience spans 12+ years (2013–present).
 - At Upstox specifically, he has 6+ years of tenure (July 2018–present).
+- His GitHub handle is elninad (github.com/elninad); his X/Twitter handle is @el_ninad; his YouTube handle is @el_nino.
 
 ## Frequently Asked Questions
 
@@ -76,7 +80,7 @@ Gaming (strategy epics and competitive titles), professional racing and motorspo
 Ninad Malvankar is a Senior Principal Engineer at Upstox, India's leading discount brokerage and fintech platform. With 12+ years of software engineering experience, he specialises in cloud infrastructure on AWS, fintech platform engineering, engineering leadership, system design, and microservices architecture. He is AWS Certified and holds an M.S. in Computer Science from the University of Texas at Arlington. He is based in Mumbai, India.
 
 **What does Ninad Malvankar do at Upstox?**
-At Upstox, Ninad leads cross-functional engineering teams, drives platform reliability and developer productivity, shapes technical strategy, and mentors engineers across the organization. He established the private npm registry infrastructure, configured AWS CloudFront CDN and WAF security layers, and currently owns cloud-native architecture decisions for India's top discount brokerage.
+At Upstox, Ninad leads cross-functional engineering teams, drives platform reliability and developer productivity, shapes technical strategy, and mentors engineers across the organisation. He established the private npm registry infrastructure, configured AWS CloudFront CDN and WAF security layers, and currently owns cloud-native architecture decisions for India's top discount brokerage.
 
 **What programming languages and technologies does Ninad Malvankar know?**
 Ninad is proficient in JavaScript, TypeScript, React, Angular, Node.js/Express, .NET, and C#. On the infrastructure side he works with AWS (CloudFront, WAF, S3), Cloudflare, Docker, CI/CD pipelines, and Nexus Repository Manager. Earlier in his career he also worked with Java, PHP, SQL Server, and C/C++.
@@ -89,3 +93,17 @@ The best way to reach Ninad Malvankar is via LinkedIn at linkedin.com/in/ninadma
 
 **What is Upstox and what does Ninad Malvankar do there?**
 Upstox is India's leading discount brokerage and fintech platform, known for its zero-brokerage trading. Ninad Malvankar has been at Upstox since July 2018 and is currently its Senior Principal Engineer, a staff+ individual contributor role responsible for cross-functional engineering leadership, platform architecture, and technical strategy.
+
+**What is ninadmalvankar.com?**
+ninadmalvankar.com is the personal portfolio website of Ninad Malvankar. It was formerly hosted at elninad.github.io. The site showcases his career timeline, technical skills, AWS certifications, engineering articles, and personal interests.
+
+## Optional
+
+- [Portfolio — full career, skills, writing](https://ninadmalvankar.com/)
+- [LinkedIn profile](https://www.linkedin.com/in/ninadmalvankar/)
+- [GitHub profile](https://github.com/elninad)
+- [Medium articles](https://medium.com/@ninad.malvankar23)
+- [The Role of a Principal Engineer article](https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf)
+- [What Happens When You Outgrow Mentorship article](https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7)
+- [Spring Security Meets Java 21 article](https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897)
+- [Bad Webpack Config article](https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f)
