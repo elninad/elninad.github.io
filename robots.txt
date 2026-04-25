@@ -44,7 +44,31 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: AI2Bot
+Allow: /
+
+User-agent: PetalBot
+Allow: /
+
+User-agent: Kangaroo Bot
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
-# AI-readable structured content
+# AI-readable structured content — available at the paths below
 # llms.txt: https://ninadmalvankar.com/llms.txt

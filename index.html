@@ -7,7 +7,12 @@
   <meta name="description" content="Ninad Malvankar is a Senior Principal Engineer at Upstox, India's leading fintech platform. 12+ years building cloud infrastructure, fintech systems, and engineering teams at scale. AWS Certified. M.S. Computer Science. Based in Mumbai, India." />
   <meta name="author" content="Ninad Malvankar" />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  <meta name="keywords" content="Ninad Malvankar, Senior Principal Engineer, Upstox, cloud infrastructure, fintech engineering, engineering leadership, AWS, AWS Certified, React, Angular, Node.js, TypeScript, microservices, system design, DevOps, platform engineering, cloud architecture, Mumbai India, principal engineer India, fintech platform, AWS CloudFront, AWS WAF, distributed systems, software architect, elninad" />
+  <meta name="keywords" content="Ninad Malvankar, Senior Principal Engineer, Upstox, cloud infrastructure, fintech engineering, engineering leadership, AWS, AWS Certified, React, Angular, Node.js, TypeScript, microservices, system design, DevOps, platform engineering, cloud architecture, Mumbai India, principal engineer India, fintech platform, AWS CloudFront, AWS WAF, distributed systems, software architect, elninad, ninadmalvankar, el_ninad, Ninad Malvankar Upstox, principal engineer Mumbai" />
+  <meta name="topic" content="Software Engineering, Cloud Architecture, FinTech, Engineering Leadership, Principal Engineer" />
+  <meta name="subject" content="Ninad Malvankar — Personal Portfolio and Professional Profile" />
+  <meta name="pagename" content="Ninad Malvankar — Senior Principal Engineer at Upstox" />
+  <meta name="owner" content="Ninad Malvankar" />
+  <meta name="category" content="Technology, Engineering, FinTech" />
   <link rel="canonical" href="https://ninadmalvankar.com/" />
   <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
@@ -19,6 +24,7 @@
   <link rel="me" href="https://github.com/elninad" />
   <link rel="me" href="https://medium.com/@ninad.malvankar23" />
   <link rel="me" href="https://x.com/el_ninad" />
+  <link rel="me" href="https://twitter.com/el_ninad" />
   <link rel="author" href="https://www.linkedin.com/in/ninadmalvankar/" />
   <meta name="geo.region" content="IN-MH" />
   <meta name="geo.placename" content="Mumbai, Maharashtra, India" />
@@ -40,7 +46,7 @@
   <meta name="classification" content="Technology, Engineering Leadership, Cloud Computing, FinTech" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://ninadmalvankar.com/" />
   <meta property="og:title" content="Ninad Malvankar — Senior Principal Engineer at Upstox" />
   <meta property="og:description" content="Senior Principal Engineer at Upstox — India's leading fintech platform. 12+ years in cloud infrastructure, system design, and engineering leadership. AWS Certified. Mumbai, India." />
@@ -579,6 +585,40 @@
     @keyframes fade-in  { from { opacity:0; } to { opacity:1; } }
     @keyframes slide-up { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
 
+    /* ─── FAQ ──────────────────────────────────────────────────── */
+    #faq { background: var(--surface); }
+    .faq-list {
+      max-width: 860px; margin: 60px auto 0;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .faq-item {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color .3s;
+    }
+    .faq-item[open] { border-color: rgba(99,102,241,.45); }
+    .faq-question {
+      padding: 22px 28px; cursor: pointer;
+      font-size: .975rem; font-weight: 600; color: var(--text);
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 16px; list-style: none; user-select: none;
+      border-radius: var(--radius);
+    }
+    .faq-question::-webkit-details-marker { display: none; }
+    .faq-chevron {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(99,102,241,.12); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--accent); font-size: .75rem;
+      transition: transform .3s, background .3s;
+    }
+    .faq-item[open] .faq-chevron { transform: rotate(180deg); background: rgba(99,102,241,.25); }
+    .faq-answer {
+      padding: 0 28px 22px;
+      font-size: .9rem; color: var(--muted); line-height: 1.75;
+    }
+    .faq-answer p { margin: 0; }
+
     /* ─── Responsive ────────────────────────────────────────────── */
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -779,6 +819,9 @@
             "sameAs": "https://en.wikipedia.org/wiki/Mumbai"
           },
           "skills": "Cloud Architecture, AWS CloudFront, AWS WAF, Amazon S3, System Design, Engineering Leadership, FinTech, Microservices, React, Angular, Node.js, TypeScript, DevOps, Platform Engineering, Mentorship"
+        },
+        "subjectOf": {
+          "@id": "https://ninadmalvankar.com/#webpage"
         }
       },
       {
@@ -797,10 +840,10 @@
           "@id": "https://ninadmalvankar.com/#website"
         },
         "inLanguage": "en-US",
-        "dateModified": "2026-04-24",
+        "dateModified": "2026-04-25",
         "speakable": {
           "@type": "SpeakableSpecification",
-          "cssSelector": [".hero-title", ".hero-sub", ".about-text"]
+          "cssSelector": [".hero-title", ".hero-sub", ".about-text", ".faq-question", ".faq-answer"]
         },
         "breadcrumb": {
           "@type": "BreadcrumbList",
@@ -1036,6 +1079,7 @@
     <li><a href="#writing">Writing</a></li>
     <li><a href="#github">GitHub</a></li>
     <li><a href="#beyond">Beyond</a></li>
+    <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
   <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
@@ -1698,6 +1742,94 @@
         <i class="fa-brands fa-youtube" style="color:var(--red);"></i> YouTube
       </a>
     </address>
+  </div>
+</section>
+
+
+<!-- ─── FAQ ──────────────────────────────────────────────────────── -->
+<section id="faq" itemscope itemtype="https://schema.org/FAQPage">
+  <div style="max-width:860px;margin:0 auto;">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-tag" style="justify-content:center;">FAQ</div>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-lead" style="margin:0 auto;">
+        Common questions about Ninad Malvankar — engineer, leader, and builder.
+      </p>
+    </div>
+
+    <div class="faq-list">
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">Who is Ninad Malvankar?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar is a <strong>Senior Principal Engineer at Upstox</strong>, India's leading discount brokerage and fintech platform. With 12+ years of experience, he specialises in cloud infrastructure on AWS, fintech platform engineering, engineering leadership, system design, and microservices architecture. He is AWS Certified and holds an M.S. in Computer Science from the University of Texas at Arlington. Based in Mumbai, India.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">What does Ninad Malvankar do at Upstox?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar is the <strong>Senior Principal Engineer at Upstox</strong> — a staff+ individual contributor role. He leads cross-functional engineering, drives platform reliability and developer productivity, shapes technical strategy organisation-wide, and mentors engineers. He established the private npm registry infrastructure, configured AWS CloudFront CDN caching and AWS WAF security layers, and owns cloud-native architecture decisions for India's top discount brokerage.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">What is "elninad" and who uses that handle?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">"elninad" is Ninad Malvankar's online alias — his first name "Ninad" spelled backwards. He uses elninad on GitHub (github.com/elninad) and his portfolio was formerly hosted at elninad.github.io, now at ninadmalvankar.com. He also goes by el_ninad on X/Twitter and el_nino on YouTube. Ninad Malvankar and elninad refer to the same person.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">What is Ninad Malvankar's educational background?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar holds an <strong>M.S. in Computer Science from the University of Texas at Arlington</strong>, USA (2011–2013), focusing on distributed systems and web technologies, and a <strong>B.E. in Computer Engineering from the University of Mumbai</strong>, India (2007–2011). He is also an <strong>AWS Certified Cloud Practitioner</strong> (2023) with academic qualifications verified by World Education Services (WES).</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">Where has Ninad Malvankar worked?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar has worked at <strong>Upstox</strong> (July 2018–present, progressing from Technology Lead to Principal Engineer to Senior Principal Engineer), <strong>Swift Pace Solutions Inc.</strong> on a Walt Disney World project (March 2017–February 2018), <strong>enSYNC Corporation</strong> (August 2013–January 2017), and the <strong>University of Texas at Arlington</strong> as Web Developer (March 2012–May 2013).</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">What technologies does Ninad Malvankar work with?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar's core stack includes <strong>JavaScript, TypeScript, React, Angular, Node.js/Express, .NET, and C#</strong> for application development. For cloud and infrastructure he works with <strong>AWS (CloudFront, WAF, S3), Cloudflare, Docker, CI/CD pipelines, and Nexus Repository Manager</strong>. He is especially experienced in AWS cloud architecture and platform engineering for high-traffic fintech applications.</p>
+        </div>
+      </details>
+
+      <details class="faq-item reveal" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+        <summary class="faq-question">
+          <span itemprop="name">What articles has Ninad Malvankar written?</span>
+          <span class="faq-chevron"><i class="fa-solid fa-chevron-down"></i></span>
+        </summary>
+        <div class="faq-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+          <p itemprop="text">Ninad Malvankar publishes on Medium at medium.com/@ninad.malvankar23. His articles include: <em>"The Role of a Principal Engineer — Leadership Without Authority"</em>, <em>"What Happens When You Outgrow Mentorship? Lessons from a Principal Engineer"</em>, <em>"Spring Security Meets Java 21: A Closer Look at Firewall Controls"</em>, and <em>"How a Bad Webpack Config Can Silently Destroy Frontend Performance"</em>.</p>
+        </div>
+      </details>
+
+    </div>
   </div>
 </section>
 
