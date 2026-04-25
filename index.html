@@ -1867,23 +1867,21 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll listener, single scrollY read */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
   (function() {
     var container = document.getElementById('particles');
     if (!container) return;
-    var colors = ['#6366f1','#8b5cf6','#22d3ee','#f59e0b'];
+    var cs = getComputedStyle(document.documentElement);
+    var colors = ['--accent','--accent2','--teal','--gold'].map(function(v) { return cs.getPropertyValue(v).trim(); });
     for (var i = 0; i < 28; i++) {
       var p = document.createElement('div');
       p.className = 'particle';
