@@ -297,7 +297,7 @@
       font-size: clamp(2rem, 4vw, 3rem); font-weight: 800;
       letter-spacing: -.025em; line-height: 1.15; margin-bottom: 16px;
     }
-    .section-lead { font-size: 1.05rem; color: var(--muted); max-width: 540px; line-height: 1.75; }
+    .section-lead { font-size: 1.05rem; color: var(--muted); max-width: 540px; line-height: 1.75; margin: 0 auto; }
 
     .reveal {
       opacity: 0; transform: translateY(36px);
@@ -589,6 +589,13 @@
     /* ─── Keyframes ─────────────────────────────────────────────── */
     @keyframes fade-in  { from { opacity:0; } to { opacity:1; } }
     @keyframes slide-up { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ─── Section Container Widths ──────────────────────────────── */
+    .sc-xl  { max-width: 1100px; margin: 0 auto; }
+    .sc-md  { max-width:  900px; margin: 0 auto; }
+    .sc-sm  { max-width:  680px; margin: 0 auto; }
+    .sc-lg  { max-width: 1000px; margin: 0 auto; }
+    .sc-faq { max-width:  860px; margin: 0 auto; }
 
     /* ─── FAQ ──────────────────────────────────────────────────── */
     #faq { background: var(--surface); }
@@ -1220,7 +1227,7 @@
 
 <!-- ─── About ───────────────────────────────────────────────────── -->
 <section id="about">
-  <div style="max-width:1100px;margin:0 auto;">
+  <div class="sc-xl">
     <div class="reveal">
       <div class="section-tag">About Me</div>
       <h2 class="section-title">Engineering with purpose,<br>leading with clarity</h2>
@@ -1265,11 +1272,11 @@
 
 <!-- ─── Skills ───────────────────────────────────────────────────── -->
 <section id="skills">
-  <div style="max-width:1100px;margin:0 auto;">
+  <div class="sc-xl">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Core Skills</div>
       <h2 class="section-title">Technologies I work with</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         A versatile, battle-tested stack built across 12+ years of production systems.
       </p>
     </div>
@@ -1350,11 +1357,11 @@
 
 <!-- ─── Timeline ─────────────────────────────────────────────────── -->
 <section id="timeline">
-  <div style="max-width:900px;margin:0 auto;">
+  <div class="sc-md">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Career Journey</div>
       <h2 class="section-title">From Mumbai to Fintech Leader</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         A decade-long path of learning, building, and leading — across continents, industries, and scales.
       </p>
     </div>
@@ -1578,7 +1585,7 @@
 
 <!-- ─── Certifications ───────────────────────────────────────────── -->
 <section id="certifications">
-  <div style="max-width:900px;margin:0 auto;">
+  <div class="sc-md">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Certifications</div>
       <h2 class="section-title">Credentials &amp; Recognition</h2>
@@ -1608,11 +1615,11 @@
 
 <!-- ─── Writing ──────────────────────────────────────────────────── -->
 <section id="writing">
-  <div style="max-width:680px;margin:0 auto;text-align:center;">
+  <div class="sc-sm" style="text-align:center;">
     <div class="reveal">
       <div class="section-tag" style="justify-content:center;">Writing</div>
       <h2 class="section-title">Thoughts on Engineering</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         I write about engineering leadership, system design, and building teams that last.
       </p>
     </div>
@@ -1680,12 +1687,12 @@
 </section>
 
 <!-- ─── GitHub ───────────────────────────────────────────────────── -->
-<section id="github" class="section">
+<section id="github">
   <div class="github-inner">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Open Source</div>
       <h2 class="section-title">GitHub Profile</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         Code, contributions, and open collaboration — a snapshot of what I build and ship.
       </p>
     </div>
@@ -1700,11 +1707,11 @@
 
 <!-- ─── Beyond the Code ─────────────────────────────────────── -->
 <section id="beyond">
-  <div style="max-width:1000px;margin:0 auto;">
+  <div class="sc-lg">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Off the Clock</div>
       <h2 class="section-title">Beyond the Code</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         Engineering is what I do — but it's not all I am. When I step away from the keyboard
         I'm either deep in a game, chasing apexes on a racing circuit, or filming car content.
       </p>
@@ -1820,11 +1827,11 @@
 
 <!-- ─── FAQ ──────────────────────────────────────────────────────── -->
 <section id="faq" itemscope itemtype="https://schema.org/FAQPage">
-  <div style="max-width:860px;margin:0 auto;">
+  <div class="sc-faq">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">FAQ</div>
       <h2 class="section-title">Frequently Asked Questions</h2>
-      <p class="section-lead" style="margin:0 auto;">
+      <p class="section-lead">
         Common questions about Ninad Malvankar — engineer, leader, and builder.
       </p>
     </div>
@@ -2009,16 +2016,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll handler */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
