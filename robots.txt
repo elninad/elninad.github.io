@@ -50,6 +50,9 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
+User-agent: Meta-ExternalFetcher
+Allow: /
+
 User-agent: Bytespider
 Allow: /
 
@@ -68,7 +71,26 @@ Allow: /
 User-agent: Kangaroo Bot
 Allow: /
 
+User-agent: Timpibot
+Allow: /
+
+User-agent: iaskspider
+Allow: /
+
+User-agent: Scrapy
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
-# AI-readable structured content — available at the paths below
-# llms.txt: https://ninadmalvankar.com/llms.txt
+# AI-readable structured content
+# llms.txt (LLM-readable profile summary): https://ninadmalvankar.com/llms.txt
+# humans.txt (human attribution): https://ninadmalvankar.com/humans.txt

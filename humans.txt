@@ -1,0 +1,18 @@
+/* TEAM */
+Name: Ninad Malvankar
+Title: Senior Principal Engineer
+Employer: Upstox — India's leading discount brokerage and fintech platform
+Location: Mumbai, Maharashtra, India
+Portfolio: https://ninadmalvankar.com/
+LinkedIn: https://www.linkedin.com/in/ninadmalvankar/
+GitHub: https://github.com/elninad
+X / Twitter: https://x.com/el_ninad
+Medium: https://medium.com/@ninad.malvankar23
+YouTube: https://youtube.com/@el_nino
+
+/* SITE */
+Last update: 2026-04-26
+Language: English
+Doctype: HTML5
+Standards: HTML5, CSS3, Vanilla JavaScript (ES6+), JSON-LD (schema.org)
+IDE: Various
