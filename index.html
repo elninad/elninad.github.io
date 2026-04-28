@@ -1841,7 +1841,7 @@
 </section>
 
 <!-- ─── GitHub ───────────────────────────────────────────────────── -->
-<section id="github" class="section" aria-label="GitHub Profile and Open Source">
+<section id="github" aria-label="GitHub Profile and Open Source">
   <div class="github-inner">
     <div class="reveal" style="text-align:center;">
       <div class="section-tag" style="justify-content:center;">Open Source</div>
@@ -2173,16 +2173,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll listener to avoid double scrollY read */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */

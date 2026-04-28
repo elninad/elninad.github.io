@@ -12,7 +12,7 @@ The site is a **single-page, zero-build static website** — all content lives i
 
 ```
 elninad.github.io/
-├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~1,226 lines)
+├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~2,230 lines)
 ├── robots.txt      # Allows all crawlers, references sitemap
 ├── sitemap.xml     # Single-entry sitemap for the home page
 └── CLAUDE.md       # This file
@@ -74,26 +74,29 @@ The file is divided into well-commented sections using ASCII dividers:
 - Embedded `<style>` block (all CSS)
 - JSON-LD structured data (`Person`, `WebSite`, `Article`, `FAQPage` schemas)
 
-### Body Sections (lines ~645–1170)
+### Body Sections
 | Section | ID | Content |
 |---|---|---|
 | Navigation | `#navbar` | Fixed header with logo `<NM />` and nav links |
 | Hero | `#hero` | Title, badge, stats, CTA buttons, particle animation |
 | About | `#about` | Bio, avatar with orbit animation, skill pills |
 | Skills | `#skills` | Animated progress bars by category |
-| Timeline | `#journey` | Career and education history (alternating layout) |
-| Certifications | `#certs` | AWS + academic credentials |
+| Timeline | `#timeline` | Career and education history (alternating layout) |
+| Certifications | `#certifications` | AWS + academic credentials |
 | Writing | `#writing` | Medium article cards |
-| Contact | `#contact` | LinkedIn, Medium, GitHub buttons |
+| GitHub | `#github` | GitHub profile link |
+| Beyond | `#beyond` | Personal interests (gaming, racing, Gundam, YouTube) |
+| Contact | `#contact` | LinkedIn, Medium, GitHub, X, YouTube buttons |
+| FAQ | `#faq` | Visible `<details>` FAQ accordion (mirrors JSON-LD FAQPage) |
 | Footer | — | Attribution and location |
 
-### Scripts (lines ~1171–1224)
+### Scripts (end of file, ~75 lines)
 All vanilla JavaScript, no external libraries:
-- **Parallax**: translates `#parallaxBg` at 35% scroll speed (passive listener)
-- **Sticky nav**: toggles `.scrolled` class on `#navbar` after 40px scroll
-- **Particles**: creates 28 floating `<div>` particles with randomized positions, colors, sizes, and animation durations
-- **Intersection Observer**: adds `.visible` to `.reveal` elements at 12% viewport threshold; triggers skill bar width animations; unobserves after first trigger for performance
-- **Timeline stagger**: applies incremental `transition-delay` (6ms steps) to timeline items
+- **Hamburger menu**: IIFE toggles `.open` on `.nav-links` and `#navHamburger`, locks body scroll on mobile
+- **Parallax + sticky nav**: single `scroll` listener (passive) reads `window.scrollY` once — translates `#parallaxBg` at 35% speed and toggles `.scrolled` on `#navbar` after 40px
+- **Particles**: IIFE creates 28 floating `<div>` particles with randomized positions, colors, sizes, and animation durations
+- **Intersection Observer**: adds `.visible` to `.reveal` elements at 12% viewport threshold; reads `data-width` attribute on `.skill-bar-fill` elements and sets `style.width` to animate bars; unobserves after first trigger for performance
+- **Timeline stagger**: applies incremental `transition-delay` (0.06s steps) to `.tl-item` elements
 
 ## CSS Design System
 
@@ -126,7 +129,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `data-width="XX"` attributes on `.skill-bar-fill` elements; the Intersection Observer JS reads `bar.dataset.width` and sets `bar.style.width` to trigger the CSS transition when the card scrolls into view.
 
 ## HTML Conventions
 
@@ -161,20 +164,20 @@ Include a Claude Code session URL in the commit body when relevant (this is stan
 ## Common Tasks
 
 ### Add a new timeline entry
-Find the `<div class="timeline" id="journey">` section. Copy an existing `<div class="timeline-item">` block and update the content. Choose the correct dot color:
-- Education: `teal`
-- Past work: `green`
-- Leadership: `gold`
-- Current role: `accent2` (violet)
+Find `<section id="timeline">` and the `<div class="timeline-wrapper">` inside it. Copy an existing `<div class="tl-item left reveal">` or `<div class="tl-item right reveal">` block and update the content. Choose the correct dot class on `.tl-dot`:
+- Education: `edu` (teal)
+- Past work: `work` (green)
+- Leadership: `lead` (gold)
+- Current role: `current` (violet/accent2)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section (`#skills`), each skill row has a `<div class="skill-bar-fill" data-width="XX">`. Update the number in `data-width`; the JS reads it on scroll and sets `style.width` to trigger the CSS transition. Do NOT use `style="--w: XX%"` — that is not how this site works.
 
 ### Add a new section
-1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
-2. Add a nav link `<a href="#new-section">Label</a>` in `<nav>`
+1. Add `<section id="new-section" aria-label="...">` in `<body>` (no `class="section"` — sections need no extra class)
+2. Add a nav link `<a href="#new-section">Label</a>` in the `<ul class="nav-links">`
 3. Add corresponding CSS in the embedded `<style>` block, following the existing section pattern
-4. If the section has scroll-triggered animations, add `.reveal` to the root element and `.reveal` to child elements that should animate
+4. If the section has scroll-triggered animations, add `.reveal` to elements that should animate on scroll
 
 ### Modify SEO metadata
 All meta tags are in `<head>`. JSON-LD structured data blocks follow the embedded CSS. Update both the `<meta>` tags and the JSON-LD when changing job titles, company, or skills.
