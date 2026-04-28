@@ -1,0 +1,19 @@
+{
+  "name": "Ninad Malvankar — Senior Principal Engineer",
+  "short_name": "Ninad Malvankar",
+  "description": "Personal portfolio of Ninad Malvankar, Senior Principal Engineer at Upstox. Cloud architect, fintech platform builder, and engineering leader with 12+ years of experience. Based in Mumbai, India.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060b18",
+  "theme_color": "#6366f1",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["technology", "portfolio", "engineering"]
+}
