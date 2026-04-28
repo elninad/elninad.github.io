@@ -77,6 +77,18 @@ Allow: /
 User-agent: iaskspider
 Allow: /
 
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: claude-web
+Allow: /
+
 User-agent: Scrapy
 Allow: /
 
