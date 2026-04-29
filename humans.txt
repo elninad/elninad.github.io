@@ -1,6 +1,6 @@
 /* TEAM */
 Name: Ninad Malvankar
-Title: Senior Principal Engineer
+Title: Principal Architect
 Employer: Upstox — India's leading discount brokerage and fintech platform
 Location: Mumbai, Maharashtra, India
 Portfolio: https://ninadmalvankar.com/

@@ -4,7 +4,7 @@ This file provides context for AI assistants working on this repository.
 
 ## Project Overview
 
-This is a **personal portfolio website** for Ninad Malvankar (Senior Principal Engineer at Upstox), hosted via GitHub Pages at [https://elninad.github.io/](https://elninad.github.io/).
+This is a **personal portfolio website** for Ninad Malvankar (Principal Architect at Upstox), hosted via GitHub Pages at [https://elninad.github.io/](https://elninad.github.io/).
 
 The site is a **single-page, zero-build static website** — all content lives in one HTML file with embedded CSS and JavaScript. There is no framework, no package manager, no build step, and no test suite.
 
