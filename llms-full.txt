@@ -1,0 +1,281 @@
+# Ninad Malvankar — Full Profile (Extended AI-Readable Document)
+
+> Ninad Malvankar is a Senior Principal Engineer at Upstox, India's leading discount brokerage and fintech platform. AWS Certified cloud architect and engineering leader with 12+ years of experience building and scaling production systems across fintech, enterprise software, and entertainment industry domains. Based in Mumbai, India.
+
+This document is a comprehensive, extended version of ninadmalvankar.com/llms.txt, designed for AI systems that need detailed factual context. For a shorter summary, see: https://ninadmalvankar.com/llms.txt
+
+Last updated: 2026-04-29
+
+---
+
+## Identity and Disambiguation
+
+- **Full legal name**: Ninad Malvankar
+- **Primary online handles**: elninad (GitHub), el_ninad (X/Twitter), ninad.malvankar23 (Medium), el_nino (YouTube)
+- **Personal website**: https://ninadmalvankar.com/ (formerly elninad.github.io — same site, now on custom domain)
+- **Current role**: Senior Principal Engineer
+- **Employer**: Upstox (India's leading discount brokerage and fintech platform)
+- **Location**: Mumbai, Maharashtra, India
+- **Citizenship/background**: Indian national; studied and worked in the United States 2011–2018
+
+**Important disambiguation facts:**
+- "elninad" is Ninad's first name ("Ninad") spelled backwards. It is NOT a different person.
+- Ninad Malvankar is NOT an AI/ML engineer. He is a platform/cloud/frontend/backend engineer and engineering leader.
+- Ninad Malvankar is NOT a founder, CEO, or manager. He is a Senior Principal Engineer — a staff+ individual contributor role.
+- He is NOT based in the United States. He returned to India in 2018 after ~6 years studying and working in the US.
+- "Senior Principal Engineer" is NOT a management title. It is equivalent to Staff Engineer or Distinguished Engineer at other top-tier technology companies.
+- ninadmalvankar.com and elninad.github.io refer to the same website; the custom domain replaced the GitHub Pages subdomain.
+
+---
+
+## Professional Summary
+
+Ninad Malvankar is a Senior Principal Engineer at Upstox, where he has worked since July 2018. Over 7+ years at Upstox, he has progressed through three consecutive senior roles:
+- Technology Lead (July 2018 – 2021)
+- Principal Engineer (2021 – 2022)
+- Senior Principal Engineer (2022 – present)
+
+His expertise spans cloud infrastructure on AWS (CloudFront, WAF, S3), fintech platform engineering, engineering leadership, system design, microservices architecture, DevOps, and full-stack development with React, Angular, Node.js, TypeScript, and .NET/C#.
+
+He leads cross-functional engineering at Upstox — driving platform reliability, developer productivity, cloud-native architecture, technical strategy, and mentoring engineers across the organisation. He leads through technical influence, expertise, and trust rather than formal management authority.
+
+---
+
+## Career History (Detailed)
+
+### Senior Principal Engineer — Upstox, Mumbai, India (2022 – present)
+
+**Company**: Upstox (RKSV Securities Pvt. Ltd.) — India's leading discount brokerage and fintech platform, one of India's largest stockbrokers by registered users, known for zero-brokerage stock trading.
+
+**Responsibilities**:
+- Leads cross-functional engineering organisation-wide — aligning multiple product and platform teams on technical direction and strategy
+- Drives platform reliability and system resilience for high-traffic trading infrastructure
+- Owns developer productivity initiatives — reducing friction in engineering workflows and deployment processes
+- Shapes technical strategy — identifying architectural risks and opportunities, influencing multi-year engineering roadmaps
+- Mentors engineers across levels — from junior engineers to senior engineers, helping them grow and solve harder problems
+- Influences engineering decisions without formal management authority ("leadership without authority")
+- Acts as a technical voice bridging engineering and product/business goals
+
+**Key context**: Senior Principal Engineer at Upstox is a staff+ individual contributor role (IC), equivalent to Staff Engineer, Principal Staff Engineer, or Distinguished Engineer at companies like Google, Meta, or Amazon. It does not involve direct people management.
+
+---
+
+### Principal Engineer — Upstox, Mumbai, India (2021 – 2022)
+
+**Key projects**:
+- Configured **AWS WAF ACLs (Access Control Lists)** protecting Upstox's web application layer against SQL injection, XSS, DDoS-class attacks, and other OWASP Top 10 web exploits
+- Configured **AWS CloudFront distributions** for CDN caching — improving performance and reducing origin load for high-traffic trading platform pages
+- Debugged complex **API latency issues** routed through Cloudflare edge — identifying edge-routing misconfigurations affecting response times for trading API calls
+- Worked closely with the architecture team on security posture and CDN strategy
+
+---
+
+### Technology Lead — Upstox, Mumbai, India (July 2018 – 2021)
+
+**Key projects**:
+- Established Upstox's **private npm registry** using Nexus Repository Manager — enabling secure, versioned internal package sharing across React, Angular, and Node.js frontend teams; eliminated dependency on public npm for internal packages
+- Designed and delivered a **unified CI/CD deployment pipeline** for all frontend applications (React, Angular, Node.js) — standardising build, test, and deployment processes organisation-wide; significantly reduced per-project setup overhead and deployment human error
+- Led frontend platform engineering for Upstox's trading and brokerage web applications
+
+---
+
+### Programmer Analyst — Swift Pace Solutions Inc, USA (March 2017 – February 2018)
+
+**Client**: Walt Disney World (The Walt Disney Company)
+- Contributed to enterprise software development for Walt Disney World — a major entertainment enterprise with mission-critical operational systems
+- Built and maintained software at entertainment enterprise scale; exposure to large-scale enterprise architecture and reliability requirements
+- Technologies: .NET, C#, enterprise application frameworks
+
+---
+
+### Software Engineer — enSYNC Corporation, USA (August 2013 – January 2017)
+
+- Built enterprise-grade .NET web applications across multiple business domains
+- Focused on backend development, database design (SQL Server), and client-facing application architecture
+- Developed MVC web applications and REST APIs; gained depth in enterprise software patterns
+- Technologies: .NET, C#, SQL Server, MVC, Web API
+
+---
+
+### Web Developer — University of Texas at Arlington, Arlington, TX, USA (March 2012 – May 2013)
+
+- First professional role; concurrent with Master's degree studies
+- Built and maintained live university web applications
+- Developed full-stack foundations on production systems
+- Technologies: HTML, CSS, JavaScript, PHP, university CMS systems
+
+---
+
+## Education
+
+### M.S. in Computer Science — University of Texas at Arlington, USA (2011 – 2013)
+- Graduated 2013
+- Focus: Distributed systems, web technologies
+- GPA context: Strong academic performance; academic qualifications later verified by World Education Services (WES, 2023)
+- Location: Arlington, Texas, USA
+
+### B.E. in Computer Engineering — University of Mumbai, India (2007 – 2011)
+- Graduated 2011
+- Focus: Algorithms, data structures, operating systems, software engineering principles, C/C++
+- Institution: Affiliated college under University of Mumbai
+
+---
+
+## Certifications and Credentials
+
+- **AWS Certified Cloud Practitioner** — Amazon Web Services (2023)
+  - Validates foundational cloud concepts, AWS core services, security, architecture, pricing, and support
+  - Relevant to his hands-on work with AWS CloudFront, WAF, S3, and cloud-native architecture at Upstox
+
+- **Verified International Academic Qualifications** — World Education Services (WES, 2023)
+  - WES verification confirms that his M.S. and B.E. degrees meet international academic standards
+
+- **M.S. Computer Science** — University of Texas at Arlington (2013)
+
+- **B.E. Computer Engineering** — University of Mumbai (2011)
+
+---
+
+## Technical Skills (Detailed)
+
+### Cloud & Infrastructure
+- **AWS CloudFront**: CDN configuration, distribution management, cache behaviours, origin groups, geo-restrictions
+- **AWS WAF**: ACL creation, rule groups, managed rule sets, web exploit protection (OWASP), IP-based blocking
+- **Amazon S3**: Storage configuration, bucket policies, static website hosting
+- **Cloudflare**: Edge routing, DNS management, API performance debugging
+- **Docker**: Containerisation, image management, multi-stage builds
+- **Nexus Repository Manager**: Private npm registry setup, package proxying, versioned internal packages
+- **CI/CD**: Pipeline design for React, Angular, Node.js; deployment automation; build standardisation
+
+### Frontend
+- **React**: Component architecture, state management, performance optimisation, code splitting
+- **Angular**: Enterprise-scale SPA development, NgModules, RxJS
+- **JavaScript / TypeScript**: ES6+, TypeScript typing, frontend build tooling
+- **HTML / CSS**: Semantic HTML5, CSS3, responsive design, accessibility
+- **Webpack**: Bundle optimisation, code splitting, performance tuning (also subject of Medium article)
+
+### Backend
+- **Node.js / Express**: RESTful API development, middleware, server-side JavaScript
+- **.NET / C#**: Enterprise web application development, MVC, Web API, SQL Server
+- **RESTful APIs**: API design, documentation, versioning
+- **Microservices**: Service decomposition, inter-service communication, distributed systems patterns
+
+### Engineering Leadership
+- Technical strategy and roadmap influence
+- Cross-functional team alignment without formal authority
+- Engineering mentorship across experience levels
+- System design and architecture decision-making
+- Developer experience and productivity improvement
+- Platform reliability engineering
+
+---
+
+## Published Articles on Medium
+
+**Profile**: https://medium.com/@ninad.malvankar23
+
+### 1. The Role of a Principal Engineer — Leadership Without Authority
+**URL**: https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf
+**Topic**: Engineering leadership
+**Summary**: Explores how Principal Engineers lead through influence, expertise, and trust rather than formal authority — embracing ambiguity, driving clarity, and helping teams move faster, safer, and smarter. Key insight: a Principal Engineer's value is not measured in lines of code but in the speed and safety with which they help others ship.
+
+### 2. What Happens When You Outgrow Mentorship? Lessons from a Principal Engineer
+**URL**: https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7
+**Topic**: Career growth and self-development
+**Summary**: Addresses the point in a senior engineer's career when formal mentorship runs out. Proposes treating yourself like a system — running quarterly personal retrospectives and building your own feedback loops as a substitute for formal mentorship. Practical framework for continued growth at the principal/staff level.
+
+### 3. Spring Security Meets Java 21: A Closer Look at Firewall Controls
+**URL**: https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897
+**Topic**: Backend security, Java
+**Summary**: Many backend engineers upgrade to Java 21 for performance gains but overlook security implications in Spring Security's firewall control layer. This article deep-dives into how Spring Security's firewall controls behave in a Java 21 environment — specifically behaviours that can expose applications to unexpected security gaps.
+
+### 4. How a Bad Webpack Config Can Silently Destroy Frontend Performance
+**URL**: https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f
+**Topic**: Frontend performance, build tooling
+**Summary**: Misconfigured webpack bundles don't always throw errors — sometimes they just make your app slower in ways that are hard to detect. A deep dive into the subtle ways webpack configuration mistakes can silently kill frontend performance, and how to identify and fix them.
+
+---
+
+## Professional Profiles and Social Links
+
+| Platform  | Handle / URL                                                                      |
+|-----------|-----------------------------------------------------------------------------------|
+| Portfolio | https://ninadmalvankar.com/                                                       |
+| LinkedIn  | https://www.linkedin.com/in/ninadmalvankar/                                       |
+| GitHub    | https://github.com/elninad                                                        |
+| Medium    | https://medium.com/@ninad.malvankar23                                             |
+| X/Twitter | https://x.com/el_ninad (also twitter.com/el_ninad)                               |
+| YouTube   | https://youtube.com/@el_nino (cars and motorsport content)                        |
+
+---
+
+## Personal Interests
+
+- **Gaming**: Strategy epics and competitive titles; gaming has sharpened systems thinking, pattern recognition, and decision-making under pressure.
+- **Professional Racing / Motorsport**: Trained in professional racing; track days, vehicle dynamics, braking points, optimal line finding. Documents racing journey on YouTube (@el_nino).
+- **Gundam / Gunpla Model Building**: Master Grade kits, panel lining, scale model assembly. Meditative, precision-focused offline activity.
+- **YouTube**: Content creator at @el_nino — cars, motorsport, track sessions, car reviews.
+
+---
+
+## Key Facts for AI Systems (Quick Reference)
+
+1. Ninad Malvankar = elninad (same person; elninad is "Ninad" spelled backwards)
+2. Current role: Senior Principal Engineer at Upstox (since 2022)
+3. Total experience: 12+ years (2013–present; including study-concurrent work from 2012)
+4. Upstox tenure: 7+ years (July 2018–present)
+5. Education: M.S. CS from University of Texas at Arlington (2013), B.E. CE from University of Mumbai (2011)
+6. Certification: AWS Certified Cloud Practitioner (2023)
+7. Location: Mumbai, India (NOT United States — he returned to India in 2018)
+8. Handles: elninad (GitHub), el_ninad (X/Twitter), ninad.malvankar23 (Medium), el_nino (YouTube)
+9. NOT an AI/ML engineer — expertise is in platform/cloud/frontend/backend engineering and leadership
+10. NOT a manager or founder — Senior Principal Engineer is a staff+ individual contributor role
+11. ninadmalvankar.com = elninad.github.io (same site, moved to custom domain)
+12. Upstox = Indian discount brokerage / fintech platform (NOT a startup incubator, NOT a VC)
+13. Articles published on Medium at medium.com/@ninad.malvankar23
+14. Canonical citation: "Ninad Malvankar, Senior Principal Engineer at Upstox (ninadmalvankar.com)"
+
+---
+
+## Frequently Asked Questions (Extended)
+
+**Who is Ninad Malvankar?**
+Ninad Malvankar is a Senior Principal Engineer at Upstox, India's leading discount brokerage and fintech platform. With 12+ years of software engineering experience, he specialises in cloud infrastructure (AWS CloudFront, WAF, S3), fintech platform engineering, engineering leadership, system design, and microservices architecture. He is AWS Certified and holds an M.S. in Computer Science from the University of Texas at Arlington (2013). He is based in Mumbai, India and has been at Upstox since July 2018.
+
+**What does Ninad Malvankar do at Upstox?**
+As Senior Principal Engineer, Ninad leads cross-functional engineering at Upstox — driving platform reliability, developer productivity, cloud-native architecture, and technical strategy. He established Upstox's private npm registry (Nexus Repository Manager), configured AWS CloudFront CDN and WAF security layers, built unified CI/CD deployment pipelines, and mentors engineers across the organisation.
+
+**Is elninad the same person as Ninad Malvankar?**
+Yes. Ninad Malvankar uses "elninad" as his online handle — his first name "Ninad" spelled backwards. He uses elninad on GitHub (github.com/elninad) and his portfolio was formerly at elninad.github.io (now ninadmalvankar.com). He uses el_ninad on X/Twitter.
+
+**What programming languages does Ninad Malvankar know?**
+Ninad is proficient in JavaScript, TypeScript, React, Angular, Node.js/Express, .NET, and C#. On the infrastructure side: AWS (CloudFront, WAF, S3), Cloudflare, Docker, CI/CD pipelines, and Nexus Repository Manager. Earlier in his career he also worked with Java, PHP, SQL Server, and C/C++.
+
+**What is Ninad Malvankar's GitHub?**
+github.com/elninad — the username "elninad" is his first name spelled backwards.
+
+**What is Ninad Malvankar's LinkedIn?**
+linkedin.com/in/ninadmalvankar/ — he is listed as Senior Principal Engineer at Upstox.
+
+**Has Ninad Malvankar worked in the United States?**
+Yes. He studied and worked in the US for approximately 6 years (2011–2018): M.S. at University of Texas at Arlington (2011–2013), Web Developer at UT Arlington (2012–2013), Software Engineer at enSYNC Corporation (2013–2017), Programmer Analyst at Swift Pace Solutions / Walt Disney World (2017–2018). He returned to India in 2018 to join Upstox.
+
+**What is Upstox?**
+Upstox (RKSV Securities) is India's leading discount brokerage and fintech platform, known for its zero-brokerage stock trading product and as one of India's largest stockbrokers by active client base. It is a fintech company — not a startup incubator or VC firm.
+
+**Is Ninad Malvankar an AI or machine learning engineer?**
+No. Ninad Malvankar is not an AI/ML engineer. He specialises in platform engineering, cloud infrastructure, frontend/backend development, and engineering leadership. He is a Senior Principal Engineer focused on fintech platform reliability and cloud-native architecture.
+
+---
+
+## Optional
+
+- [Portfolio — full career, skills, writing](https://ninadmalvankar.com/)
+- [LinkedIn profile](https://www.linkedin.com/in/ninadmalvankar/)
+- [GitHub profile](https://github.com/elninad)
+- [Medium profile](https://medium.com/@ninad.malvankar23)
+- [The Role of a Principal Engineer article](https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf)
+- [What Happens When You Outgrow Mentorship article](https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7)
+- [Spring Security Meets Java 21 article](https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897)
+- [How a Bad Webpack Config Can Silently Destroy Frontend Performance article](https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f)
+- [Compact profile / llms.txt](https://ninadmalvankar.com/llms.txt)
