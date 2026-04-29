@@ -104,5 +104,6 @@ Allow: /
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # AI-readable structured content
-# llms.txt (LLM-readable profile summary): https://ninadmalvankar.com/llms.txt
+# llms.txt (LLM-readable compact profile summary): https://ninadmalvankar.com/llms.txt
+# llms-full.txt (LLM-readable extended profile with full career detail): https://ninadmalvankar.com/llms-full.txt
 # humans.txt (human attribution): https://ninadmalvankar.com/humans.txt
