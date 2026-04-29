@@ -4,7 +4,7 @@ This file provides context for AI assistants working on this repository.
 
 ## Project Overview
 
-This is a **personal portfolio website** for Ninad Malvankar (Senior Principal Engineer at Upstox), hosted via GitHub Pages at [https://elninad.github.io/](https://elninad.github.io/).
+This is a **personal portfolio website** for Ninad Malvankar (Principal Architect at Upstox), hosted via GitHub Pages at [https://elninad.github.io/](https://elninad.github.io/).
 
 The site is a **single-page, zero-build static website** — all content lives in one HTML file with embedded CSS and JavaScript. There is no framework, no package manager, no build step, and no test suite.
 
@@ -12,7 +12,7 @@ The site is a **single-page, zero-build static website** — all content lives i
 
 ```
 elninad.github.io/
-├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~1,226 lines)
+├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~2,400 lines)
 ├── robots.txt      # Allows all crawlers, references sitemap
 ├── sitemap.xml     # Single-entry sitemap for the home page
 └── CLAUDE.md       # This file
@@ -87,10 +87,9 @@ The file is divided into well-commented sections using ASCII dividers:
 | Contact | `#contact` | LinkedIn, Medium, GitHub buttons |
 | Footer | — | Attribution and location |
 
-### Scripts (lines ~1171–1224)
+### Scripts (near end of file)
 All vanilla JavaScript, no external libraries:
-- **Parallax**: translates `#parallaxBg` at 35% scroll speed (passive listener)
-- **Sticky nav**: toggles `.scrolled` class on `#navbar` after 40px scroll
+- **Scroll handler**: single passive `scroll` listener handles both parallax (`#parallaxBg` at 35% speed) and sticky nav (`.scrolled` on `#navbar` after 40px)
 - **Particles**: creates 28 floating `<div>` particles with randomized positions, colors, sizes, and animation durations
 - **Intersection Observer**: adds `.visible` to `.reveal` elements at 12% viewport threshold; triggers skill bar width animations; unobserves after first trigger for performance
 - **Timeline stagger**: applies incremental `transition-delay` (6ms steps) to timeline items
@@ -126,7 +125,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `data-width="XX"` attributes on `.skill-bar-fill` elements; JavaScript sets `style.width` from that value when the card becomes visible, triggering the CSS width transition.
 
 ## HTML Conventions
 
@@ -168,7 +167,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `<div class="skill-bar-track">` has a child `<div class="skill-bar-fill" data-width="XX">`. Update the numeric value in `data-width`; the Intersection Observer reads it and sets `style.width` to trigger the CSS transition.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
