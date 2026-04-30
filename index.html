@@ -195,14 +195,14 @@
       transition: color .25s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--accent) !important;
-      color: var(--white) !important;
+    .nav-links a.nav-cta {
+      background: var(--accent);
+      color: var(--white);
       padding: 8px 20px;
       border-radius: 8px;
-      transition: background .25s, transform .2s !important;
+      transition: background .25s, transform .2s;
     }
-    .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
+    .nav-links a.nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
     .nav-hamburger { display: none; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
@@ -416,6 +416,9 @@
       border-radius: 14px; display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem; color: var(--accent); margin-bottom: 20px;
     }
+    .skill-card-icon.green { background: rgba(16,185,129,.12); color: var(--green); }
+    .skill-card-icon.teal  { background: rgba(34,211,238,.12); color: var(--teal); }
+    .skill-card-icon.gold  { background: rgba(245,158,11,.12); color: var(--gold); }
     .skill-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 20px; }
     .skill-bar-row { margin-bottom: 14px; }
     .skill-bar-label {
@@ -680,10 +683,10 @@
         list-style: none;
       }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
-      .nav-links.open .nav-cta {
-        background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+      .nav-links.open a.nav-cta {
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 32px; border-radius: 10px; font-size: 1rem;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
@@ -1568,7 +1571,7 @@
 
       <!-- Backend -->
       <div class="skill-card reveal">
-        <div class="skill-card-icon" style="background:rgba(16,185,129,.12);color:var(--green);">
+        <div class="skill-card-icon green">
           <i class="fa-solid fa-server"></i>
         </div>
         <h3>Backend</h3>
@@ -1592,7 +1595,7 @@
 
       <!-- Cloud & DevOps -->
       <div class="skill-card reveal">
-        <div class="skill-card-icon" style="background:rgba(245,158,11,.12);color:var(--gold);">
+        <div class="skill-card-icon gold">
           <i class="fa-brands fa-aws"></i>
         </div>
         <h3>Cloud &amp; DevOps</h3>
@@ -2373,16 +2376,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll handler */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
