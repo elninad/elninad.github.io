@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is a Sen
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-04-29
+Last updated: 2026-05-01
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 
