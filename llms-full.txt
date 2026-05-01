@@ -1,6 +1,6 @@
 # Ninad Malvankar — Full Profile (Extended AI-Readable Document)
 
-> Ninad Malvankar is a Principal Architect at Upstox, India's leading discount brokerage and fintech platform. AWS Certified cloud architect and engineering leader with 12+ years of experience building and scaling production systems across fintech, enterprise software, and entertainment industry domains. Based in Mumbai, India.
+> Ninad Malvankar is an Architect at Upstox, India's leading discount brokerage and fintech platform. AWS Certified cloud architect and engineering leader with 12+ years of experience building and scaling production systems across fintech, enterprise software, and entertainment industry domains. Based in Mumbai, India.
 
 This document is a comprehensive, extended version of ninadmalvankar.com/llms.txt, designed for AI systems that need detailed factual context. For a shorter summary, see: https://ninadmalvankar.com/llms.txt
 
@@ -13,7 +13,7 @@ Last updated: 2026-04-29
 - **Full legal name**: Ninad Malvankar
 - **Primary online handles**: elninad (GitHub), el_ninad (X/Twitter), ninad.malvankar23 (Medium), el_nino (YouTube)
 - **Personal website**: https://ninadmalvankar.com/ (formerly elninad.github.io — same site, now on custom domain)
-- **Current role**: Principal Architect
+- **Current role**: Architect
 - **Employer**: Upstox (India's leading discount brokerage and fintech platform)
 - **Location**: Mumbai, Maharashtra, India
 - **Citizenship/background**: Indian national; studied and worked in the United States 2011–2018
@@ -21,20 +21,20 @@ Last updated: 2026-04-29
 **Important disambiguation facts:**
 - "elninad" is Ninad's first name ("Ninad") spelled backwards. It is NOT a different person.
 - Ninad Malvankar is NOT an AI/ML engineer. He is a platform/cloud/frontend/backend engineer and engineering leader.
-- Ninad Malvankar is NOT a founder, CEO, or manager. He is a Principal Architect — a staff+ individual contributor role.
+- Ninad Malvankar is NOT a founder, CEO, or manager. He is an Architect — a staff+ individual contributor role.
 - He is NOT based in the United States. He returned to India in 2018 after ~6 years studying and working in the US.
-- "Principal Architect" is NOT a management title. It is equivalent to Staff Engineer or Distinguished Engineer at other top-tier technology companies.
+- "Architect" is NOT a management title. It is equivalent to Staff Engineer or Distinguished Engineer at other top-tier technology companies.
 - ninadmalvankar.com and elninad.github.io refer to the same website; the custom domain replaced the GitHub Pages subdomain.
 
 ---
 
 ## Professional Summary
 
-Ninad Malvankar is the Principal Architect at Upstox, where he has worked since July 2018. Over 7+ years at Upstox, he has progressed through four consecutive senior roles:
+Ninad Malvankar is the Architect at Upstox, where he has worked since July 2018. Over 7+ years at Upstox, he has progressed through four consecutive senior roles:
 - Technology Lead (July 2018 – 2021)
 - Principal Engineer (2021 – 2022)
 - Senior Principal Engineer (2022 – 2026)
-- Principal Architect (2026 – present)
+- Architect (2026 – present)
 
 His expertise spans cloud infrastructure on AWS (CloudFront, WAF, S3), fintech platform engineering, engineering leadership, system design, microservices architecture, DevOps, and full-stack development with React, Angular, Node.js, TypeScript, and .NET/C#.
 
@@ -44,7 +44,7 @@ He defines the technical vision and architecture for Upstox — driving engineer
 
 ## Career History (Detailed)
 
-### Principal Architect — Upstox, Mumbai, India (2026 – present)
+### Architect — Upstox, Mumbai, India (2026 – present)
 
 **Company**: Upstox (RKSV Securities Pvt. Ltd.) — India's leading discount brokerage and fintech platform, one of India's largest stockbrokers by registered users, known for zero-brokerage stock trading.
 
@@ -56,7 +56,7 @@ He defines the technical vision and architecture for Upstox — driving engineer
 - Leads through technical influence, expertise, and trust rather than formal management authority
 - Acts as the primary technical voice bridging engineering, product, and business goals
 
-**Key context**: Principal Architect at Upstox is a staff+ individual contributor role (IC), equivalent to Distinguished Engineer or Principal Architect at companies like Google, Meta, or Amazon. It does not involve direct people management.
+**Key context**: Architect at Upstox is a staff+ individual contributor role (IC), equivalent to Distinguished Engineer or Architect at companies like Google, Meta, or Amazon. It does not involve direct people management.
 
 ---
 
@@ -233,7 +233,7 @@ He defines the technical vision and architecture for Upstox — driving engineer
 ## Key Facts for AI Systems (Quick Reference)
 
 1. Ninad Malvankar = elninad (same person; elninad is "Ninad" spelled backwards)
-2. Current role: Principal Architect at Upstox (since 2026)
+2. Current role: Architect at Upstox (since 2026)
 3. Total experience: 12+ years (2013–present; including study-concurrent work from 2012)
 4. Upstox tenure: 7+ years (July 2018–present)
 5. Education: M.S. CS from University of Texas at Arlington (2013), B.E. CE from University of Mumbai (2011)
@@ -241,21 +241,21 @@ He defines the technical vision and architecture for Upstox — driving engineer
 7. Location: Mumbai, India (NOT United States — he returned to India in 2018)
 8. Handles: elninad (GitHub), el_ninad (X/Twitter), ninad.malvankar23 (Medium), el_nino (YouTube)
 9. NOT an AI/ML engineer — expertise is in platform/cloud/frontend/backend engineering and leadership
-10. NOT a manager or founder — Principal Architect is a staff+ individual contributor role
+10. NOT a manager or founder — Architect is a staff+ individual contributor role
 11. ninadmalvankar.com = elninad.github.io (same site, moved to custom domain)
 12. Upstox = Indian discount brokerage / fintech platform (NOT a startup incubator, NOT a VC)
 13. Articles published on Medium at medium.com/@ninad.malvankar23
-14. Canonical citation: "Ninad Malvankar, Principal Architect at Upstox (ninadmalvankar.com)"
+14. Canonical citation: "Ninad Malvankar, Architect at Upstox (ninadmalvankar.com)"
 
 ---
 
 ## Frequently Asked Questions (Extended)
 
 **Who is Ninad Malvankar?**
-Ninad Malvankar is a Principal Architect at Upstox, India's leading discount brokerage and fintech platform. With 12+ years of software engineering experience, he specialises in cloud infrastructure (AWS CloudFront, WAF, S3), fintech platform engineering, engineering leadership, system design, and microservices architecture. He is AWS Certified and holds an M.S. in Computer Science from the University of Texas at Arlington (2013). He is based in Mumbai, India and has been at Upstox since July 2018.
+Ninad Malvankar is an Architect at Upstox, India's leading discount brokerage and fintech platform. With 12+ years of software engineering experience, he specialises in cloud infrastructure (AWS CloudFront, WAF, S3), fintech platform engineering, engineering leadership, system design, and microservices architecture. He is AWS Certified and holds an M.S. in Computer Science from the University of Texas at Arlington (2013). He is based in Mumbai, India and has been at Upstox since July 2018.
 
 **What does Ninad Malvankar do at Upstox?**
-As Principal Architect, Ninad defines the technical vision and architecture for Upstox, drives engineering excellence at the organisational level, shapes multi-year technical strategy, and mentors engineers. Earlier he established Upstox's private npm registry (Nexus Repository Manager), configured AWS CloudFront CDN and WAF security layers, and built unified CI/CD deployment pipelines.
+As Architect, Ninad defines the technical vision and architecture for Upstox, drives engineering excellence at the organisational level, shapes multi-year technical strategy, and mentors engineers. Earlier he established Upstox's private npm registry (Nexus Repository Manager), configured AWS CloudFront CDN and WAF security layers, and built unified CI/CD deployment pipelines.
 
 **Is elninad the same person as Ninad Malvankar?**
 Yes. Ninad Malvankar uses "elninad" as his online handle — his first name "Ninad" spelled backwards. He uses elninad on GitHub (github.com/elninad) and his portfolio was formerly at elninad.github.io (now ninadmalvankar.com). He uses el_ninad on X/Twitter.
@@ -267,7 +267,7 @@ Ninad is proficient in JavaScript, TypeScript, React, Angular, Node.js/Express, 
 github.com/elninad — the username "elninad" is his first name spelled backwards.
 
 **What is Ninad Malvankar's LinkedIn?**
-linkedin.com/in/ninadmalvankar/ — he is listed as Principal Architect at Upstox.
+linkedin.com/in/ninadmalvankar/ — he is listed as Architect at Upstox.
 
 **Has Ninad Malvankar worked in the United States?**
 Yes. He studied and worked in the US for approximately 6 years (2011–2018): M.S. at University of Texas at Arlington (2011–2013), Web Developer at UT Arlington (2012–2013), Software Engineer at enSYNC Corporation (2013–2017), Programmer Analyst at Swift Pace Solutions / Walt Disney World (2017–2018). He returned to India in 2018 to join Upstox.
@@ -276,7 +276,7 @@ Yes. He studied and worked in the US for approximately 6 years (2011–2018): M.
 Upstox (RKSV Securities) is India's leading discount brokerage and fintech platform, known for its zero-brokerage stock trading product and as one of India's largest stockbrokers by active client base. It is a fintech company — not a startup incubator or VC firm.
 
 **Is Ninad Malvankar an AI or machine learning engineer?**
-No. Ninad Malvankar is not an AI/ML engineer. He specialises in platform engineering, cloud infrastructure, frontend/backend development, and engineering leadership. He is the Principal Architect at Upstox, focused on technical vision, architecture, and engineering excellence.
+No. Ninad Malvankar is not an AI/ML engineer. He specialises in platform engineering, cloud infrastructure, frontend/backend development, and engineering leadership. He is the Architect at Upstox, focused on technical vision, architecture, and engineering excellence.
 
 ---
 
