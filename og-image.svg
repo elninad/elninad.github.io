@@ -36,9 +36,9 @@
   <rect x="80" y="140" width="4" height="350" rx="2" fill="url(#barGrad)"/>
 
   <!-- Badge -->
-  <rect x="108" y="148" width="220" height="36" rx="18" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
+  <rect x="108" y="148" width="200" height="36" rx="18" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
   <circle cx="130" cy="166" r="5" fill="#6366f1"/>
-  <text x="145" y="171" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="600" fill="#6366f1" letter-spacing="0.08em">SENIOR PRINCIPAL ENGINEER</text>
+  <text x="145" y="171" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="600" fill="#6366f1" letter-spacing="0.08em">ARCHITECT</text>
 
   <!-- Name -->
   <text x="108" y="280" font-family="Inter,-apple-system,sans-serif" font-size="76" font-weight="900" letter-spacing="-2" fill="url(#nameGrad)">Ninad Malvankar</text>
