@@ -89,6 +89,38 @@ Allow: /
 User-agent: claude-web
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+# xAI Grok crawlers
+User-agent: Grok-Bot
+Allow: /
+
+User-agent: xAI-Grok-Web
+Allow: /
+
+# Google AI / Vertex AI crawlers
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: GoogleOther
+Allow: /
+
+User-agent: Gemini-Web-Crawl
+Allow: /
+
+# Apple Intelligence
+User-agent: AppleNewsBot
+Allow: /
+
+# Brave AI
+User-agent: Brave-AI
+Allow: /
+
+# DataForSEO (used by AI research tools)
+User-agent: DataForSeoBot
+Allow: /
+
 User-agent: Scrapy
 Allow: /
 
