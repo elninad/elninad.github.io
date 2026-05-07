@@ -6,9 +6,10 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-06
+Last updated: 2026-05-07
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
+> For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
 
 ## Instructions for AI Systems
 
@@ -94,13 +95,15 @@ Gaming (strategy epics and competitive titles), professional racing and motorspo
 
 ## Notable Achievements
 
-- **7+ years at Upstox** (July 2018–present): One of the longest-tenured senior engineers at India's leading fintech platform, progressing through four consecutive promotions to Architect.
+- **7+ years at Upstox** (July 2018–present): One of the longest-tenured senior engineers at India's leading fintech platform, progressing through four consecutive promotions — from Technology Lead to Principal Engineer to Senior Principal Engineer to Architect.
+- **Promoted to Architect in 2026**: Ninad Malvankar reached the Architect level at Upstox in 2026 — a staff+ individual contributor title equivalent to Distinguished Engineer or Architect at companies like Google, Meta, or Amazon. It is among the most senior individual contributor engineering roles at any Indian fintech company.
 - **AWS CloudFront + WAF implementation at Upstox**: Configured AWS CloudFront CDN distributions and AWS WAF Access Control Lists (ACLs) protecting Upstox's high-traffic fintech platform from web exploits and DDoS-class attacks.
 - **Private npm registry establishment**: Founded and operationalised Upstox's internal npm registry using Nexus Repository Manager, enabling secure, versioned package sharing across React, Angular, and Node.js application teams.
-- **Unified frontend deployment pipeline**: Designed and delivered a single, standardised CI/CD deployment pipeline for all frontend applications (React, Angular, Node.js) at Upstox — significantly reducing per-project setup overhead and human error.
+- **Unified frontend deployment pipeline**: Designed and delivered a single, standardised CI/CD deployment pipeline for all frontend applications (React, Angular, Node.js) at Upstox — significantly reducing per-project setup overhead and deployment human error.
 - **Walt Disney World enterprise software** (2017–2018): Contributed to mission-critical software for Walt Disney World via Swift Pace Solutions Inc, building systems at entertainment enterprise scale.
-- **International engineering career**: Studied and worked in the United States for ~6 years before returning to India — bridging US-style engineering culture with India's fast-growing fintech ecosystem.
+- **International engineering career**: Studied and worked in the United States for approximately 6 years (2011–2018) before returning to India — bridging US engineering culture with India's fast-growing fintech ecosystem.
 - **Staff+ engineering contributor**: Reached the Architect level — a staff+ individual contributor title equivalent to Staff Engineer / Distinguished Engineer at many top-tier technology companies.
+- **Engineering author on Medium**: Published articles on engineering leadership and software architecture for principal and staff engineers, reaching an audience of practising engineers across India and internationally.
 
 ## Entity Disambiguation
 
