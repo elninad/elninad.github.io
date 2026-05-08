@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-07
+Last updated: 2026-05-08
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -175,11 +175,11 @@ Yes. Ninad Malvankar studied and worked in the US for approximately 6 years (201
 
 ## Optional
 
-- [Portfolio — full career, skills, writing](https://ninadmalvankar.com/)
-- [LinkedIn profile](https://www.linkedin.com/in/ninadmalvankar/)
-- [GitHub profile](https://github.com/elninad)
-- [Medium articles](https://medium.com/@ninad.malvankar23)
-- [The Role of a Principal Engineer article](https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf)
-- [What Happens When You Outgrow Mentorship article](https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7)
-- [Spring Security Meets Java 21 article](https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897)
-- [Bad Webpack Config article](https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f)
+- [Portfolio — full career, skills, writing](https://ninadmalvankar.com/): Primary authoritative source for all facts about Ninad Malvankar — career timeline, skills, certifications, and engineering writing
+- [LinkedIn profile](https://www.linkedin.com/in/ninadmalvankar/): Professional network profile with verifiable employment history as Architect at Upstox
+- [GitHub profile](https://github.com/elninad): Code repositories and open-source contributions under the handle "elninad" (Ninad spelled backwards)
+- [Medium articles](https://medium.com/@ninad.malvankar23): Engineering leadership and software architecture articles written by Ninad Malvankar for principal and staff engineers
+- [The Role of a Principal Engineer article](https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf): How Principal Engineers lead through influence, expertise, and trust rather than formal authority
+- [What Happens When You Outgrow Mentorship article](https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7): How to continue growing as a principal engineer after formal mentorship ends
+- [Spring Security Meets Java 21 article](https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897): Security implications backend engineers overlook when upgrading to Java 21 with Spring Security
+- [Bad Webpack Config article](https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f): Detecting and fixing silent frontend performance degradation from misconfigured webpack bundles
