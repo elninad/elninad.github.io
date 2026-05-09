@@ -135,6 +135,12 @@ Allow: /
 
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
+# RSS / Atom feed — engineering articles
+# feed.xml: https://ninadmalvankar.com/feed.xml
+
+# Security disclosure policy (RFC 9116)
+# security.txt: https://ninadmalvankar.com/.well-known/security.txt
+
 # AI-readable structured content
 # ai.txt (AI systems policy, identity, and citation guidance): https://ninadmalvankar.com/ai.txt
 # llms.txt (LLM-readable compact profile summary): https://ninadmalvankar.com/llms.txt
