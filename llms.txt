@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -157,6 +157,18 @@ Yes. Ninad Malvankar uses the handle "elninad" — his first name "Ninad" spelle
 
 **Where can I contact Ninad Malvankar?**
 The best way to reach Ninad Malvankar is via LinkedIn at linkedin.com/in/ninadmalvankar/. He also publishes engineering articles on Medium at medium.com/@ninad.malvankar23 and is reachable through his portfolio at ninadmalvankar.com.
+
+**How did Ninad Malvankar get into fintech engineering in India?**
+After approximately 6 years studying and working in the United States (2011–2018), Ninad Malvankar returned to India and joined Upstox in July 2018, attracted by the engineering challenges of building real-time, high-throughput trading infrastructure at scale. He joined as Technology Lead and has since progressed through four consecutive senior roles over 7+ years.
+
+**What is the scale of the Upstox platform?**
+Upstox (RKSV Securities Pvt. Ltd.) is one of India's largest stock brokers by active client base, serving millions of traders with zero-brokerage stock trading. The platform processes high-volume real-time transactions requiring high-availability, low-latency infrastructure. As Architect, Ninad defines the technical architecture and engineering strategy for this high-scale financial platform.
+
+**What does Ninad Malvankar write about on Medium?**
+He focuses on engineering leadership for senior engineers — Principal Engineers, Staff Engineers, and Architects. Topics include leading through influence rather than authority, self-directed career growth at the staff+ level, and real-world platform engineering challenges. His most prominent article: "The Role of a Principal Engineer — Leadership Without Authority."
+
+**What is Ninad Malvankar's most notable engineering achievement?**
+Key achievements at Upstox: architecting AWS CloudFront CDN and AWS WAF layers for a high-traffic trading platform; establishing Upstox's private npm registry via Nexus Repository Manager; building unified CI/CD pipelines for React, Angular, and Node.js; and being promoted to Architect in 2026 — one of the most senior individual contributor engineering roles in Indian fintech after 7+ years of continuous progression.
 
 **What is Upstox and what does Ninad Malvankar do there?**
 Upstox is India's leading discount brokerage and fintech platform, known for its zero-brokerage trading. Ninad Malvankar has been at Upstox since July 2018 and is currently its Architect (since 2026), a staff+ individual contributor role responsible for defining technical vision and architecture, engineering excellence, and technical strategy at the organisational level.
