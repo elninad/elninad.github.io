@@ -133,6 +133,44 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
+# Alibaba / Tongyi Qwen AI
+# Internet Archive / Wayback Machine — temporal citation depth for LLMs
+User-agent: ia_archiver
+Allow: /
+
+# Alibaba / Tongyi Qwen AI
+User-agent: QwenBot
+Allow: /
+
+# DeepSeek AI
+User-agent: DeepSeek-Bot
+Allow: /
+
+# Firecrawl — popular LLM RAG/ingestion tool
+User-agent: FirecrawlAgent
+Allow: /
+
+# Baidu — Chinese search engine and AI
+User-agent: Baiduspider
+Allow: /
+
+# SEO crawlers (increase domain authority signals in SEO tools)
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+# Bing search crawler
+User-agent: msnbot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
