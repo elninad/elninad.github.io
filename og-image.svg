@@ -64,7 +64,7 @@
   <text x="318" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">CERTIFIED</text>
 
   <!-- URL -->
-  <text x="108" y="580" font-family="'JetBrains Mono',monospace,sans-serif" font-size="18" fill="rgba(99,102,241,0.7)" letter-spacing="0.04em">elninad.github.io</text>
+  <text x="108" y="580" font-family="'JetBrains Mono',monospace,sans-serif" font-size="18" fill="rgba(99,102,241,0.7)" letter-spacing="0.04em">ninadmalvankar.com</text>
 
   <!-- Decorative orb -->
   <circle cx="1060" cy="315" r="190" fill="none" stroke="rgba(99,102,241,0.07)" stroke-width="1"/>
