@@ -1134,8 +1134,8 @@
           {
             "@type": "InteractionCounter",
             "interactionType": "https://schema.org/CommentAction",
-            "userInteractionCount": 42,
-            "description": "42 FAQ items covering professional background, expertise, and career history"
+            "userInteractionCount": 43,
+            "description": "43 FAQ items covering professional background, expertise, and career history"
           }
         ],
         "mention": [
@@ -3136,9 +3136,12 @@
 
   /* Parallax hero background on scroll */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (parallaxBg && !prefersReducedMotion) {
+    window.addEventListener('scroll', function() {
+      parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
+    }, { passive: true });
+  }
 
   /* Sticky nav */
   const navbar = document.getElementById('navbar');
@@ -3150,6 +3153,7 @@
   (function() {
     var container = document.getElementById('particles');
     if (!container) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     var colors = ['#6366f1','#8b5cf6','#22d3ee','#f59e0b'];
     for (var i = 0; i < 28; i++) {
       var p = document.createElement('div');
