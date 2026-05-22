@@ -133,6 +133,32 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
+# Qwen / Alibaba AI
+User-agent: Qwen
+Allow: /
+
+# WriteSonic AI
+User-agent: WriteSonic
+Allow: /
+
+# Semrush / SEO analysis tools (used by AI research platforms)
+User-agent: SemrushBot
+Allow: /
+
+User-agent: AhrefsBot
+Allow: /
+
+# Slack / Telegram link preview crawlers
+User-agent: Slackbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# WhatsApp link preview
+User-agent: WhatsApp
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
