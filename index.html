@@ -213,14 +213,14 @@
       transition: color .25s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--accent) !important;
-      color: var(--white) !important;
+    .nav-links .nav-cta {
+      background: var(--accent);
+      color: var(--white);
       padding: 8px 20px;
       border-radius: 8px;
-      transition: background .25s, transform .2s !important;
+      transition: background .25s, transform .2s;
     }
-    .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
+    .nav-links .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
     .nav-hamburger { display: none; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
@@ -594,10 +594,11 @@
     .interest-card.racing::before  { background: linear-gradient(90deg, var(--gold), #fb923c); }
     .interest-card.youtube::before { background: linear-gradient(90deg, var(--red), #f97316); }
     .interest-card.gundam::before  { background: linear-gradient(90deg, var(--teal), var(--green)); }
-    .interest-card.gaming:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--accent); }
-    .interest-card.racing:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--gold); }
-    .interest-card.youtube:hover { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--red); }
-    .interest-card.gundam:hover  { transform: translateY(-6px); box-shadow: var(--shadow); border-color: var(--teal); }
+    .interest-card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .interest-card.gaming:hover  { border-color: var(--accent); }
+    .interest-card.racing:hover  { border-color: var(--gold); }
+    .interest-card.youtube:hover { border-color: var(--red); }
+    .interest-card.gundam:hover  { border-color: var(--teal); }
     .interest-icon {
       width: 64px; height: 64px; border-radius: 18px;
       display: flex; align-items: center; justify-content: center;
@@ -713,9 +714,9 @@
       }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
       .nav-links.open .nav-cta {
-        background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 32px; border-radius: 10px; font-size: 1rem;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
@@ -3239,16 +3240,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll listener */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
