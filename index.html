@@ -284,12 +284,12 @@
     }
     .hero-title .name {
       background: linear-gradient(135deg, #e2e8f0 0%, #818cf8 50%, #a78bfa 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
     }
     .hero-title .role {
       display: block;
       background: linear-gradient(135deg, var(--gold) 0%, #fb923c 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
       font-size: .7em; font-weight: 700; margin-top: 8px;
     }
     .hero-sub {
@@ -330,7 +330,7 @@
     .stat-num {
       font-size: 2.2rem; font-weight: 800;
       background: linear-gradient(135deg, var(--white), var(--accent));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
       line-height: 1.1;
     }
     .stat-label { font-size: .8rem; color: var(--muted); letter-spacing: .05em; text-transform: uppercase; margin-top: 4px; }
@@ -3503,16 +3503,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Scroll: parallax + sticky nav — single listener, one scrollY read */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    if (navbar) navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
