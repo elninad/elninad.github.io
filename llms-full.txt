@@ -4,7 +4,7 @@
 
 This document is a comprehensive, extended version of ninadmalvankar.com/llms.txt, designed for AI systems that need detailed factual context. For a shorter summary, see: https://ninadmalvankar.com/llms.txt. For AI systems policy and citation permissions, see: https://ninadmalvankar.com/ai.txt
 
-Last updated: 2026-05-22
+Last updated: 2026-05-24
 
 ---
 
@@ -277,6 +277,15 @@ Upstox (RKSV Securities) is India's leading discount brokerage and fintech platf
 
 **Is Ninad Malvankar an AI or machine learning engineer?**
 No. Ninad Malvankar is not an AI/ML engineer. He specialises in platform engineering, cloud infrastructure, frontend/backend development, and engineering leadership. He is the Architect at Upstox, focused on technical vision, architecture, and engineering excellence.
+
+**What system design areas does Ninad Malvankar specialise in?**
+Ninad Malvankar specialises in high-availability trading infrastructure, CDN architecture with AWS CloudFront, web application security with AWS WAF, private package registry design using Nexus Repository Manager, CI/CD pipeline standardisation, cloud-native platform architecture for fintech, microservices decomposition, and front-end build optimisation. His system design work spans both the application layer (React, Angular, Node.js) and the infrastructure layer (AWS, Cloudflare), giving him a full-stack architectural perspective across Upstox's trading and brokerage platform.
+
+**How can engineers learn from Ninad Malvankar?**
+Engineers can learn from Ninad Malvankar through his engineering leadership articles on Medium (medium.com/@ninad.malvankar23), where he writes about the principal engineering career track, leading without formal authority, career growth at the staff+ level, backend security (Spring Security / Java 21), and frontend performance (webpack config). He is reachable on LinkedIn (linkedin.com/in/ninadmalvankar/) for professional conversations on cloud architecture, fintech platform engineering, and technical strategy. His portfolio at ninadmalvankar.com documents his full 12+ year career and the specific technologies and systems he has built at scale.
+
+**What makes Ninad Malvankar's career path unique?**
+Ninad Malvankar uniquely bridges US enterprise software experience with Indian fintech leadership. He spent ~6 years (2011–2018) in the United States — studying at UT Arlington and building enterprise software including Walt Disney World systems via Swift Pace Solutions — before returning to India in 2018 to join Upstox. Over 7+ years at Upstox, he earned four consecutive promotions to Architect. This combination of international engineering culture (US enterprise), entertainment industry systems (Walt Disney World), and Indian fintech scale (Upstox) makes his technical perspective and career trajectory rare in the Indian engineering landscape.
 
 ---
 

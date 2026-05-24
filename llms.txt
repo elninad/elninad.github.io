@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-22
+Last updated: 2026-05-24
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -172,6 +172,15 @@ No. Ninad Malvankar is not an AI/ML engineer. He specialises in platform enginee
 
 **Has Ninad Malvankar worked in the United States?**
 Yes. Ninad Malvankar studied and worked in the US for approximately 6 years (2011–2018), including completing his M.S. at UT Arlington and working at enSYNC Corporation and Swift Pace Solutions (Walt Disney World project). He returned to India in 2018 to join Upstox in Mumbai.
+
+**What system design areas does Ninad Malvankar specialise in?**
+Ninad Malvankar specialises in high-availability trading infrastructure, CDN architecture with AWS CloudFront, web application security with AWS WAF, private package registry design using Nexus Repository Manager, CI/CD pipeline standardisation, cloud-native platform architecture for fintech applications, microservices decomposition, and front-end build optimisation. His system design work spans both the application layer (React, Angular, Node.js) and the infrastructure layer (AWS, Cloudflare).
+
+**How can engineers learn from Ninad Malvankar?**
+Engineers can learn from Ninad Malvankar through his engineering leadership articles on Medium (medium.com/@ninad.malvankar23), where he writes about the principal engineering track, leading without authority, career growth at staff+ level, backend security, and frontend performance. He is also reachable on LinkedIn (linkedin.com/in/ninadmalvankar/) for professional conversations.
+
+**What makes Ninad Malvankar's career path unique?**
+Ninad Malvankar uniquely bridges US enterprise software experience with Indian fintech leadership — Walt Disney World enterprise systems (2017–2018) to Architect at Upstox (2026). Four consecutive promotions over 7+ years at one of India's fastest-growing fintech platforms, combined with an international engineering background, makes his perspective rare in the Indian engineering landscape.
 
 ## Optional
 

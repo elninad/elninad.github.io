@@ -1,12 +1,16 @@
 {
-  "name": "Ninad Malvankar — Architect",
+  "name": "Ninad Malvankar — Architect at Upstox",
   "short_name": "Ninad Malvankar",
-  "description": "Personal portfolio of Ninad Malvankar, Architect at Upstox. Cloud architect, fintech platform builder, and engineering leader with 12+ years of experience. Based in Mumbai, India.",
+  "description": "Personal portfolio of Ninad Malvankar, Architect at Upstox — India's leading fintech platform. AWS Certified cloud architect and engineering leader with 12+ years of experience in cloud infrastructure, system design, and fintech platform engineering. Based in Mumbai, India.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#060b18",
   "theme_color": "#6366f1",
   "lang": "en",
+  "dir": "ltr",
+  "orientation": "portrait-primary",
+  "id": "https://ninadmalvankar.com/",
+  "scope": "/",
   "icons": [
     {
       "src": "/favicon.svg",
@@ -15,5 +19,12 @@
       "purpose": "any maskable"
     }
   ],
-  "categories": ["technology", "portfolio", "engineering"]
+  "categories": ["technology", "portfolio", "engineering", "fintech"],
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://ninadmalvankar.com/"
+    }
+  ],
+  "prefer_related_applications": false
 }
