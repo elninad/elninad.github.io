@@ -141,6 +141,26 @@ Allow: /
 User-agent: WriteSonic
 Allow: /
 
+# Magpie / AI research crawler
+User-agent: Magpie-Crawler
+Allow: /
+
+# Imagesift AI
+User-agent: ImagesiftBot
+Allow: /
+
+# Amazon Kendra AI search indexer
+User-agent: Amazon-KendraBot
+Allow: /
+
+# Neevabot (now Perplexity underlying)
+User-agent: Neevabot
+Allow: /
+
+# Webz.io crawler (used by AI research platforms)
+User-agent: Webzio-Extended
+Allow: /
+
 # Semrush / SEO analysis tools (used by AI research platforms)
 User-agent: SemrushBot
 Allow: /
