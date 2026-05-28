@@ -223,21 +223,21 @@
       letter-spacing: .04em;
     }
     .nav-links { display: flex; gap: 32px; list-style: none; }
-    .nav-links a {
+    .nav-links a:not(.nav-cta) {
       color: var(--muted); text-decoration: none;
       font-size: .875rem; font-weight: 500;
       letter-spacing: .03em; text-transform: uppercase;
       transition: color .25s;
     }
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:not(.nav-cta):hover { color: var(--white); }
     .nav-cta {
-      background: var(--accent) !important;
-      color: var(--white) !important;
+      background: var(--accent);
+      color: var(--white);
       padding: 8px 20px;
       border-radius: 8px;
-      transition: background .25s, transform .2s !important;
+      transition: background .25s, transform .2s;
     }
-    .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
+    .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
     .nav-hamburger { display: none; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
@@ -745,9 +745,9 @@
       }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
       .nav-links.open .nav-cta {
-        background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 32px; border-radius: 10px; font-size: 1rem;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
@@ -3563,16 +3563,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll listener, one scrollY read */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */
