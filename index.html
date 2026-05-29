@@ -228,14 +228,14 @@
       transition: color .25s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--accent) !important;
-      color: var(--white) !important;
+    .nav-links a.nav-cta {
+      background: var(--accent);
+      color: var(--white);
       padding: 8px 20px;
       border-radius: 8px;
-      transition: background .25s, transform .2s !important;
+      transition: background .25s, transform .2s;
     }
-    .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
+    .nav-links a.nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
     .nav-hamburger { display: none; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
@@ -682,6 +682,13 @@
     @keyframes fade-in  { from { opacity:0; } to { opacity:1; } }
     @keyframes slide-up { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
 
+    /* ─── About entity lead ────────────────────────────────────── */
+    .about-entity-lead {
+      font-family: var(--mono); font-size: .78rem; color: var(--accent);
+      letter-spacing: .05em; line-height: 1.6; margin-bottom: 18px;
+      border-left: 2px solid var(--accent); padding-left: 14px;
+    }
+
     /* ─── FAQ ──────────────────────────────────────────────────── */
     #faq { background: var(--surface); }
     .faq-list {
@@ -743,9 +750,9 @@
       }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
       .nav-links.open .nav-cta {
-        background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 32px; border-radius: 10px; font-size: 1rem;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
@@ -2214,7 +2221,7 @@
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
-  <button class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+  <button type="button" class="nav-hamburger" id="navHamburger" aria-label="Toggle navigation menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -2393,7 +2400,7 @@
       </div>
 
       <div class="about-text reveal">
-        <p class="about-entity-lead" style="font-family:var(--mono);font-size:.78rem;color:var(--accent);letter-spacing:.05em;line-height:1.6;margin-bottom:18px;border-left:2px solid var(--accent);padding-left:14px;">
+        <p class="about-entity-lead">
           Ninad Malvankar is an <strong style="color:var(--text)">Architect at Upstox</strong>, India's leading discount brokerage and fintech platform — a staff+ individual contributor role. 12+ years of experience in cloud infrastructure (AWS CloudFront, WAF, S3), engineering leadership, system design, and fintech platform engineering. AWS Certified Cloud Practitioner. M.S. Computer Science, University of Texas at Arlington (2013). Mumbai, India.
         </p>
         <p style="color:var(--muted);line-height:1.8;">
@@ -3524,16 +3531,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — single scroll listener */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    const y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Floating particles in hero */

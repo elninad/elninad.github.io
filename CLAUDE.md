@@ -126,7 +126,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `data-width="XX"` HTML attributes on `.skill-bar-fill` elements; the Intersection Observer reads `bar.dataset.width` and sets `bar.style.width` directly when the card scrolls into view.
 
 ## HTML Conventions
 
@@ -168,7 +168,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `.skill-bar-track` contains a `.skill-bar-fill` element with `data-width="XX"` and matching `aria-valuenow="XX"`. Update both the `data-width` value and `aria-valuenow` to change a skill percentage. The Intersection Observer reads the attribute and sets `style.width` when the card scrolls into view.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
