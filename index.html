@@ -228,14 +228,14 @@
       transition: color .25s;
     }
     .nav-links a:hover { color: var(--white); }
-    .nav-cta {
-      background: var(--accent) !important;
-      color: var(--white) !important;
+    .nav-links a.nav-cta {
+      background: var(--accent);
+      color: var(--white);
       padding: 8px 20px;
       border-radius: 8px;
-      transition: background .25s, transform .2s !important;
+      transition: background .25s, transform .2s;
     }
-    .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
+    .nav-links a.nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
     .nav-hamburger { display: none; }
 
     /* ─── Hero ──────────────────────────────────────────────────── */
@@ -514,8 +514,7 @@
       font-size: .875rem; color: var(--muted); margin-bottom: 10px;
       display: flex; align-items: center; gap: 6px; flex-wrap: wrap;
     }
-    .tl-item.right .tl-company { justify-content: flex-start; }
-    .tl-item.left  .tl-company { justify-content: flex-end;   }
+    .tl-item.left  .tl-company { justify-content: flex-end; }
     .tl-badge {
       display: inline-block; font-size: .7rem; font-weight: 600;
       padding: 3px 10px; border-radius: 100px;
@@ -742,10 +741,10 @@
         list-style: none;
       }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
-      .nav-links.open .nav-cta {
-        background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+      .nav-links.open a.nav-cta {
+        background: var(--accent);
+        color: var(--white);
+        padding: 12px 32px; border-radius: 10px; font-size: 1rem;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
