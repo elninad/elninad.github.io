@@ -3,6 +3,7 @@
 # This file signals domain ownership and responsible-disclosure intent.
 
 Contact: https://www.linkedin.com/in/ninadmalvankar/
-Expires: 2027-05-25T00:00:00.000Z
+Contact: mailto:ninad.malvankar23@gmail.com
+Expires: 2027-05-31T00:00:00.000Z
 Preferred-Languages: en
 Canonical: https://ninadmalvankar.com/.well-known/security.txt
