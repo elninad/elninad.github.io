@@ -168,7 +168,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `<div class="skill-bar-track">` has a child `<div class="skill-bar-fill" data-width="XX">`. Update the integer value in `data-width`. The Intersection Observer reads this attribute and sets `element.style.width` to trigger the CSS transition animation.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
