@@ -109,6 +109,29 @@ Allow: /
 User-agent: Gemini-Web-Crawl
 Allow: /
 
+# DeepSeek AI crawlers
+User-agent: DeepSeek-Bot
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# Meta Llama crawlers
+User-agent: LlamaBot
+Allow: /
+
+# Mistral AI crawlers
+User-agent: Mistral-AI
+Allow: /
+
+# Nvidia crawler
+User-agent: Omgilibot
+Allow: /
+
+# Hugging Face crawlers
+User-agent: HuggingFaceBot
+Allow: /
+
 # Apple Intelligence
 User-agent: AppleNewsBot
 Allow: /

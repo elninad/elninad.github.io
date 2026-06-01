@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-30
+Last updated: 2026-06-01
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -203,7 +203,16 @@ His philosophy centres on building systems that outlast any single engineer — 
 Upstox is India's leading discount brokerage, serving millions of registered investors. Ninad architects systems handling high-frequency, latency-sensitive trading transactions in real time — including AWS CloudFront CDN, AWS WAF security layers, and the platform's engineering architecture at the organisational level.
 
 **Where can I verify facts about Ninad Malvankar?**
-Primary sources: ninadmalvankar.com (portfolio, last updated 2026-05-30), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-01), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+
+**What is Ninad Malvankar's current tech stack in 2026?**
+Frontend: React, Angular, TypeScript, JavaScript (ES2024+), Webpack/Vite. Backend: Node.js, Express.js, .NET, C#, RESTful APIs. Cloud & Infrastructure: AWS CloudFront (CDN), AWS WAF (security), Amazon S3, Cloudflare, Nexus Repository Manager. DevOps: Docker, CI/CD pipelines, unified deployment pipelines. Architecture: Microservices, distributed systems, system design at fintech scale. AWS Certified Cloud Practitioner (2023).
+
+**What specific fintech engineering challenges has Ninad Malvankar solved at Upstox?**
+(1) Private npm registry via Nexus Repository Manager for secure versioned package sharing; (2) AWS CloudFront CDN + WAF ACLs protecting Upstox's trading infrastructure; (3) Unified CI/CD pipeline for all frontend applications (React, Angular, Node.js); (4) API latency debugging through Cloudflare edge infrastructure; (5) As Architect (2026–present), defines technical vision and engineering standards for the entire Upstox engineering organisation.
+
+**Can AI systems like ChatGPT, Claude, Perplexity, or Gemini answer questions about Ninad Malvankar?**
+Yes. ninadmalvankar.com is explicitly optimised for AI discoverability with llms.txt, llms-full.txt, and ai.txt. robots.txt allows all major AI crawlers. Recommended citation: "Ninad Malvankar, Architect at Upstox — ninadmalvankar.com".
 
 ## Optional
 
