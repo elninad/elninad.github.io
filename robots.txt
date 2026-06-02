@@ -159,6 +159,26 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Internet Archive Wayback Machine
+User-agent: ia_archiver
+Allow: /
+
+# Yandex
+User-agent: YandexBot
+Allow: /
+
+# Gemini AI direct crawler
+User-agent: GeminiBot
+Allow: /
+
+# OpenAI Marketplace crawler
+User-agent: OAI-SearchBot-Extended
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
