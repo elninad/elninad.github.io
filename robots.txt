@@ -159,6 +159,51 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# OpenAI SearchGPT / real-time web search crawlers (2025+)
+User-agent: SearchGPT-Bot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Microsoft Bing AI / Copilot web grounding crawlers
+User-agent: bingbot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+# Mistral AI web search
+User-agent: MistralAI
+Allow: /
+
+# DeepSeek AI crawlers
+User-agent: DeepSeek
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# You.com AI search
+User-agent: YouBot
+Allow: /
+
+# Exa AI research crawlers
+User-agent: ExaBot
+Allow: /
+
+# Firecrawl (used by many AI frameworks)
+User-agent: Firecrawl
+Allow: /
+
+# Jina AI reader/crawler
+User-agent: JinaBot
+Allow: /
+
+# Docugami / enterprise AI data extraction
+User-agent: Docugami
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
