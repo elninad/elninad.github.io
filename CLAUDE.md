@@ -89,8 +89,7 @@ The file is divided into well-commented sections using ASCII dividers:
 
 ### Scripts (lines ~1171–1224)
 All vanilla JavaScript, no external libraries:
-- **Parallax**: translates `#parallaxBg` at 35% scroll speed (passive listener)
-- **Sticky nav**: toggles `.scrolled` class on `#navbar` after 40px scroll
+- **Scroll handler** (single passive listener): translates `#parallaxBg` at 35% scroll speed; toggles `.scrolled` on `#navbar` after 40px scroll
 - **Particles**: creates 28 floating `<div>` particles with randomized positions, colors, sizes, and animation durations
 - **Intersection Observer**: adds `.visible` to `.reveal` elements at 12% viewport threshold; triggers skill bar width animations; unobserves after first trigger for performance
 - **Timeline stagger**: applies incremental `transition-delay` (6ms steps) to timeline items
@@ -126,7 +125,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `data-width="XX"` attributes on `.skill-bar-fill` elements; the Intersection Observer reads `dataset.width` and sets `bar.style.width` directly via JavaScript when the element enters the viewport.
 
 ## HTML Conventions
 
@@ -168,7 +167,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `.skill-bar-fill` element has a `data-width="XX"` attribute (integer, 0–100) and a matching `aria-valuenow="XX"` attribute. Update both. The Intersection Observer reads `dataset.width` and animates the bar width via JavaScript when the section scrolls into view.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
