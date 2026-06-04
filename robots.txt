@@ -137,6 +137,18 @@ Allow: /
 User-agent: Qwen
 Allow: /
 
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+
+# HuggingFace AI
+User-agent: HuggingFaceBot
+Allow: /
+
+# Nvidia AI
+User-agent: Nvidia-Chat
+Allow: /
+
 # WriteSonic AI
 User-agent: WriteSonic
 Allow: /
