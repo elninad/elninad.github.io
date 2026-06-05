@@ -26,5 +26,31 @@
       "url": "https://ninadmalvankar.com/"
     }
   ],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "/og-image.svg",
+      "sizes": "1200x630",
+      "type": "image/svg+xml",
+      "form_factor": "wide",
+      "label": "Ninad Malvankar — Architect at Upstox portfolio"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Career Journey",
+      "url": "/#timeline",
+      "description": "Career timeline from Web Developer to Architect at Upstox"
+    },
+    {
+      "name": "Writing",
+      "url": "/#writing",
+      "description": "Engineering leadership and architecture articles on Medium"
+    },
+    {
+      "name": "Contact",
+      "url": "/#contact",
+      "description": "Connect with Ninad Malvankar on LinkedIn and GitHub"
+    }
+  ]
 }

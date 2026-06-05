@@ -117,6 +117,32 @@ Allow: /
 User-agent: Brave-AI
 Allow: /
 
+# Microsoft Copilot / Bing AI
+User-agent: CopilotBot
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+# Jina AI (used for AI-powered search and embeddings)
+User-agent: JinaBot
+Allow: /
+
+User-agent: Jina-AI-Crawler
+Allow: /
+
+# SearchGPT / OpenAI web browsing
+User-agent: OAI-SearchBot
+Allow: /
+
+# Exa AI (used by AI research tools)
+User-agent: ExaBot
+Allow: /
+
+# You.com AI search
+User-agent: YouBot
+Allow: /
+
 # DataForSEO (used by AI research tools)
 User-agent: DataForSeoBot
 Allow: /
@@ -157,6 +183,14 @@ Allow: /
 
 # WhatsApp link preview
 User-agent: WhatsApp
+Allow: /
+
+# Discord link preview
+User-agent: Discordbot
+Allow: /
+
+# Notion AI
+User-agent: Notion-AI
 Allow: /
 
 Sitemap: https://ninadmalvankar.com/sitemap.xml
