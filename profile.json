@@ -1,0 +1,158 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://ninadmalvankar.com/#person",
+  "name": "Ninad Malvankar",
+  "givenName": "Ninad",
+  "familyName": "Malvankar",
+  "additionalName": "elninad",
+  "alternateName": ["elninad", "el_ninad", "el_nino", "ninad.malvankar23"],
+  "honorificSuffix": "M.S.",
+  "jobTitle": "Architect",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Upstox",
+    "legalName": "RKSV Securities Pvt. Ltd.",
+    "url": "https://upstox.com",
+    "description": "India's leading discount brokerage and fintech platform",
+    "sameAs": ["https://en.wikipedia.org/wiki/Upstox", "https://www.linkedin.com/company/upstox/"]
+  },
+  "url": "https://ninadmalvankar.com/",
+  "email": "ninad.malvankar23@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "addressCountry": "IN",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 19.076,
+      "longitude": 72.8777
+    }
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "India"
+  },
+  "sameAs": [
+    "https://www.linkedin.com/in/ninadmalvankar/",
+    "https://github.com/elninad",
+    "https://medium.com/@ninad.malvankar23",
+    "https://x.com/el_ninad",
+    "https://twitter.com/el_ninad",
+    "https://youtube.com/@el_nino",
+    "https://elninad.github.io/"
+  ],
+  "identifier": [
+    { "@type": "PropertyValue", "propertyID": "URL", "value": "https://ninadmalvankar.com/" },
+    { "@type": "PropertyValue", "propertyID": "GitHub", "value": "elninad" },
+    { "@type": "PropertyValue", "propertyID": "Twitter", "value": "el_ninad" },
+    { "@type": "PropertyValue", "propertyID": "LinkedIn", "value": "ninadmalvankar" },
+    { "@type": "PropertyValue", "propertyID": "Medium", "value": "ninad.malvankar23" },
+    { "@type": "PropertyValue", "propertyID": "YouTube", "value": "el_nino" }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "AWS Certified Cloud Practitioner",
+      "credentialCategory": "certification",
+      "dateCreated": "2023",
+      "validFrom": "2023",
+      "validThrough": "2026",
+      "recognizedBy": {
+        "@type": "Organization",
+        "name": "Amazon Web Services",
+        "sameAs": "https://aws.amazon.com"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "M.S. Computer Science",
+      "credentialCategory": "degree",
+      "startDate": "2011",
+      "endDate": "2013",
+      "dateCreated": "2013",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Texas at Arlington",
+        "sameAs": "https://www.uta.edu/"
+      }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "B.E. Computer Engineering",
+      "credentialCategory": "degree",
+      "startDate": "2007",
+      "endDate": "2011",
+      "dateCreated": "2011",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "University of Mumbai",
+        "sameAs": "https://mu.ac.in/"
+      }
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Texas at Arlington",
+      "sameAs": "https://www.uta.edu/"
+    },
+    {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Mumbai",
+      "sameAs": "https://mu.ac.in/"
+    }
+  ],
+  "knowsAbout": [
+    "Cloud Architecture", "Amazon Web Services", "AWS CloudFront", "AWS WAF", "Amazon S3",
+    "FinTech Engineering", "Engineering Leadership", "System Design", "Microservices Architecture",
+    "DevOps", "React", "Angular", "Node.js", "TypeScript", "JavaScript", ".NET", "C#",
+    "Docker", "CI/CD Pipelines", "Platform Engineering", "Distributed Systems",
+    "Cloudflare", "Nexus Repository Manager", "Technical Strategy", "Mentorship",
+    "Developer Experience", "Internal Developer Platform", "Fintech Platform Engineering"
+  ],
+  "hasOccupation": [
+    {
+      "@type": "Occupation",
+      "name": "Architect",
+      "startDate": "2026",
+      "description": "Defines technical vision and architecture for Upstox at the organisational level. Drives engineering excellence, technical strategy, and mentors engineers.",
+      "occupationLocation": { "@type": "City", "name": "Mumbai", "sameAs": "https://en.wikipedia.org/wiki/Mumbai" }
+    },
+    {
+      "@type": "Occupation",
+      "name": "Senior Principal Engineer",
+      "startDate": "2022",
+      "endDate": "2026",
+      "occupationLocation": { "@type": "City", "name": "Mumbai" }
+    },
+    {
+      "@type": "Occupation",
+      "name": "Principal Engineer",
+      "startDate": "2021",
+      "endDate": "2022",
+      "occupationLocation": { "@type": "City", "name": "Mumbai" }
+    },
+    {
+      "@type": "Occupation",
+      "name": "Technology Lead",
+      "startDate": "2018-07",
+      "endDate": "2021",
+      "occupationLocation": { "@type": "City", "name": "Mumbai" }
+    }
+  ],
+  "description": "Ninad Malvankar (alias: elninad) is the Architect at Upstox, India's leading discount brokerage and fintech platform. 12+ years of experience in cloud infrastructure (AWS CloudFront, WAF, S3), fintech platform engineering, engineering leadership, and system design. AWS Certified Cloud Practitioner. M.S. Computer Science, University of Texas at Arlington (2013). Based in Mumbai, India.",
+  "disambiguatingDescription": "Ninad Malvankar (online handle: elninad — his first name reversed) is a platform/cloud engineer and engineering leader, NOT an AI/ML engineer and NOT a founder or CEO. Based in Mumbai, India — not in the United States (studied in US 2011–2018).",
+  "publishingPrinciples": "https://medium.com/@ninad.malvankar23",
+  "usageInfo": "https://ninadmalvankar.com/ai.txt",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "professional inquiry",
+    "url": "https://www.linkedin.com/in/ninadmalvankar/",
+    "availableLanguage": "English"
+  },
+  "mainEntityOfPage": "https://ninadmalvankar.com/",
+  "dateCreated": "2024-01-01",
+  "dateModified": "2026-06-06"
+}

@@ -168,6 +168,7 @@ Sitemap: https://ninadmalvankar.com/sitemap.xml
 # security.txt: https://ninadmalvankar.com/.well-known/security.txt
 
 # AI-readable structured content
+# profile.json (machine-readable JSON entity profile): https://ninadmalvankar.com/profile.json
 # ai.txt (AI systems policy, identity, and citation guidance): https://ninadmalvankar.com/ai.txt
 # llms.txt (LLM-readable compact profile summary): https://ninadmalvankar.com/llms.txt
 # llms-full.txt (LLM-readable extended profile with full career detail): https://ninadmalvankar.com/llms-full.txt
