@@ -126,7 +126,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `data-width="XX"` attributes on `.skill-bar-fill` elements. The Intersection Observer reads `dataset.width` and sets `element.style.width` directly, triggering the CSS `width` transition from `0` to the target value.
 
 ## HTML Conventions
 
@@ -168,7 +168,15 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `.skill-bar-row` contains a `.skill-bar-track` with a child `.skill-bar-fill[data-width]`. Update the `data-width` attribute value and the matching visible label in `.skill-bar-label`. Also update `aria-valuenow` to keep accessibility in sync. Example:
+```html
+<div class="skill-bar-label"><span>React</span><span>90%</span></div>
+<div class="skill-bar-track">
+  <div class="skill-bar-fill" data-width="90" role="progressbar"
+       aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+       aria-label="React proficiency 90%"></div>
+</div>
+```
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
