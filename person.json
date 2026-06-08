@@ -1,0 +1,168 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://ninadmalvankar.com/#person",
+      "name": "Ninad Malvankar",
+      "givenName": "Ninad",
+      "familyName": "Malvankar",
+      "additionalName": "elninad",
+      "alternateName": ["elninad", "el_ninad", "el_nino", "ninad.malvankar23"],
+      "honorificSuffix": "M.S.",
+      "jobTitle": "Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "@id": "https://upstox.com/#organization",
+        "name": "Upstox",
+        "legalName": "RKSV Securities Pvt. Ltd.",
+        "url": "https://upstox.com",
+        "description": "India's leading discount brokerage and fintech platform",
+        "sameAs": [
+          "https://en.wikipedia.org/wiki/Upstox",
+          "https://www.linkedin.com/company/upstox/"
+        ]
+      },
+      "url": "https://ninadmalvankar.com/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://ninadmalvankar.com/og-image.svg",
+        "width": 1200,
+        "height": 630
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
+      "nationality": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/ninadmalvankar/",
+        "https://github.com/elninad",
+        "https://medium.com/@ninad.malvankar23",
+        "https://x.com/el_ninad",
+        "https://twitter.com/el_ninad",
+        "https://youtube.com/@el_nino",
+        "https://elninad.github.io/"
+      ],
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Texas at Arlington",
+          "sameAs": "https://www.uta.edu/"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "University of Mumbai",
+          "sameAs": "https://mu.ac.in/"
+        }
+      ],
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "AWS Certified Cloud Practitioner",
+          "credentialCategory": "certification",
+          "validFrom": "2023",
+          "validThrough": "2026",
+          "recognizedBy": {
+            "@type": "Organization",
+            "name": "Amazon Web Services",
+            "sameAs": "https://aws.amazon.com"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "M.S. Computer Science",
+          "credentialCategory": "degree",
+          "startDate": "2011",
+          "endDate": "2013",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Texas at Arlington",
+            "sameAs": "https://www.uta.edu/"
+          }
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "B.E. Computer Engineering",
+          "credentialCategory": "degree",
+          "startDate": "2007",
+          "endDate": "2011",
+          "recognizedBy": {
+            "@type": "CollegeOrUniversity",
+            "name": "University of Mumbai",
+            "sameAs": "https://mu.ac.in/"
+          }
+        }
+      ],
+      "knowsAbout": [
+        "Cloud Infrastructure",
+        "Amazon Web Services",
+        "AWS CloudFront",
+        "AWS WAF",
+        "Amazon S3",
+        "FinTech Platform Engineering",
+        "Engineering Leadership",
+        "System Design",
+        "Microservices Architecture",
+        "DevOps",
+        "React",
+        "Angular",
+        "Node.js",
+        "TypeScript",
+        "JavaScript",
+        ".NET",
+        "C#",
+        "Docker",
+        "CI/CD Pipelines",
+        "Cloudflare",
+        "Software Architecture",
+        "Platform Engineering",
+        "Distributed Systems",
+        "Technical Strategy",
+        "Mentorship",
+        "Nexus Repository Manager",
+        "Principal Engineering",
+        "Staff Engineering",
+        "Developer Productivity",
+        "Frontend Architecture",
+        "Backend Architecture",
+        "API Design",
+        "CDN Optimisation",
+        "Fintech Platform Engineering",
+        "Indian FinTech",
+        "Engineering Mentorship"
+      ],
+      "knowsLanguage": [
+        {
+          "@type": "Language",
+          "name": "English",
+          "alternateName": "en"
+        }
+      ],
+      "description": "Ninad Malvankar is the Architect at Upstox, India's leading discount brokerage and fintech platform. With 12+ years of experience, he specialises in system design, cloud infrastructure on AWS (CloudFront, WAF, S3), fintech platform engineering, engineering leadership, and technical strategy. He is AWS Certified, holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). Previously Senior Principal Engineer at Upstox, Programmer Analyst at Swift Pace Solutions (Walt Disney World project), and Software Engineer at enSYNC Corporation. Based in Mumbai, India.",
+      "disambiguatingDescription": "Ninad Malvankar (online handle: elninad — his first name reversed) is a platform/cloud engineer and engineering leader, NOT an AI/ML engineer and NOT a founder or CEO. His unique handles: elninad on GitHub (github.com/elninad), el_ninad on X/Twitter (@el_ninad), el_nino on YouTube (@el_nino), ninad.malvankar23 on Medium. Based in Mumbai, India — not in the United States.",
+      "email": "ninad.malvankar23@gmail.com",
+      "dateCreated": "2024-01-01",
+      "dateModified": "2026-06-08",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "professional inquiry",
+        "url": "https://www.linkedin.com/in/ninadmalvankar/",
+        "availableLanguage": "English"
+      },
+      "usageInfo": "https://ninadmalvankar.com/ai.txt",
+      "publishingPrinciples": "https://medium.com/@ninad.malvankar23",
+      "subjectOf": {
+        "@id": "https://ninadmalvankar.com/#webpage"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://ninadmalvankar.com/#webpage"
+      }
+    }
+  ]
+}
