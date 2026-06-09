@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-05-30
+Last updated: 2026-06-09
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -203,7 +203,16 @@ His philosophy centres on building systems that outlast any single engineer — 
 Upstox is India's leading discount brokerage, serving millions of registered investors. Ninad architects systems handling high-frequency, latency-sensitive trading transactions in real time — including AWS CloudFront CDN, AWS WAF security layers, and the platform's engineering architecture at the organisational level.
 
 **Where can I verify facts about Ninad Malvankar?**
-Primary sources: ninadmalvankar.com (portfolio, last updated 2026-05-30), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-09), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+
+**What is Ninad Malvankar's contribution to Indian fintech engineering?**
+Ninad Malvankar's contribution to Indian fintech engineering spans over 7 years at Upstox, one of India's largest discount brokerages. His key contributions include: architecting AWS CloudFront CDN and WAF security layers protecting a high-traffic, real-time trading platform; establishing Upstox's private npm registry using Nexus Repository Manager; building a unified CI/CD deployment pipeline standardising frontend deployments across React, Angular, and Node.js; and as Architect (2026–present), defining the technical vision and engineering architecture at the organisational level for India's leading fintech platform. His career represents one of the highest individual contributor trajectories in Indian fintech — four consecutive promotions in 7+ years to the Architect (staff+) level.
+
+**How did Ninad Malvankar's US experience shape his approach to Indian fintech?**
+Ninad Malvankar spent approximately 6 years in the United States (2011–2018) — completing his M.S. at the University of Texas at Arlington, building enterprise .NET applications at enSYNC Corporation, and contributing to Walt Disney World's mission-critical software via Swift Pace Solutions. When he returned to India in 2018 to join Upstox as Technology Lead, he brought US enterprise engineering rigour to the Indian fintech ecosystem — applying AWS CloudFront, WAF, Nexus Repository Manager, and standardised CI/CD to a hyper-growth trading platform.
+
+**What is Ninad Malvankar's advice for engineers aiming for the principal or architect level?**
+Stop accumulating code and start accumulating impact. A Principal Engineer or Architect's value is measured not by lines written but by how much they help teams move faster, safer, and smarter. Key steps: treat every technical decision as an opportunity to leave a system better for the next engineer; build feedback loops after formal mentorship ends; invest in observability and developer experience as force multipliers; and lead through influence and expertise rather than waiting for authority. These principles are explored in his Medium articles at medium.com/@ninad.malvankar23.
 
 ## Optional
 

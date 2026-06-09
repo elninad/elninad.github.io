@@ -159,6 +159,40 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# Microsoft Copilot / Bing AI crawlers
+User-agent: Copilot-User
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: MSNBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Internet Archive / Wayback Machine
+User-agent: ia_archiver
+Allow: /
+
+# SearchGPT / OpenAI search
+User-agent: SearchGPT-User
+Allow: /
+
+# Naver (Korean AI search)
+User-agent: Yeti
+Allow: /
+
+# Baidu AI
+User-agent: Baiduspider
+Allow: /
+
+# Independent / neutral search
+User-agent: Mojeek
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
