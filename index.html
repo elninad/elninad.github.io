@@ -5144,6 +5144,9 @@
     function dimensionShift() {
       if (busy) return;
       busy = true;
+      /* release is unconditional so a mid-shift hiccup can never lock konami out */
+      setTimeout(function() { busy = false; }, 2600);
+
       var entering = !document.documentElement.classList.contains('alt-univ');
       document.documentElement.classList.toggle('alt-univ', entering);
       var themeMeta = document.querySelector('meta[name="theme-color"]');
@@ -5158,23 +5161,24 @@
         ? 'dimension shift :: welcome to universe B :: the modern world'
         : 'dimension shift :: CRT universe restored', 't-sys');
 
-      if (reduceMotion) {
-        busy = false;
-        return;
-      }
+      if (reduceMotion) return;
       var flash = document.createElement('div');
       flash.className = 'dim-flash';
       document.body.appendChild(flash);
       setTimeout(function() { flash.remove(); }, 900);
       confetti();
       var el = toast(entering ? 'DIMENSION SHIFT' : 'CRT RESTORED');
-      setTimeout(function() { el.remove(); busy = false; }, 2600);
+      setTimeout(function() { el.remove(); }, 2600);
     }
 
     GAME.setWarp(dimensionShift);
 
     document.addEventListener('keydown', function(e) {
+      /* held keys fire repeats and stray modifier taps are easy to make
+         mid-sequence — neither should poison the 10-key buffer */
+      if (e.repeat) return;
       var k = (e.key || '').toLowerCase();
+      if (k === 'shift' || k === 'control' || k === 'alt' || k === 'meta' || k === 'capslock') return;
       buf.push(k);
       if (buf.length > SEQ.length) buf.shift();
       if (buf.join(',') === SEQ.join(',')) dimensionShift();
