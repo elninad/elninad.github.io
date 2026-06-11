@@ -743,6 +743,23 @@
       font-family: var(--pixel); font-size: .5rem; color: var(--gold);
       letter-spacing: .08em; margin-top: 14px; line-height: 1.8;
     }
+
+    /* ─── Coin Pickups (one-time collectibles in section headers) ── */
+    .pickup {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: var(--pixel); font-size: .5rem; color: var(--gold);
+      letter-spacing: .06em; line-height: 1.6; vertical-align: middle;
+      padding: 4px 9px; cursor: pointer; user-select: none;
+      border: 1px dashed rgba(var(--gold-rgb),.45);
+      background: rgba(var(--gold-rgb),.07);
+      transition: transform .2s, opacity .3s, filter .3s, border-color .2s;
+    }
+    .pickup svg { width: 14px; height: 14px; animation: pulse 2s ease-in-out infinite; }
+    .pickup:hover { transform: translateY(-2px) scale(1.1); border-color: var(--gold); filter: drop-shadow(0 0 8px rgba(var(--gold-rgb),.6)); }
+    .pickup.claimed { opacity: .3; filter: grayscale(.8); cursor: default; border-style: solid; }
+    .pickup.claimed:hover { transform: none; }
+    .pickup.claimed svg { animation: none; }
+    .pickup-float { position: absolute; z-index: 3; }
     .tl-badge.edu     { background: rgba(var(--teal-rgb),.12);   color: var(--teal);   }
     .tl-badge.work    { background: rgba(var(--green-rgb),.12);   color: var(--green);  }
     .tl-badge.lead    { background: rgba(var(--gold-rgb),.12);   color: var(--gold);   }
@@ -3029,13 +3046,14 @@
     <span>Scroll</span>
     <i class="fa-solid fa-chevron-down"></i>
   </div>
+  <span class="pickup pickup-float" data-xp="25" aria-hidden="true" style="right:8%;bottom:28px;"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span>
 </section>
 
 <!-- ─── About ───────────────────────────────────────────────────── -->
 <section id="about" aria-label="About Ninad Malvankar">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="reveal">
-      <div class="section-tag"><span class="level-marker" aria-hidden="true">WORLD 1-1</span> &gt; cat about.txt</div>
+      <div class="section-tag"><span class="level-marker" aria-hidden="true">WORLD 1-1</span> &gt; cat about.txt <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">Engineering with purpose,<br>leading with clarity</h2>
     </div>
 
@@ -3157,7 +3175,7 @@
 <section id="skills" aria-label="Technical Skills">
   <div style="max-width:1100px;margin:0 auto;">
     <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-2</span> &gt; ninad --stats --verbose</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-2</span> &gt; ninad --stats --verbose <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">Technologies I work with</h2>
       <div class="hp-row" aria-hidden="true">
         <svg class="pixel-sprite"><use href="#px-heart"/></svg>
@@ -3504,7 +3522,7 @@
 <section id="certifications" aria-label="Certifications and Credentials">
   <div style="max-width:900px;margin:0 auto;">
     <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-4</span> ACHIEVEMENTS UNLOCKED</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-4</span> ACHIEVEMENTS UNLOCKED <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">Credentials &amp; Recognition</h2>
     </div>
     <div class="cert-grid">
@@ -3537,7 +3555,7 @@
 <section id="writing" aria-label="Engineering Articles and Writing">
   <div style="max-width:680px;margin:0 auto;text-align:center;">
     <div class="reveal">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-5</span> &gt; ls ~/writing</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-5</span> &gt; ls ~/writing <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">Thoughts on Engineering</h2>
       <p class="section-lead" style="margin:0 auto;">
         I write about engineering leadership, system design, and building teams that last.
@@ -3622,7 +3640,7 @@
 <section id="github" class="section" aria-label="GitHub Profile and Open Source">
   <div class="github-inner">
     <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-6</span> &gt; gh profile view elninad</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-6</span> &gt; gh profile view elninad <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">GitHub Profile</h2>
       <p class="section-lead" style="margin:0 auto;">
         Code, contributions, and open collaboration — a snapshot of what I build and ship.
@@ -3641,7 +3659,7 @@
 <section id="beyond" aria-label="Personal Interests Beyond Engineering">
   <div style="max-width:1000px;margin:0 auto;">
     <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-7</span> BONUS LEVEL</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-7</span> BONUS LEVEL <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
       <h2 class="section-title">Beyond the Code</h2>
       <p class="section-lead" style="margin:0 auto;">
         Engineering is what I do — but it's not all I am. When I step away from the keyboard
@@ -3734,7 +3752,7 @@
 <!-- ─── Contact ──────────────────────────────────────────────────── -->
 <section id="contact" aria-label="Contact Ninad Malvankar">
   <div class="contact-inner reveal">
-    <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-8</span> <span class="blink-label">PLAYER 2 :: PRESS START</span></div>
+    <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">WORLD 1-8</span> <span class="blink-label">PLAYER 2 :: PRESS START</span> <span class="pickup" data-xp="25" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+25</span></div>
     <h2 class="section-title">Let's connect</h2>
     <p style="color:var(--muted);font-size:1.05rem;line-height:1.75;margin-top:12px;">
       Whether you're looking for technical leadership, architecture consulting,
@@ -3765,7 +3783,7 @@
 <section id="faq" itemscope itemtype="https://schema.org/FAQPage" aria-label="Frequently Asked Questions about Ninad Malvankar">
   <div style="max-width:860px;margin:0 auto;">
     <div class="reveal" style="text-align:center;">
-      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">BOSS ROOM</span> &gt; talk ninad</div>
+      <div class="section-tag" style="justify-content:center;"><span class="level-marker" aria-hidden="true">BOSS ROOM</span> &gt; talk ninad <span class="pickup" data-xp="50" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+50</span></div>
       <h2 class="section-title">Frequently Asked Questions</h2>
       <p class="section-lead" style="margin:0 auto;">
         Common questions about Ninad Malvankar — engineer, leader, and builder.
@@ -4275,6 +4293,7 @@
     GAME OVER :: CONTINUE? <a href="#hero"><span class="blink-label">▸ YES</span></a> &nbsp;NO
   </p>
   <p class="final-score" id="finalScore" aria-hidden="true">FINAL SCORE :: 000000 :: GHOST LV 1</p>
+  <p aria-hidden="true" style="margin-bottom:14px;"><span class="pickup" data-xp="100" aria-hidden="true"><svg class="pixel-sprite"><use href="#px-coin"/></svg>+100 BONUS</span></p>
   <p>
     Crafted by
     <a href="https://www.linkedin.com/in/ninadmalvankar/" target="_blank" rel="noopener noreferrer">Ninad Malvankar</a>
@@ -4476,7 +4495,7 @@
       document.addEventListener('mouseover', function(e) {
         var t = e.target;
         cursorEl.classList.toggle('on-text', !!(t.closest && t.closest('input, textarea')));
-        cursorEl.classList.toggle('on-link', !!(t.closest && t.closest('a, button, summary, .pill')));
+        cursorEl.classList.toggle('on-link', !!(t.closest && t.closest('a, button, summary, .pill, .pickup, .tl-xp')));
       });
 
       var pmx = mx, pmy = my, rx = mx, ry = my;
@@ -4743,6 +4762,19 @@
       });
     });
 
+    /* Coin pickups scattered through section headers: obvious one-time
+       collectibles that teach visitors the click-to-collect mechanic */
+    document.querySelectorAll('.pickup').forEach(function(p) {
+      p.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (p.classList.contains('claimed')) return;
+        var n = parseInt(p.getAttribute('data-xp'), 10) || 25;
+        p.classList.add('claimed');
+        var r = p.getBoundingClientRect();
+        (n >= 50 ? feast : add)(n, r.left + r.width / 2, r.top + r.height / 2);
+      });
+    });
+
     /* Exploration points: first time each section crosses mid-viewport */
     var secObs = new IntersectionObserver(function(entries) {
       entries.forEach(function(en) {
@@ -4755,8 +4787,11 @@
 
     /* Curiosity points: first click on each interactive element */
     var clicked = [];
+    var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
+      '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
+      '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
-      var t = e.target.closest && e.target.closest('a, button, summary, .pill, .tl-card, .interest-card, .cert-card');
+      var t = e.target.closest && e.target.closest(CLICKABLE);
       if (!t || clicked.indexOf(t) !== -1) return;
       clicked.push(t);
       add(2, e.clientX, e.clientY);
