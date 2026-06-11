@@ -161,6 +161,16 @@
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /></noscript>
+  <script>
+    /* Pre-paint flag: hides hero terminal output for the typed intro (skipped under reduced motion; no-JS visitors see everything) */
+    (function() {
+      try {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.documentElement.classList.add('hero-typing');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <style>
     /* ─── Reset & Tokens ────────────────────────────────────────── */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -936,7 +946,7 @@
 
     /* ─── Star Power (Konami) ───────────────────────────────────── */
     @keyframes hue-spin { to { filter: hue-rotate(360deg); } }
-    html.star-power body { animation: hue-spin 1.2s linear infinite; }
+    html.star-power main, html.star-power footer { animation: hue-spin 1.2s linear infinite; }
     .sp-toast {
       position: fixed; top: 50%; left: 50%; transform: translate(-50%,-50%);
       z-index: 9500; display: flex; align-items: center; gap: 14px;
@@ -972,7 +982,7 @@
       .hero-parallax-bg { transform: none !important; }
       body::after { display: none !important; }
       .cursor, .blink-label { animation: none !important; }
-      .star-power, .star-power body { animation: none !important; filter: none !important; }
+      .star-power main, .star-power footer { animation: none !important; filter: none !important; }
       .avatar-blink { animation: none !important; }
     }
 
@@ -989,8 +999,8 @@
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
       .nav-links.open .nav-cta {
         background: var(--accent) !important;
-        color: var(--white) !important;
-        padding: 12px 32px; border-radius: 10px; font-size: 1rem !important;
+        color: var(--bg) !important;
+        padding: 12px 32px; border-radius: 6px; font-size: 1rem !important;
       }
       .nav-hamburger {
         display: flex; flex-direction: column; gap: 5px;
@@ -1033,7 +1043,7 @@
   <style>
     .skip-link {
       position: absolute; top: -100%; left: 0;
-      background: var(--accent); color: var(--white);
+      background: var(--accent); color: var(--bg);
       padding: 10px 20px; font-size: .9rem; font-weight: 600;
       z-index: 9999; border-radius: 0 0 8px 0;
       transition: top .2s;
@@ -3989,7 +3999,7 @@
     &mdash; Architect &bull; Mumbai, India
   </p>
   <p style="margin-top:8px;font-size:.78rem;">
-    Last updated: <time datetime="2026-05-30">May 30, 2026</time>
+    Last updated: <time datetime="2026-06-11">June 11, 2026</time>
   </p>
 </footer>
 
@@ -4127,9 +4137,11 @@
       termLive.hidden = false;
     }
 
-    if (reduceMotion) { showLive(); return; }
+    if (reduceMotion || !document.documentElement.classList.contains('hero-typing')) {
+      showLive();
+      return;
+    }
 
-    hero.classList.add('hero-typing');
     var cmds = heroTerm.querySelectorAll('.t-cmd');
     var outs = heroTerm.querySelectorAll('.t-out');
 

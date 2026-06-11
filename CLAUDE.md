@@ -97,26 +97,36 @@ All vanilla JavaScript, no external libraries:
 
 ## CSS Design System
 
-All design tokens are CSS custom properties defined on `:root`:
+The site uses a retro terminal + arcade ("Press Start") theme: CRT phosphor palette, Ghostty-style terminal panels, pixel/display fonts, and custom 8-bit SVG sprites. All design tokens are CSS custom properties defined on `:root`:
 
 ```css
---bg:      #060b18       /* page background */
---surface: #0d1526       /* section backgrounds */
---card:    #111d35       /* card backgrounds */
---border:  rgba(99,102,241,.18)
---accent:  #6366f1       /* indigo — primary accent */
---accent2: #8b5cf6       /* violet — secondary accent */
---gold:    #f59e0b
---teal:    #22d3ee
---green:   #10b981
---text:    #e2e8f0
---muted:   #64748b
---font:    'Inter', sans-serif
---mono:    'JetBrains Mono', monospace
---radius:  16px
+--bg:      #060a07       /* CRT black, green-tinted page background */
+--surface: #0a120c       /* section backgrounds */
+--card:    #0f1a12       /* card / terminal-panel backgrounds */
+--border:  rgba(51,255,124,.16)
+--accent:  #33ff7c       /* phosphor green — primary accent */
+--accent2: #ff5fd7       /* neon magenta — secondary accent */
+--gold:    #ffb000       /* amber phosphor / coin gold */
+--teal:    #3fd9ff       /* neon cyan */
+--green:   #00d68a
+--text:    #d9f2dd       /* phosphor white */
+--muted:   #8db096
+--font:    'Inter', sans-serif          /* body copy */
+--mono:    'JetBrains Mono', monospace  /* dates, tags, prompts */
+--pixel:   'Press Start 2P', monospace  /* short uppercase labels ONLY (.5-.8rem) */
+--display: 'VT323', monospace           /* section h2 headings + terminal text */
+--radius:  10px
 ```
 
 **Always use these variables** when modifying or adding styles. Do not hardcode color values.
+
+### Theme Conventions
+
+- `.term` + `data-title="..."` turns any panel into a terminal window (title bar and traffic-light dots are drawn by `::before`/`::after`). Cards that set their own `padding` shorthand need a `.term.<class>` padding-top override (see `.term.skill-card`).
+- Custom pixel art lives in an inline `<svg><defs><symbol id="px-*">` sprite sheet right after `<body>`; instance it with `<use href="#px-...">` or the `spriteSvg()` JS helper. Do not use emoji anywhere; use sprites instead.
+- Do not use em dashes in new decorative/UI text; use `::`, `>`, hyphens, or pipes as separators.
+- A static CRT scanline overlay is drawn by `body::after` (disabled under `prefers-reduced-motion`).
+- Decorative game labels (`.section-tag`, `.level-marker`, `.tl-badge`, `.tl-xp`, lore HUD, GAME OVER footer line) are `aria-hidden` where they carry no real content; never move entity facts into them.
 
 ### Responsive Breakpoint
 
@@ -124,9 +134,15 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 ### Animation Conventions
 
-CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
+CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `hue-spin`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar fills read their target width from `data-width` attributes when `.visible` is set on the parent.
+
+All new animations (typed hero intro, blinking cursors/labels, scanlines, star power) are disabled or skipped under `prefers-reduced-motion`; the typing JS checks `matchMedia` and shows everything instantly.
+
+### Interactive Terminal
+
+The hero is a terminal window (`#heroTerm`). After the typed intro it reveals a live prompt (`#termInput`): commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, beyond, contact, talk, ask, konami, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries. The Konami code (up up down down left right left right B A) triggers star power.
 
 ## HTML Conventions
 
@@ -168,7 +184,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `.skill-bar-row` has a `.skill-bar-fill` with a `data-width="XX"` attribute plus matching `aria-valuenow` and visible label text. Update all three together; the Intersection Observer JS reads `data-width` to animate the bar, and the label renders as `LV XX%` via CSS.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
