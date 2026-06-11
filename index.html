@@ -431,10 +431,17 @@
     .t-resp a { color: var(--teal); }
     .t-resp.t-echo { color: var(--accent); }
     .t-input-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 0; }
+    .t-input-wrap { position: relative; flex: 1; min-width: 0; }
+    /* invisible mirror of the input text — measures where the block cursor sits */
+    .t-mirror {
+      position: absolute; left: 0; top: 0;
+      visibility: hidden; white-space: pre; font: inherit;
+    }
+    #termCursor { position: absolute; left: 0; top: 50%; translate: 0 -50%; line-height: 1; pointer-events: none; }
     #termInput {
-      flex: 1; min-width: 0; background: transparent; border: none; outline: none;
+      width: 100%; background: transparent; border: none; outline: none;
       font-family: var(--display); font-size: 1.25rem; color: var(--text);
-      caret-color: var(--accent);
+      caret-color: transparent; /* the blinking block (#termCursor) is the caret */
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 10px;
@@ -1076,6 +1083,28 @@
       font-family: var(--pixel); font-size: .55rem; color: var(--gold);
       letter-spacing: .1em; margin-bottom: 18px; line-height: 2;
     }
+    /* points pipeline: coin flies from the earn spot to the ghost, then a
+       spark carries it from the ghost into the score HUD */
+    .fly-coin {
+      position: fixed; left: 0; top: 0; z-index: 9070; pointer-events: none;
+      width: 16px; height: 16px; margin: -8px 0 0 -8px;
+      transition: transform .45s cubic-bezier(.35,0,.65,1), opacity .45s ease;
+      will-change: transform;
+    }
+    .fly-coin svg { width: 100%; height: 100%; display: block; }
+    .fly-spark {
+      position: fixed; left: 0; top: 0; z-index: 9070; pointer-events: none;
+      width: 7px; height: 7px; margin: -4px 0 0 -4px;
+      background: var(--gold); box-shadow: 0 0 8px rgba(var(--gold-rgb),.8);
+      transition: transform .4s cubic-bezier(.5,0,.8,.4), opacity .4s ease;
+      will-change: transform;
+    }
+    #scoreHud.bump { animation: hud-bump .45s ease; }
+    @keyframes hud-bump {
+      0%   { scale: 1; }
+      35%  { scale: 1.12; border-color: var(--gold); box-shadow: 0 0 18px rgba(var(--gold-rgb),.55); }
+      100% { scale: 1; }
+    }
 
     /* ─── Pixel Cursor & Reality Rift ───────────────────────────── */
     html.custom-cursor, html.custom-cursor * { cursor: none !important; }
@@ -1094,28 +1123,46 @@
     #pxCursor.on-text, #pxCursor.off { opacity: 0; }
     #riftLens {
       position: fixed; left: 0; top: 0; z-index: 8990; pointer-events: none;
-      width: 220px; height: 220px; margin: -110px 0 0 -110px; border-radius: 50%;
+      width: 230px; height: 230px; margin: -115px 0 0 -115px;
       -webkit-backdrop-filter: invert(1) hue-rotate(165deg) saturate(1.15) contrast(1.02);
       backdrop-filter: invert(1) hue-rotate(165deg) saturate(1.15) contrast(1.02);
       will-change: transform;
-      animation: rift-jitter 3.5s steps(7) infinite;
+      animation: rift-morph 6s ease-in-out infinite;
     }
-    #riftLens.off { display: none; }
+    #riftLens.off, #riftLens.off ~ .rift-echo { display: none; }
     #riftLens::before, #riftLens::after {
-      content: ''; position: absolute; inset: -2px; border-radius: 50%; opacity: .5;
+      content: ''; position: absolute; inset: -2px; border-radius: inherit; opacity: .5;
     }
-    #riftLens::before { border: 2px solid var(--teal); translate: -2px 1px; }
-    #riftLens::after  { border: 2px solid var(--accent2); translate: 2px -1px; }
-    @keyframes rift-jitter {
-      0%, 100% { clip-path: circle(50% at 50% 50%); }
-      14% { clip-path: circle(49% at 51% 49%); }
-      28% { clip-path: circle(50% at 49% 51%); }
-      42% { clip-path: circle(47% at 50% 50%); }
-      57% { clip-path: circle(50% at 52% 50%); }
-      71% { clip-path: circle(49% at 49% 49%); }
-      85% { clip-path: circle(51% at 50% 51%); }
+    #riftLens::before { border: 2px solid var(--teal); animation: ring-flick 1.3s steps(3) infinite; }
+    #riftLens::after  { border: 2px solid var(--accent2); animation: ring-flick 1.7s steps(3) infinite reverse; }
+    /* ectoplasm trail: tinted echo blobs that lag behind the lens and fade at rest */
+    .rift-echo {
+      position: fixed; left: 0; top: 0; z-index: 8985; pointer-events: none;
+      width: 180px; height: 180px; margin: -90px 0 0 -90px; opacity: 0;
+      background: rgba(var(--teal-rgb),.07);
+      border: 1px solid rgba(var(--teal-rgb),.3);
+      animation: rift-morph 8s ease-in-out infinite reverse;
+      will-change: transform, opacity;
     }
-    @media (hover: none), (pointer: coarse) { #pxCursor, #riftLens { display: none !important; } }
+    .rift-echo.e2 {
+      width: 130px; height: 130px; margin: -65px 0 0 -65px;
+      background: rgba(var(--accent2-rgb),.07);
+      border-color: rgba(var(--accent2-rgb),.3);
+      animation-duration: 10s;
+    }
+    /* amorphous ghost-blob silhouette: asymmetric radii morphing over time */
+    @keyframes rift-morph {
+      0%, 100% { border-radius: 46% 54% 58% 42% / 52% 44% 56% 48%; }
+      25%      { border-radius: 60% 40% 42% 58% / 44% 60% 40% 56%; }
+      50%      { border-radius: 38% 62% 56% 44% / 60% 38% 54% 46%; }
+      75%      { border-radius: 56% 44% 46% 54% / 40% 58% 44% 60%; }
+    }
+    @keyframes ring-flick {
+      0%, 100% { translate: -2px 1px; }
+      33%      { translate: 2px -2px; }
+      66%      { translate: -1px -1px; }
+    }
+    @media (hover: none), (pointer: coarse) { #pxCursor, #riftLens, .rift-echo { display: none !important; } }
 
     .lore-hud.complete .lore-count::before {
       content: ''; display: inline-block; width: 14px; height: 14px;
@@ -1139,7 +1186,7 @@
       body::after { display: none !important; }
       .cursor, .blink-label { animation: none !important; }
       .avatar-blink { animation: none !important; }
-      #ghostPal, #pxCursor, #riftLens, .score-pop, .dim-flash, .sp-confetti { display: none !important; }
+      #ghostPal, #pxCursor, #riftLens, .rift-echo, .score-pop, .fly-coin, .fly-spark, .dim-flash, .sp-confetti { display: none !important; }
       .px-twinkle { animation: none !important; opacity: .35; }
     }
 
@@ -2897,7 +2944,11 @@
         <div id="termOutput" role="log" aria-live="polite"></div>
         <p class="t-line t-input-row">
           <span class="t-prompt" aria-hidden="true">ninad@mumbai:~$</span>
-          <input id="termInput" type="text" aria-label="Interactive terminal. Type help to list available commands" autocomplete="off" autocapitalize="none" spellcheck="false" />
+          <span class="t-input-wrap">
+            <span class="t-mirror" id="termMirror" aria-hidden="true"></span>
+            <span class="cursor" id="termCursor" aria-hidden="true">&#9608;</span>
+            <input id="termInput" type="text" aria-label="Interactive terminal. Type help to list available commands" autocomplete="off" autocapitalize="none" spellcheck="false" />
+          </span>
         </p>
       </div>
 
@@ -4328,7 +4379,16 @@
       cursorEl.id = 'pxCursor';
       cursorEl.className = 'off';
       cursorEl.setAttribute('aria-hidden', 'true');
+      var echo1 = document.createElement('div');
+      echo1.className = 'rift-echo';
+      echo1.setAttribute('aria-hidden', 'true');
+      var echo2 = document.createElement('div');
+      echo2.className = 'rift-echo e2';
+      echo2.setAttribute('aria-hidden', 'true');
       document.body.appendChild(rift);
+      /* echoes must follow #riftLens in the DOM: ".off ~ .rift-echo" hides them together */
+      document.body.appendChild(echo1);
+      document.body.appendChild(echo2);
       document.body.appendChild(cursorEl);
 
       document.addEventListener('mousemove', function(e) {
@@ -4346,7 +4406,15 @@
         cursorEl.classList.toggle('on-link', !!(t.closest && t.closest('a, button, summary, .pill')));
       });
 
+      var pmx = mx, pmy = my, rx = mx, ry = my;
+      var e1x = mx, e1y = my, e2x = mx, e2y = my, ang = 0;
       (function frame() {
+        var dx = mx - pmx, dy = my - pmy;
+        pmx = mx; pmy = my;
+        var speed = Math.min(Math.sqrt(dx * dx + dy * dy), 60);
+        if (speed > 2) ang = Math.atan2(dy, dx);
+        var stretch = Math.min(speed / 130, .35);
+
         gx += (mx + 24 - gx) * 0.08;
         gy += (my + 16 - gy) * 0.08;
         if (ghost) {
@@ -4354,7 +4422,20 @@
           ghost.classList.toggle('flip', mx < gx - 6);
         }
         cursorEl.style.transform = 'translate3d(' + (mx - 7) + 'px,' + (my - 7) + 'px,0)';
-        rift.style.transform = 'translate3d(' + mx + 'px,' + my + 'px,0)';
+
+        /* lens stretches along its direction of travel; echoes lag behind as trails */
+        rx += (mx - rx) * 0.35;
+        ry += (my - ry) * 0.35;
+        e1x += (mx - e1x) * 0.16; e1y += (my - e1y) * 0.16;
+        e2x += (mx - e2x) * 0.08; e2y += (my - e2y) * 0.08;
+        rift.style.transform = 'translate3d(' + rx + 'px,' + ry + 'px,0)' +
+          ' rotate(' + ang + 'rad) scale(' + (1 + stretch) + ',' + (1 - stretch * .5) + ') rotate(' + (-ang) + 'rad)';
+        echo1.style.transform = 'translate3d(' + e1x + 'px,' + e1y + 'px,0)';
+        echo2.style.transform = 'translate3d(' + e2x + 'px,' + e2y + 'px,0)';
+        var trail = Math.min(speed / 22, .85);
+        echo1.style.opacity = trail;
+        echo2.style.opacity = trail * .6;
+
         requestAnimationFrame(frame);
       })();
     }
@@ -4395,14 +4476,23 @@
       setFavicon();
     }
 
+    /* Where the ghost currently is (works for cursor-chasing and docked modes) */
+    function ghostXY() {
+      if (ghost) {
+        var r = ghost.getBoundingClientRect();
+        if (r.width) return [r.left + r.width / 2, r.top + r.height / 2];
+      }
+      return [finePointer ? gx : innerWidth - 40, finePointer ? gy : innerHeight - 90];
+    }
+
     function popLabel(text, x, y) {
       if (rm) return;
       var el = document.createElement('span');
       el.className = 'score-pop';
       el.textContent = text;
       if (x === undefined) {
-        if (finePointer) { x = gx; y = gy; }
-        else { x = innerWidth - 96; y = innerHeight - 96; }
+        var g = ghostXY();
+        x = g[0]; y = g[1];
       }
       el.style.left = x + 'px';
       el.style.top = (y - 16) + 'px';
@@ -4417,28 +4507,107 @@
       ghost.classList.add('chomp');
     }
 
+    /* HUD shows the rolled (displayed) value so deposits visibly count up */
+    var displayed = 0, rollRaf = null;
     function updateText() {
-      hudScore.textContent = 'SCORE ' + pad(score);
+      hudScore.textContent = 'SCORE ' + pad(displayed);
       if (finalScore) {
-        finalScore.textContent = 'FINAL SCORE :: ' + pad(score) + ' :: GHOST LV ' + level;
+        finalScore.textContent = 'FINAL SCORE :: ' + pad(displayed) + ' :: GHOST LV ' + level;
       }
     }
 
-    function add(n, x, y) {
-      score += n;
+    function rollTo(target) {
+      if (rollRaf) cancelAnimationFrame(rollRaf);
+      var start = displayed, t0 = null, dur = 420;
+      function step(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min((ts - t0) / dur, 1);
+        displayed = Math.round(start + (target - start) * p);
+        updateText();
+        if (p < 1) rollRaf = requestAnimationFrame(step);
+      }
+      rollRaf = requestAnimationFrame(step);
+    }
+
+    function syncLevel() {
       var lv = 1;
       for (var i = 0; i < THRESHOLDS.length; i++) {
         if (score >= THRESHOLDS[i]) lv = i + 1;
       }
-      updateText();
-      popLabel('+' + n, x, y);
-      chomp();
       if (lv !== level) {
         level = lv;
         applyLevel();
         updateText();
         setTimeout(function() { popLabel('GHOST LV UP!'); }, 350);
       }
+    }
+
+    function flyCoin(x, y, done) {
+      var c = document.createElement('span');
+      c.className = 'fly-coin';
+      c.setAttribute('aria-hidden', 'true');
+      c.appendChild(spriteSvg('#px-coin'));
+      c.style.left = x + 'px';
+      c.style.top = y + 'px';
+      document.body.appendChild(c);
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          var g = ghostXY();
+          c.style.transform = 'translate(' + (g[0] - x) + 'px,' + (g[1] - y) + 'px) scale(.5)';
+        });
+      });
+      setTimeout(function() { c.remove(); done(); }, 470);
+    }
+
+    function flySpark(done) {
+      var g = ghostXY();
+      var r = hud.getBoundingClientRect();
+      var s = document.createElement('span');
+      s.className = 'fly-spark';
+      s.setAttribute('aria-hidden', 'true');
+      s.style.left = g[0] + 'px';
+      s.style.top = g[1] + 'px';
+      document.body.appendChild(s);
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          s.style.transform = 'translate(' + (r.left + 18 - g[0]) + 'px,' + (r.top + r.height / 2 - g[1]) + 'px) scale(.6)';
+          s.style.opacity = '.2';
+        });
+      });
+      setTimeout(function() { s.remove(); done(); }, 430);
+    }
+
+    function hudBump() {
+      hud.classList.remove('bump');
+      void hud.offsetWidth;
+      hud.classList.add('bump');
+    }
+
+    /* Earn pipeline: coin spawns at the earn spot -> ghost eats it (chomp + "+N")
+       -> a spark carries it into the HUD -> HUD bumps and the score rolls up */
+    function add(n, x, y) {
+      score += n;
+      if (rm) {
+        displayed = score;
+        syncLevel();
+        updateText();
+        return;
+      }
+      var g = ghostXY();
+      if (x === undefined) {
+        x = g[0] + (Math.random() * 60 - 30);
+        y = g[1] - 72;
+      }
+      flyCoin(x, y, function() {
+        chomp();
+        var gp = ghostXY();
+        popLabel('+' + n, gp[0], gp[1]);
+        syncLevel();
+        flySpark(function() {
+          hudBump();
+          rollTo(score);
+        });
+      });
     }
 
     /* Exploration points: first time each section crosses mid-viewport */
@@ -4569,6 +4738,18 @@
   (function() {
     if (!termInput || !termOutput) return;
 
+    /* Block cursor at the live prompt: a hidden mirror span measures the typed
+       text so the blinking block always sits right after it (native caret is
+       transparent — this IS the caret) */
+    var termMirror = document.getElementById('termMirror');
+    var termCursor = document.getElementById('termCursor');
+    function syncTermCursor() {
+      if (!termMirror || !termCursor) return;
+      termMirror.textContent = termInput.value;
+      termCursor.style.left = Math.min(termMirror.offsetWidth, Math.max(termInput.offsetWidth - 14, 0)) + 'px';
+    }
+    termInput.addEventListener('input', syncTermCursor);
+
     function goSection(id, msg) {
       termPrint(msg, 't-sys');
       var el = document.querySelector(id);
@@ -4692,6 +4873,7 @@
       if (e.key === 'Enter') {
         var raw = termInput.value.trim();
         termInput.value = '';
+        syncTermCursor();
         if (!raw) return;
         history.push(raw);
         histIdx = history.length;
@@ -4700,6 +4882,7 @@
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
         if (histIdx > 0) termInput.value = history[--histIdx];
+        syncTermCursor();
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         if (histIdx < history.length - 1) {
@@ -4708,6 +4891,7 @@
           histIdx = history.length;
           termInput.value = '';
         }
+        syncTermCursor();
       }
     });
 
