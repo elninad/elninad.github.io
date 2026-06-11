@@ -97,26 +97,47 @@ All vanilla JavaScript, no external libraries:
 
 ## CSS Design System
 
-All design tokens are CSS custom properties defined on `:root`:
+The site uses a retro terminal + arcade ("Press Start") theme: CRT phosphor palette, Ghostty-style terminal panels, pixel/display fonts, and custom 8-bit SVG sprites. All design tokens are CSS custom properties defined on `:root`:
 
 ```css
---bg:      #060b18       /* page background */
---surface: #0d1526       /* section backgrounds */
---card:    #111d35       /* card backgrounds */
---border:  rgba(99,102,241,.18)
---accent:  #6366f1       /* indigo — primary accent */
---accent2: #8b5cf6       /* violet — secondary accent */
---gold:    #f59e0b
---teal:    #22d3ee
---green:   #10b981
---text:    #e2e8f0
---muted:   #64748b
---font:    'Inter', sans-serif
---mono:    'JetBrains Mono', monospace
---radius:  16px
+--bg:      #060a07       /* CRT black, green-tinted page background */
+--surface: #0a120c       /* section backgrounds */
+--card:    #0f1a12       /* card / terminal-panel backgrounds */
+--border:  rgba(51,255,124,.16)
+--accent:  #33ff7c       /* phosphor green — primary accent */
+--accent2: #ff5fd7       /* neon magenta — secondary accent */
+--gold:    #ffb000       /* amber phosphor / coin gold */
+--teal:    #3fd9ff       /* neon cyan */
+--green:   #00d68a
+--text:    #d9f2dd       /* phosphor white */
+--muted:   #8db096
+--font:    'Inter', sans-serif          /* body copy */
+--mono:    'JetBrains Mono', monospace  /* dates, tags, prompts */
+--pixel:   'Press Start 2P', monospace  /* short uppercase labels ONLY (.5-.8rem) */
+--display: 'VT323', monospace           /* section h2 headings + terminal text */
+--radius:  10px
 ```
 
+Each accent also has an RGB-triplet twin for translucent tints — `--accent-rgb`, `--accent2-rgb`, `--gold-rgb`, `--teal-rgb`, `--green-rgb`, `--red-rgb`, plus `--ink-rgb` (overlay ink), `--nav-rgb` (nav backdrop) and `--accent-shadow` (3D button base). Write tints as `rgba(var(--accent-rgb), .12)` — never as literal channel values — so the alternate-universe palette swap recolours them.
+
 **Always use these variables** when modifying or adding styles. Do not hardcode color values.
+
+**No smooth gradients.** The theme bans color fades (`linear-gradient` blends, radial glows, gradient text). Allowed lookalikes: hard-edged `repeating-linear-gradient` stripes (scanlines, dashed tracks, bar notches) and hard-stop `conic-gradient` segments (avatar ring). For glow, use `text-shadow`/`box-shadow` in an accent tint; for atmosphere, use the pixel starfield (`.px-twinkle`), not gradient blobs.
+
+### Alternate Universe (`html.alt-univ`)
+
+The Konami code performs a **dimension shift**: `html.alt-univ` swaps every `:root` token to a modern light 2026 palette (indigo `#4f46e5` accent, white cards, Inter replacing the pixel/display fonts) and hides the CRT scanlines. The reality-rift cursor lens previews this universe through `backdrop-filter: invert(1) hue-rotate(...)`. When adding styles, check they read correctly in both universes — anything tokenized via the variables above adapts automatically.
+
+### Theme Conventions
+
+- `.term` + `data-title="..."` turns any panel into a terminal window (title bar and traffic-light dots are drawn by `::before`/`::after`). Cards that set their own `padding` shorthand need a `.term.<class>` padding-top override (see `.term.skill-card`).
+- Custom pixel art lives in an inline `<svg><defs><symbol id="px-*">` sprite sheet right after `<body>`; instance it with `<use href="#px-...">` or the `spriteSvg()` JS helper. Do not use emoji anywhere; use sprites instead.
+- Do not use em dashes in new decorative/UI text; use `::`, `>`, hyphens, or pipes as separators.
+- A static CRT scanline overlay is drawn by `body::after` (disabled under `prefers-reduced-motion`, hidden in the alt universe).
+- Decorative game labels (`.section-tag`, `.level-marker`, `.tl-badge`, `.tl-xp`, lore HUD, score HUD, GAME OVER footer line, final score line) are `aria-hidden` where they carry no real content; never move entity facts into them.
+- **Arcade engine (`GAME`)**: a script-block module that owns the ghost companion (`#ghostPal` chases the cursor on fine pointers, docks bottom-right under `html.no-pointer`), the score HUD (`#scoreHud`), the dynamic canvas favicon (ghost recoloured per level), and the nav-logo ghost (`#navGhost`). Points: +15 per section explored, +5 per FAQ lore entry (+100 lore complete), +10 per unique terminal command, +2 per unique interactive click (the `CLICKABLE` selector list in the script covers links, buttons, cards, pills, tags, dots, etc.), +500 Konami secret, the shown value for each timeline XP orb (`.tl-xp` is click-to-collect once; it gains `.claimed` and an `:: EATEN` suffix), and one `.pickup` coin per section header (`data-xp`, +25 each; +50 in the FAQ boss room, +100 footer bonus; ≥50 routes through the feast pipeline). Pickups are the visible onboarding for the mechanic — when adding a new section, include one in its `.section-tag`. Levels at 60/300/1200/6000 change ghost size/colour — thresholds are tuned so exploration reaches lv3-4 and orb feasting is the fast lane to lv5. Award points via `GAME.add(n, x, y)` — every earn runs the visible pipeline: a `.fly-coin` flies from the earn spot to the ghost, the ghost chomps and shows `+N`, then a `.fly-spark` carries it into the HUD, which bumps (`hud-bump`) while the displayed score rolls up to the real total. Orb clicks instead run `feast(n, x, y)`: a staggered coin shower, a longer `ghost-feast` gulp, a `.score-pop.big` banner (`pop-rise-big`), and a 3-spark volley into the HUD.
+- **Pixel cursor & reality rift**: on fine pointers without reduced motion, `html.custom-cursor` hides the native cursor behind `#pxCursor` (crosshair, rotates over links) and `#riftLens` — a `backdrop-filter` lens masked by a pixelated glitch silhouette (`rift-glitch` snaps between blocky staircase clip-path polygons via `step-end`, with RGB interference lines inside) that previews the alternate universe, squashes/stretches along its direction of travel, and drags two tinted `.rift-echo` ectoplasm trails whose opacity follows pointer speed. All disabled on touch (`@media (hover: none)`) and under reduced motion.
+- The companion ghost uses the dedicated `#px-ghost-pal` sprite: `currentColor` body plus a contrast rim and eye colors exposed as CSS vars (`--ghost-rim`, `--ghost-eye`, `--ghost-pupil`) set inline via `style="fill:var(...)"` so they pierce the `<use>` shadow DOM. The rim stays dark (outline on light surfaces, incl. inside the inverted rift); the colored drop-shadow glow defines it on dark surfaces.
 
 ### Responsive Breakpoint
 
@@ -124,9 +145,15 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 ### Animation Conventions
 
-CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`.
+CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `twinkle`, `ghost-bob`, `ghost-chomp`, `pop-rise`, `pop-rise-big`, `ghost-feast`, `rift-glitch`, `ring-flick`, `hud-bump`, `dim-flash`.
 
-Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar widths are stored in `style="--w: XX%"` custom properties and animated via CSS when `.visible` is set on the parent.
+Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar fills read their target width from `data-width` attributes when `.visible` is set on the parent.
+
+All new animations (typed hero intro, blinking cursors/labels, scanlines, starfield, ghost companion, rift cursor, dimension shift) are disabled or skipped under `prefers-reduced-motion`; the typing JS checks `matchMedia` and shows everything instantly.
+
+### Interactive Terminal
+
+The hero is a terminal window (`#heroTerm`). The first prompt line (`.t-cmd.t-first`) is visible with a blinking cursor from first paint; the typed intro then fills it in (lines get `t-done` when finished, which hides their cursor). After the intro it reveals a live prompt (`#termInput`) whose caret is a permanently blinking block (`#termCursor`): the native caret is transparent and a hidden `.t-mirror` span measures the typed text so the block sits right after it — keep mirror and input fonts in sync. Commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, beyond, contact, talk, ask, konami, score, warp, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries and feeds the score. The Konami code (up up down down left right left right B A) triggers the **dimension shift** — toggling `html.alt-univ` (and the +500 secret, first time only); `warp` re-triggers it once the secret is found.
 
 ## HTML Conventions
 
@@ -168,7 +195,7 @@ Find the `<div class="timeline" id="journey">` section. Copy an existing `<div c
 - Current role: `accent2` (violet)
 
 ### Update skill percentages
-In the Skills section, each `<div class="skill-bar">` has a child `<div class="bar" style="--w: XX%">`. Update the percentage there; the CSS animation reads it via the `--w` custom property.
+In the Skills section, each `.skill-bar-row` has a `.skill-bar-fill` with a `data-width="XX"` attribute plus matching `aria-valuenow` and visible label text. Update all three together; the Intersection Observer JS reads `data-width` to animate the bar, and the label renders as `LV XX%` via CSS.
 
 ### Add a new section
 1. Add the `<section id="new-section" class="section reveal">` block in `<body>`
