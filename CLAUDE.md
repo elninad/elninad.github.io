@@ -136,7 +136,8 @@ The Konami code performs a **dimension shift**: `html.alt-univ` swaps every `:ro
 - A static CRT scanline overlay is drawn by `body::after` (disabled under `prefers-reduced-motion`, hidden in the alt universe).
 - Decorative game labels (`.section-tag`, `.level-marker`, `.tl-badge`, `.tl-xp`, lore HUD, score HUD, GAME OVER footer line, final score line) are `aria-hidden` where they carry no real content; never move entity facts into them.
 - **Arcade engine (`GAME`)**: a script-block module that owns the ghost companion (`#ghostPal` chases the cursor on fine pointers, docks bottom-right under `html.no-pointer`), the score HUD (`#scoreHud`), the dynamic canvas favicon (ghost recoloured per level), and the nav-logo ghost (`#navGhost`). Points: +15 per section explored, +5 per FAQ lore entry (+100 lore complete), +10 per unique terminal command, +2 per unique interactive click, +500 Konami secret. Levels at 60/160/320/600 change ghost size/colour. Award points via `GAME.add(n, x, y)` — every earn runs the visible pipeline: a `.fly-coin` flies from the earn spot to the ghost, the ghost chomps and shows `+N`, then a `.fly-spark` carries it into the HUD, which bumps (`hud-bump`) while the displayed score rolls up to the real total.
-- **Pixel cursor & reality rift**: on fine pointers without reduced motion, `html.custom-cursor` hides the native cursor behind `#pxCursor` (crosshair, rotates over links) and `#riftLens` — an amorphous ghost-blob `backdrop-filter` lens (`rift-morph` border-radius morph) that previews the alternate universe, squashes/stretches along its direction of travel, and drags two tinted `.rift-echo` ectoplasm trails whose opacity follows pointer speed. All disabled on touch (`@media (hover: none)`) and under reduced motion.
+- **Pixel cursor & reality rift**: on fine pointers without reduced motion, `html.custom-cursor` hides the native cursor behind `#pxCursor` (crosshair, rotates over links) and `#riftLens` — a `backdrop-filter` lens masked by a pixelated glitch silhouette (`rift-glitch` snaps between blocky staircase clip-path polygons via `step-end`, with RGB interference lines inside) that previews the alternate universe, squashes/stretches along its direction of travel, and drags two tinted `.rift-echo` ectoplasm trails whose opacity follows pointer speed. All disabled on touch (`@media (hover: none)`) and under reduced motion.
+- The companion ghost uses the dedicated `#px-ghost-pal` sprite: `currentColor` body plus a contrast rim and eye colors exposed as CSS vars (`--ghost-rim`, `--ghost-eye`, `--ghost-pupil`) set inline via `style="fill:var(...)"` so they pierce the `<use>` shadow DOM. The rim stays dark (outline on light surfaces, incl. inside the inverted rift); the colored drop-shadow glow defines it on dark surfaces.
 
 ### Responsive Breakpoint
 
@@ -144,7 +145,7 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 ### Animation Conventions
 
-CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `twinkle`, `ghost-bob`, `ghost-chomp`, `pop-rise`, `rift-morph`, `ring-flick`, `hud-bump`, `dim-flash`.
+CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `twinkle`, `ghost-bob`, `ghost-chomp`, `pop-rise`, `rift-glitch`, `ring-flick`, `hud-bump`, `dim-flash`.
 
 Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar fills read their target width from `data-width` attributes when `.visible` is set on the parent.
 
