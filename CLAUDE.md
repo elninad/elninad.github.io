@@ -118,15 +118,25 @@ The site uses a retro terminal + arcade ("Press Start") theme: CRT phosphor pale
 --radius:  10px
 ```
 
+Each accent also has an RGB-triplet twin for translucent tints — `--accent-rgb`, `--accent2-rgb`, `--gold-rgb`, `--teal-rgb`, `--green-rgb`, `--red-rgb`, plus `--ink-rgb` (overlay ink), `--nav-rgb` (nav backdrop) and `--accent-shadow` (3D button base). Write tints as `rgba(var(--accent-rgb), .12)` — never as literal channel values — so the alternate-universe palette swap recolours them.
+
 **Always use these variables** when modifying or adding styles. Do not hardcode color values.
+
+**No smooth gradients.** The theme bans color fades (`linear-gradient` blends, radial glows, gradient text). Allowed lookalikes: hard-edged `repeating-linear-gradient` stripes (scanlines, dashed tracks, bar notches) and hard-stop `conic-gradient` segments (avatar ring). For glow, use `text-shadow`/`box-shadow` in an accent tint; for atmosphere, use the pixel starfield (`.px-twinkle`), not gradient blobs.
+
+### Alternate Universe (`html.alt-univ`)
+
+The Konami code performs a **dimension shift**: `html.alt-univ` swaps every `:root` token to a modern light 2026 palette (indigo `#4f46e5` accent, white cards, Inter replacing the pixel/display fonts) and hides the CRT scanlines. The reality-rift cursor lens previews this universe through `backdrop-filter: invert(1) hue-rotate(...)`. When adding styles, check they read correctly in both universes — anything tokenized via the variables above adapts automatically.
 
 ### Theme Conventions
 
 - `.term` + `data-title="..."` turns any panel into a terminal window (title bar and traffic-light dots are drawn by `::before`/`::after`). Cards that set their own `padding` shorthand need a `.term.<class>` padding-top override (see `.term.skill-card`).
 - Custom pixel art lives in an inline `<svg><defs><symbol id="px-*">` sprite sheet right after `<body>`; instance it with `<use href="#px-...">` or the `spriteSvg()` JS helper. Do not use emoji anywhere; use sprites instead.
 - Do not use em dashes in new decorative/UI text; use `::`, `>`, hyphens, or pipes as separators.
-- A static CRT scanline overlay is drawn by `body::after` (disabled under `prefers-reduced-motion`).
-- Decorative game labels (`.section-tag`, `.level-marker`, `.tl-badge`, `.tl-xp`, lore HUD, GAME OVER footer line) are `aria-hidden` where they carry no real content; never move entity facts into them.
+- A static CRT scanline overlay is drawn by `body::after` (disabled under `prefers-reduced-motion`, hidden in the alt universe).
+- Decorative game labels (`.section-tag`, `.level-marker`, `.tl-badge`, `.tl-xp`, lore HUD, score HUD, GAME OVER footer line, final score line) are `aria-hidden` where they carry no real content; never move entity facts into them.
+- **Arcade engine (`GAME`)**: a script-block module that owns the ghost companion (`#ghostPal` chases the cursor on fine pointers, docks bottom-right under `html.no-pointer`), the score HUD (`#scoreHud`), the dynamic canvas favicon (ghost recoloured per level), and the nav-logo ghost (`#navGhost`). Points: +15 per section explored, +5 per FAQ lore entry (+100 lore complete), +10 per unique terminal command, +2 per unique interactive click, +500 Konami secret. Levels at 60/160/320/600 change ghost size/colour. Award points via `GAME.add(n, x, y)`.
+- **Pixel cursor & reality rift**: on fine pointers without reduced motion, `html.custom-cursor` hides the native cursor behind `#pxCursor` (crosshair, rotates over links) and `#riftLens` (a glitching `backdrop-filter` circle that previews the alternate universe around the pointer). Both are disabled on touch (`@media (hover: none)`) and under reduced motion.
 
 ### Responsive Breakpoint
 
@@ -134,15 +144,15 @@ Single breakpoint at `768px`. The site is mobile-first — the desktop layout is
 
 ### Animation Conventions
 
-CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `hue-spin`.
+CSS keyframe names: `fade-in`, `slide-up`, `pulse`, `bounce`, `spin-slow`, `float-up`, `blink`, `glint`, `t-print`, `dialogue-in`, `lore-flash`, `twinkle`, `ghost-bob`, `ghost-chomp`, `pop-rise`, `rift-jitter`, `dim-flash`.
 
 Elements that animate on scroll carry the class `.reveal`. The Intersection Observer adds `.visible` to trigger the animation. Skill bar fills read their target width from `data-width` attributes when `.visible` is set on the parent.
 
-All new animations (typed hero intro, blinking cursors/labels, scanlines, star power) are disabled or skipped under `prefers-reduced-motion`; the typing JS checks `matchMedia` and shows everything instantly.
+All new animations (typed hero intro, blinking cursors/labels, scanlines, starfield, ghost companion, rift cursor, dimension shift) are disabled or skipped under `prefers-reduced-motion`; the typing JS checks `matchMedia` and shows everything instantly.
 
 ### Interactive Terminal
 
-The hero is a terminal window (`#heroTerm`). After the typed intro it reveals a live prompt (`#termInput`): commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, beyond, contact, talk, ask, konami, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries. The Konami code (up up down down left right left right B A) triggers star power.
+The hero is a terminal window (`#heroTerm`). The first prompt line (`.t-cmd.t-first`) is visible with a blinking cursor from first paint; the typed intro then fills it in (lines get `t-done` when finished, which hides their cursor). After the intro it reveals a live prompt (`#termInput`): commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, beyond, contact, talk, ask, konami, score, warp, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries and feeds the score. The Konami code (up up down down left right left right B A) triggers the **dimension shift** — toggling `html.alt-univ` (and the +500 secret, first time only); `warp` re-triggers it once the secret is found.
 
 ## HTML Conventions
 
