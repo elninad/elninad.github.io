@@ -352,7 +352,10 @@
       position: relative;
       min-height: 100vh;
       /* flex-start (not center): the terminal grows downward as lines print,
-         so the prompt and its cursor stay put instead of re-centering below the fold */
+         so the prompt and its cursor stay put instead of re-centering below the fold.
+         Vertical padding off: the global section padding would push the terminal
+         120px down — the nav clearance comes from .hero-content's margin instead */
+      padding: 0 5%;
       display: flex; align-items: flex-start; justify-content: center;
       overflow: hidden;
     }
@@ -400,7 +403,7 @@
       position: relative; z-index: 2;
       text-align: left;
       max-width: 880px; width: min(880px, 92vw);
-      margin: 110px auto 70px;
+      margin: 84px auto 60px;
     }
     .term-body { padding: 26px clamp(18px, 4vw, 44px) 30px; }
     .t-line { font-family: var(--display); font-size: 1.25rem; line-height: 1.5; margin: 10px 0 14px; }
@@ -1290,7 +1293,7 @@
       .tl-empty { display: none; }
       .tl-node  { grid-column: 1; }
       .hero-stats { gap: 22px; }
-      .hero-content { margin: 92px auto 54px; }
+      .hero-content { margin: 74px auto 48px; }
       .t-line, #termInput { font-size: 1.05rem; }
       .term::before { font-size: .6rem; padding: 0 0 0 56px; justify-content: flex-start; }
       .lore-hud { margin-left: 0; text-align: left; width: 100%; }
