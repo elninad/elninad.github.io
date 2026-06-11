@@ -729,9 +729,20 @@
       display: inline-flex; align-items: center; gap: 6px;
       font-family: var(--pixel); font-size: .52rem;
       color: var(--gold); margin-left: 10px; vertical-align: middle;
+      cursor: pointer;
+      transition: transform .2s, filter .2s, opacity .3s;
     }
-    .tl-xp svg { width: 14px; height: 14px; }
+    .tl-xp svg { width: 14px; height: 14px; animation: pulse 2.2s ease-in-out infinite; }
+    .tl-xp:hover { transform: translateY(-2px) scale(1.12); filter: drop-shadow(0 0 8px rgba(var(--gold-rgb),.8)); }
+    .tl-xp.claimed { opacity: .35; filter: grayscale(.8); cursor: default; }
+    .tl-xp.claimed:hover { transform: none; }
+    .tl-xp.claimed svg { animation: none; }
+    .tl-xp.claimed::after { content: ':: EATEN'; color: var(--muted); }
     .tl-item.left .tl-xp { margin-left: 0; margin-right: 10px; }
+    .xp-hint {
+      font-family: var(--pixel); font-size: .5rem; color: var(--gold);
+      letter-spacing: .08em; margin-top: 14px; line-height: 1.8;
+    }
     .tl-badge.edu     { background: rgba(var(--teal-rgb),.12);   color: var(--teal);   }
     .tl-badge.work    { background: rgba(var(--green-rgb),.12);   color: var(--green);  }
     .tl-badge.lead    { background: rgba(var(--gold-rgb),.12);   color: var(--gold);   }
@@ -1059,6 +1070,16 @@
     #ghostPal.lv5 { width: 72px; height: 72px; color: var(--white);   filter: drop-shadow(0 0 14px rgba(var(--accent-rgb),.9)); }
     #ghostPal.chomp svg { animation: ghost-bob 2.4s ease-in-out infinite, ghost-chomp .4s steps(2) 1; }
     @keyframes ghost-chomp { 0% { scale: 1; } 50% { scale: 1.4; } 100% { scale: 1; } }
+    /* XP orb feast: a wilder, longer gulp for the big timeline point jumps */
+    #ghostPal.feast svg { animation: ghost-bob 2.4s ease-in-out infinite, ghost-feast .9s steps(6) 1; }
+    @keyframes ghost-feast {
+      0%   { scale: 1;    rotate: 0deg; }
+      20%  { scale: 1.5;  rotate: -8deg; }
+      40%  { scale: 1.3;  rotate: 7deg; }
+      60%  { scale: 1.65; rotate: -5deg; }
+      80%  { scale: 1.25; rotate: 4deg; }
+      100% { scale: 1;    rotate: 0deg; }
+    }
     html.no-pointer #ghostPal { left: auto; right: 14px; top: auto; bottom: 64px; transform: none !important; }
     .nav-ghost { width: 16px; height: 16px; flex-shrink: 0; transition: color .45s ease; }
     .nav-ghost.glv2 { color: var(--teal); }
@@ -1072,6 +1093,17 @@
       animation: pop-rise 1s ease-out both;
     }
     @keyframes pop-rise { from { opacity: 1; translate: 0 0; } to { opacity: 0; translate: 0 -36px; } }
+    .score-pop.big {
+      font-size: .9rem;
+      text-shadow: 0 0 6px rgba(var(--gold-rgb),.9), 0 0 24px rgba(var(--gold-rgb),.55);
+      animation: pop-rise-big 1.4s ease-out both;
+    }
+    @keyframes pop-rise-big {
+      0%   { opacity: 0; translate: 0 6px;   scale: .6; }
+      18%  { opacity: 1; translate: 0 -4px;  scale: 1.25; }
+      32%  { translate: 0 -10px; scale: 1; }
+      100% { opacity: 0; translate: 0 -60px; scale: 1; }
+    }
     #scoreHud {
       position: fixed; left: 14px; bottom: 14px; z-index: 9010;
       display: flex; align-items: center; gap: 10px;
@@ -3220,6 +3252,7 @@
       <p class="section-lead" style="margin:0 auto;">
         A decade-long path of learning, building, and leading — across continents, industries, and scales.
       </p>
+      <p class="xp-hint" aria-hidden="true">TIP :: THE GHOST IS HUNGRY :: CLICK THE XP ORBS TO FEED IT</p>
     </div>
 
     <div class="timeline-wrapper">
@@ -4369,7 +4402,9 @@
     var rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
     var score = 0, level = 1, secretFound = false, warpFn = null;
-    var THRESHOLDS = [0, 60, 160, 320, 600];
+    /* upper levels are tuned for the timeline XP orbs — regular exploration
+       reaches lv3-4; feasting on XP orbs is the fast lane to lv5 */
+    var THRESHOLDS = [0, 60, 300, 1200, 6000];
     var LEVEL_CLASSES = ['', 'lv2', 'lv3', 'lv4', 'lv5'];
     var FAVICON_COLORS = {
       crt: ['#33ff7c', '#3fd9ff', '#ffb000', '#ff5fd7', '#f4fff6'],
@@ -4523,10 +4558,10 @@
       return [finePointer ? gx : innerWidth - 40, finePointer ? gy : innerHeight - 90];
     }
 
-    function popLabel(text, x, y) {
+    function popLabel(text, x, y, big) {
       if (rm) return;
       var el = document.createElement('span');
-      el.className = 'score-pop';
+      el.className = 'score-pop' + (big ? ' big' : '');
       el.textContent = text;
       if (x === undefined) {
         var g = ghostXY();
@@ -4535,7 +4570,7 @@
       el.style.left = x + 'px';
       el.style.top = (y - 16) + 'px';
       document.body.appendChild(el);
-      setTimeout(function() { el.remove(); }, 1200);
+      setTimeout(function() { el.remove(); }, big ? 1600 : 1200);
     }
 
     function chomp() {
@@ -4554,9 +4589,9 @@
       }
     }
 
-    function rollTo(target) {
+    function rollTo(target, duration) {
       if (rollRaf) cancelAnimationFrame(rollRaf);
-      var start = displayed, t0 = null, dur = 420;
+      var start = displayed, t0 = null, dur = duration || 420;
       function step(ts) {
         if (t0 === null) t0 = ts;
         var p = Math.min((ts - t0) / dur, 1);
@@ -4647,6 +4682,66 @@
         });
       });
     }
+
+    function ghostFeast() {
+      if (!ghost) return;
+      ghost.classList.remove('feast');
+      void ghost.offsetWidth;
+      ghost.classList.add('feast');
+      setTimeout(function() { ghost.classList.remove('feast'); }, 1000);
+    }
+
+    /* XP orb feast: a shower of coins streams into the ghost, it gulps and
+       wobbles, a big +N XP banner pops, then a spark volley fills the HUD */
+    function feast(n, x, y) {
+      score += n;
+      if (rm) {
+        displayed = score;
+        syncLevel();
+        updateText();
+        return;
+      }
+      var coins = Math.max(5, Math.min(12, Math.round(n / 900) + 4));
+      var landed = 0;
+      for (var i = 0; i < coins; i++) {
+        (function(i) {
+          setTimeout(function() {
+            var jx = x + (Math.random() * 56 - 28);
+            var jy = y + (Math.random() * 36 - 18);
+            flyCoin(jx, jy, function() {
+              chomp();
+              landed++;
+              if (landed !== coins) return;
+              syncLevel();
+              ghostFeast();
+              var gp = ghostXY();
+              popLabel('+' + n + ' XP', gp[0], gp[1], true);
+              for (var s = 0; s < 3; s++) {
+                setTimeout(function() {
+                  flySpark(function() {
+                    hudBump();
+                    rollTo(score, 900);
+                  });
+                }, s * 140);
+              }
+            });
+          }, i * 70);
+        })(i);
+      }
+    }
+
+    /* Timeline XP orbs: click once to feed that career milestone to the ghost */
+    document.querySelectorAll('.tl-xp').forEach(function(orb) {
+      orb.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (orb.classList.contains('claimed')) return;
+        var n = parseInt((orb.textContent.match(/\d+/) || [0])[0], 10);
+        if (!n) return;
+        orb.classList.add('claimed');
+        var r = orb.getBoundingClientRect();
+        feast(n, r.left + r.width / 2, r.top + r.height / 2);
+      });
+    });
 
     /* Exploration points: first time each section crosses mid-viewport */
     var secObs = new IntersectionObserver(function(entries) {
@@ -4874,7 +4969,7 @@
       score: function() {
         return 'SCORE ' + GAME.pad(GAME.score()) + ' :: GHOST LV ' + GAME.level() +
           ' :: secrets ' + (GAME.secretFound() ? '1/1' : '0/1') +
-          '\nfeed the ghost: explore worlds, read lore, click around';
+          '\nfeed the ghost: explore worlds, read lore, eat the timeline XP orbs';
       },
       warp: function() {
         if (!GAME.secretFound()) return 'warp drive locked :: a secret code opens the rift';
