@@ -203,6 +203,43 @@
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
 
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    /* ─── CRT Overlay ───────────────────────────────────────────── */
+    body::after {
+      content: ''; position: fixed; inset: 0; z-index: 9000; pointer-events: none;
+      background:
+        repeating-linear-gradient(0deg, rgba(0,0,0,.14) 0 1px, transparent 1px 3px),
+        radial-gradient(ellipse at center, transparent 62%, rgba(0,0,0,.28) 100%);
+    }
+
+    /* ─── Terminal Window Chrome ────────────────────────────────── */
+    .term {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding-top: 38px;
+      position: relative; box-shadow: var(--shadow);
+    }
+    .term::before {
+      content: attr(data-title); position: absolute; top: 0; left: 0; right: 0; height: 30px;
+      background: rgba(255,255,255,.04); border-bottom: 1px solid var(--border);
+      border-radius: var(--radius) var(--radius) 0 0;
+      font-family: var(--mono); font-size: .68rem; color: var(--muted);
+      display: flex; align-items: center; justify-content: center;
+      letter-spacing: .04em; padding: 0 64px;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+    .term::after {
+      content: ''; position: absolute; top: 10px; left: 14px; width: 10px; height: 10px;
+      border-radius: 50%; background: var(--red);
+      box-shadow: 16px 0 0 var(--gold), 32px 0 0 var(--accent);
+    }
+
+    /* ─── Cursor & Pixel Utilities ──────────────────────────────── */
+    @keyframes blink { 50% { opacity: 0; } }
+    .cursor { display: inline-block; color: var(--accent); animation: blink 1.1s steps(1) infinite; }
+    .blink-label { animation: blink 1.4s steps(1) infinite; }
+    .pixel-sprite { shape-rendering: crispEdges; }
+
     /* ─── Navigation ────────────────────────────────────────────── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
@@ -731,6 +768,10 @@
       .about-avatar-ring, .about-orbit { animation: none !important; }
       .particle { display: none !important; }
       .hero-parallax-bg { transform: none !important; }
+      body::after { display: none !important; }
+      .cursor, .blink-label { animation: none !important; }
+      .star-power, .star-power body { animation: none !important; filter: none !important; }
+      .avatar-blink { animation: none !important; }
     }
 
     @media (max-width: 768px) {
@@ -2212,6 +2253,143 @@
 </head>
 <body itemscope itemtype="https://schema.org/ProfilePage">
 <a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- ─── Pixel Sprite Sheet (custom 8-bit SVG art, defined once, used via <use>) ─── -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <defs>
+    <!-- Pixel dev avatar: headphones, shades, phosphor shirt -->
+    <symbol id="px-avatar" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges">
+        <rect x="4" y="1" width="8" height="1" fill="#ff5fd7"/>
+        <rect x="0" y="5" width="2" height="3" fill="#ff5fd7"/>
+        <rect x="14" y="5" width="2" height="3" fill="#ff5fd7"/>
+        <rect x="3" y="2" width="10" height="1" fill="#0e7a3c"/>
+        <rect x="2" y="3" width="12" height="2" fill="#0e7a3c"/>
+        <rect x="2" y="5" width="12" height="1" fill="#d9f2dd"/>
+        <rect x="2" y="6" width="12" height="2" fill="#d9f2dd"/>
+        <rect x="2" y="8" width="12" height="1" fill="#d9f2dd"/>
+        <rect x="3" y="9" width="10" height="1" fill="#d9f2dd"/>
+        <rect x="4" y="10" width="8" height="1" fill="#d9f2dd"/>
+        <rect x="3" y="6" width="10" height="1" fill="#3fd9ff"/>
+        <rect x="3" y="7" width="4" height="1" fill="#0f1a12"/>
+        <rect x="9" y="7" width="4" height="1" fill="#0f1a12"/>
+        <rect x="7" y="7" width="2" height="1" fill="#3fd9ff"/>
+        <g class="avatar-blink"><rect x="4" y="7" width="1" height="1" fill="#3fd9ff"/></g>
+        <rect x="6" y="9" width="4" height="1" fill="#0f1a12"/>
+        <rect x="6" y="11" width="4" height="1" fill="#d9f2dd"/>
+        <rect x="4" y="12" width="8" height="1" fill="#33ff7c"/>
+        <rect x="3" y="13" width="10" height="1" fill="#33ff7c"/>
+        <rect x="2" y="14" width="12" height="2" fill="#33ff7c"/>
+      </g>
+    </symbol>
+    <!-- Gold coin -->
+    <symbol id="px-coin" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges">
+        <rect x="5" y="2" width="6" height="1" fill="#ffb000"/>
+        <rect x="4" y="3" width="8" height="1" fill="#ffb000"/>
+        <rect x="3" y="4" width="10" height="8" fill="#ffb000"/>
+        <rect x="4" y="12" width="8" height="1" fill="#ffb000"/>
+        <rect x="5" y="13" width="6" height="1" fill="#ffb000"/>
+        <rect x="4" y="4" width="2" height="7" fill="#ffd23f"/>
+        <rect x="5" y="3" width="2" height="1" fill="#ffd23f"/>
+        <rect x="7" y="5" width="2" height="6" fill="#b87400"/>
+        <rect x="11" y="4" width="2" height="8" fill="#b87400"/>
+      </g>
+    </symbol>
+    <!-- Power star -->
+    <symbol id="px-star" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges" fill="#ffb000">
+        <rect x="7" y="1" width="2" height="2"/>
+        <rect x="6" y="3" width="4" height="2"/>
+        <rect x="0" y="5" width="16" height="1"/>
+        <rect x="1" y="6" width="14" height="1"/>
+        <rect x="2" y="7" width="12" height="1"/>
+        <rect x="4" y="8" width="8" height="1"/>
+        <rect x="3" y="9" width="4" height="1"/>
+        <rect x="9" y="9" width="4" height="1"/>
+        <rect x="2" y="10" width="4" height="1"/>
+        <rect x="10" y="10" width="4" height="1"/>
+        <rect x="2" y="11" width="3" height="1"/>
+        <rect x="11" y="11" width="3" height="1"/>
+        <rect x="1" y="12" width="3" height="1"/>
+        <rect x="12" y="12" width="3" height="1"/>
+      </g>
+      <g shape-rendering="crispEdges" fill="#ffd23f">
+        <rect x="7" y="1" width="1" height="2"/>
+        <rect x="6" y="3" width="2" height="2"/>
+        <rect x="1" y="5" width="6" height="1"/>
+      </g>
+    </symbol>
+    <!-- Trophy -->
+    <symbol id="px-trophy" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges" fill="#ffb000">
+        <rect x="4" y="2" width="8" height="4"/>
+        <rect x="2" y="3" width="2" height="2"/>
+        <rect x="12" y="3" width="2" height="2"/>
+        <rect x="5" y="6" width="6" height="1"/>
+        <rect x="6" y="7" width="4" height="1"/>
+        <rect x="7" y="8" width="2" height="2"/>
+        <rect x="5" y="10" width="6" height="1"/>
+        <rect x="4" y="11" width="8" height="2"/>
+      </g>
+      <g shape-rendering="crispEdges" fill="#ffd23f">
+        <rect x="4" y="2" width="2" height="4"/>
+      </g>
+    </symbol>
+    <!-- HP heart -->
+    <symbol id="px-heart" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges" fill="#ff3860">
+        <rect x="3" y="3" width="3" height="1"/>
+        <rect x="10" y="3" width="3" height="1"/>
+        <rect x="2" y="4" width="5" height="1"/>
+        <rect x="9" y="4" width="5" height="1"/>
+        <rect x="2" y="5" width="12" height="2"/>
+        <rect x="3" y="7" width="10" height="1"/>
+        <rect x="4" y="8" width="8" height="1"/>
+        <rect x="5" y="9" width="6" height="1"/>
+        <rect x="6" y="10" width="4" height="1"/>
+        <rect x="7" y="11" width="2" height="1"/>
+      </g>
+      <rect x="3" y="4" width="2" height="2" fill="#ff7a9c" shape-rendering="crispEdges"/>
+    </symbol>
+    <!-- Game cartridge (tinted via currentColor) -->
+    <symbol id="px-cart" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges">
+        <rect x="3" y="2" width="10" height="1" fill="currentColor"/>
+        <rect x="2" y="3" width="12" height="9" fill="currentColor"/>
+        <rect x="4" y="12" width="8" height="2" fill="currentColor"/>
+        <rect x="4" y="4" width="8" height="5" fill="rgba(0,0,0,.4)"/>
+        <rect x="5" y="5" width="6" height="3" fill="rgba(255,255,255,.25)"/>
+      </g>
+    </symbol>
+    <!-- Ghostty ghost (tinted via currentColor) -->
+    <symbol id="px-ghost" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges">
+        <rect x="5" y="2" width="6" height="1" fill="currentColor"/>
+        <rect x="4" y="3" width="8" height="1" fill="currentColor"/>
+        <rect x="3" y="4" width="10" height="8" fill="currentColor"/>
+        <rect x="3" y="12" width="2" height="1" fill="currentColor"/>
+        <rect x="7" y="12" width="2" height="1" fill="currentColor"/>
+        <rect x="11" y="12" width="2" height="1" fill="currentColor"/>
+        <rect x="5" y="6" width="2" height="2" fill="#060a07"/>
+        <rect x="9" y="6" width="2" height="2" fill="#060a07"/>
+      </g>
+    </symbol>
+    <!-- Space invader (tinted via currentColor) -->
+    <symbol id="px-invader" viewBox="0 0 16 16">
+      <g shape-rendering="crispEdges" fill="currentColor">
+        <rect x="4" y="4" width="1" height="1"/><rect x="10" y="4" width="1" height="1"/>
+        <rect x="5" y="5" width="1" height="1"/><rect x="9" y="5" width="1" height="1"/>
+        <rect x="4" y="6" width="7" height="1"/>
+        <rect x="3" y="7" width="2" height="1"/><rect x="6" y="7" width="3" height="1"/><rect x="10" y="7" width="2" height="1"/>
+        <rect x="2" y="8" width="11" height="1"/>
+        <rect x="2" y="9" width="1" height="1"/><rect x="4" y="9" width="7" height="1"/><rect x="12" y="9" width="1" height="1"/>
+        <rect x="2" y="10" width="1" height="1"/><rect x="4" y="10" width="1" height="1"/><rect x="10" y="10" width="1" height="1"/><rect x="12" y="10" width="1" height="1"/>
+        <rect x="5" y="11" width="2" height="1"/><rect x="8" y="11" width="2" height="1"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 
 <!-- ─── Navigation ──────────────────────────────────────────────── -->
 <nav id="navbar">

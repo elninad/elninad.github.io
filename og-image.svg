@@ -1,79 +1,72 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs>
-    <radialGradient id="bg1" cx="75%" cy="35%" r="55%">
-      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="bg2" cx="15%" cy="80%" r="45%">
-      <stop offset="0%" stop-color="#8b5cf6" stop-opacity="0.2"/>
-      <stop offset="100%" stop-color="#060b18" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="nameGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#e2e8f0"/>
-      <stop offset="50%" stop-color="#818cf8"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
-    </linearGradient>
-    <linearGradient id="roleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="100%" stop-color="#fb923c"/>
-    </linearGradient>
-    <linearGradient id="barGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#6366f1"/>
-      <stop offset="100%" stop-color="#a78bfa"/>
-    </linearGradient>
-    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(99,102,241,0.06)" stroke-width="1"/>
+    <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse">
+      <rect width="4" height="1.5" fill="rgba(0,0,0,0.18)"/>
     </pattern>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(51,255,124,0.06)" stroke-width="1"/>
+    </pattern>
+    <radialGradient id="glow" cx="50%" cy="40%" r="70%">
+      <stop offset="0%" stop-color="#33ff7c" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#060a07" stop-opacity="0"/>
+    </radialGradient>
   </defs>
 
   <!-- Background -->
-  <rect width="1200" height="630" fill="#060b18"/>
-  <rect width="1200" height="630" fill="url(#bg1)"/>
-  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="#060a07"/>
   <rect width="1200" height="630" fill="url(#grid)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
 
-  <!-- Left accent bar -->
-  <rect x="80" y="140" width="4" height="350" rx="2" fill="url(#barGrad)"/>
+  <!-- Terminal window -->
+  <rect x="90" y="80" width="1020" height="470" rx="10" fill="#0f1a12" stroke="rgba(51,255,124,0.25)" stroke-width="2"/>
+  <rect x="90" y="80" width="1020" height="44" rx="10" fill="rgba(255,255,255,0.05)"/>
+  <rect x="90" y="112" width="1020" height="12" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="120" cy="102" r="7" fill="#ff3860"/>
+  <circle cx="144" cy="102" r="7" fill="#ffb000"/>
+  <circle cx="168" cy="102" r="7" fill="#33ff7c"/>
+  <text x="600" y="108" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="17" fill="#8db096">ninad@upstox :: ghostty :: 80x24</text>
 
-  <!-- Badge -->
-  <rect x="108" y="148" width="200" height="36" rx="18" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)" stroke-width="1"/>
-  <circle cx="130" cy="166" r="5" fill="#6366f1"/>
-  <text x="145" y="171" font-family="Inter,-apple-system,sans-serif" font-size="14" font-weight="600" fill="#6366f1" letter-spacing="0.08em">ARCHITECT</text>
+  <!-- Prompt: whoami -->
+  <text x="140" y="190" font-family="'JetBrains Mono',monospace" font-size="24" fill="#33ff7c">ninad@mumbai:~$ <tspan fill="#d9f2dd">whoami</tspan></text>
 
-  <!-- Name -->
-  <text x="108" y="280" font-family="Inter,-apple-system,sans-serif" font-size="76" font-weight="900" letter-spacing="-2" fill="url(#nameGrad)">Ninad Malvankar</text>
+  <!-- Name output -->
+  <text x="140" y="268" font-family="'Courier New',monospace" font-size="68" font-weight="700" fill="#d9f2dd" letter-spacing="-1">Ninad Malvankar</text>
+  <text x="140" y="318" font-family="'JetBrains Mono',monospace" font-size="28" fill="#ffb000">ARCHITECT @ UPSTOX</text>
 
-  <!-- Role line -->
-  <text x="108" y="340" font-family="Inter,-apple-system,sans-serif" font-size="32" font-weight="600" fill="url(#roleGrad)">@ Upstox · India's Leading Fintech Platform</text>
+  <!-- Prompt: stats -->
+  <text x="140" y="384" font-family="'JetBrains Mono',monospace" font-size="24" fill="#33ff7c">ninad@mumbai:~$ <tspan fill="#d9f2dd">ninad --stats</tspan></text>
 
-  <!-- Divider -->
-  <rect x="108" y="368" width="600" height="1" fill="rgba(99,102,241,0.2)"/>
+  <!-- HUD stats -->
+  <text x="140" y="436" font-family="'JetBrains Mono',monospace" font-size="22" fill="#8db096">XP <tspan fill="#33ff7c" font-weight="700">12+ YEARS</tspan>   LV <tspan fill="#3fd9ff" font-weight="700">ARCHITECT</tspan>   BADGE <tspan fill="#ffb000" font-weight="700">AWS CERTIFIED</tspan></text>
+  <text x="140" y="478" font-family="'JetBrains Mono',monospace" font-size="22" fill="#8db096">ZONE <tspan fill="#ff5fd7" font-weight="700">MUMBAI, INDIA</tspan>   QUEST <tspan fill="#d9f2dd" font-weight="700">FINTECH PLATFORM</tspan></text>
 
-  <!-- Skills -->
-  <text x="108" y="406" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#64748b">AWS · Cloud Architecture · FinTech · Engineering Leadership</text>
-  <text x="108" y="438" font-family="Inter,-apple-system,sans-serif" font-size="20" fill="#64748b">React · Node.js · TypeScript · Microservices · DevOps</text>
+  <!-- Cursor prompt -->
+  <text x="140" y="528" font-family="'JetBrains Mono',monospace" font-size="24" fill="#33ff7c">ninad@mumbai:~$</text>
+  <rect x="368" y="508" width="14" height="26" fill="#33ff7c"/>
 
-  <!-- Stats -->
-  <text x="108" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">12+</text>
-  <text x="108" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">YEARS EXP</text>
+  <!-- Pixel ghost sprite -->
+  <g transform="translate(940,170) scale(9)" shape-rendering="crispEdges">
+    <g fill="#33ff7c">
+      <rect x="5" y="2" width="6" height="1"/><rect x="4" y="3" width="8" height="1"/>
+      <rect x="3" y="4" width="10" height="8"/>
+      <rect x="3" y="12" width="2" height="1"/><rect x="7" y="12" width="2" height="1"/><rect x="11" y="12" width="2" height="1"/>
+    </g>
+    <rect x="5" y="6" width="2" height="2" fill="#060a07"/><rect x="9" y="6" width="2" height="2" fill="#060a07"/>
+  </g>
 
-  <text x="218" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">4+</text>
-  <text x="218" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">COMPANIES</text>
+  <!-- Pixel star -->
+  <g transform="translate(950,360) scale(5)" shape-rendering="crispEdges" fill="#ffb000">
+    <rect x="7" y="1" width="2" height="2"/><rect x="6" y="3" width="4" height="2"/>
+    <rect x="0" y="5" width="16" height="1"/><rect x="1" y="6" width="14" height="1"/>
+    <rect x="2" y="7" width="12" height="1"/><rect x="4" y="8" width="8" height="1"/>
+    <rect x="3" y="9" width="4" height="1"/><rect x="9" y="9" width="4" height="1"/>
+    <rect x="2" y="10" width="4" height="1"/><rect x="10" y="10" width="4" height="1"/>
+    <rect x="1" y="12" width="3" height="1"/><rect x="12" y="12" width="3" height="1"/>
+  </g>
 
-  <text x="318" y="498" font-family="Inter,-apple-system,sans-serif" font-size="28" font-weight="800" fill="#e2e8f0">AWS</text>
-  <text x="318" y="522" font-family="Inter,-apple-system,sans-serif" font-size="13" fill="#64748b" letter-spacing="0.05em">CERTIFIED</text>
+  <!-- Scanlines over everything -->
+  <rect width="1200" height="630" fill="url(#scan)"/>
 
-  <!-- URL -->
-  <text x="108" y="580" font-family="'JetBrains Mono',monospace,sans-serif" font-size="18" fill="rgba(99,102,241,0.7)" letter-spacing="0.04em">ninadmalvankar.com</text>
-
-  <!-- Decorative orb -->
-  <circle cx="1060" cy="315" r="190" fill="none" stroke="rgba(99,102,241,0.07)" stroke-width="1"/>
-  <circle cx="1060" cy="315" r="140" fill="none" stroke="rgba(139,92,246,0.05)" stroke-width="1"/>
-  <circle cx="1060" cy="315" r="90" fill="rgba(99,102,241,0.04)" stroke="rgba(99,102,241,0.08)" stroke-width="1"/>
-  <text x="1060" y="290" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="40" fill="rgba(99,102,241,0.25)">&lt;</text>
-  <text x="1060" y="335" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="44" font-weight="700" fill="rgba(139,92,246,0.3)">NM</text>
-  <text x="1060" y="380" text-anchor="middle" font-family="'JetBrains Mono',monospace,sans-serif" font-size="40" fill="rgba(99,102,241,0.25)">/&gt;</text>
-
-  <!-- Orbit dot -->
-  <circle cx="1060" cy="125" r="6" fill="#f59e0b" opacity="0.6"/>
+  <!-- URL footer -->
+  <text x="600" y="600" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="20" fill="rgba(51,255,124,0.75)" letter-spacing="0.06em">ninadmalvankar.com</text>
 </svg>
