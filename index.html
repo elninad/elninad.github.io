@@ -4442,16 +4442,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — one handler, one scroll event */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var sy = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (sy * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', sy > 40);
   }, { passive: true });
 
   /* Shared helper: instance a sprite from the pixel sprite sheet */
@@ -4901,14 +4898,14 @@
     document.querySelectorAll('main section[id]').forEach(function(s) { secObs.observe(s); });
 
     /* Curiosity points: first click on each interactive element */
-    var clicked = [];
+    var clicked = new Set();
     var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
       '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
       '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest(CLICKABLE);
-      if (!t || clicked.indexOf(t) !== -1) return;
-      clicked.push(t);
+      if (!t || clicked.has(t)) return;
+      clicked.add(t);
       add(2, e.clientX, e.clientY);
     });
 
@@ -4997,24 +4994,19 @@
       })();
     }
 
-    setTimeout(function() {
-      typeCmd(cmds[0], function() {
-        setTimeout(function() {
-          outs[0].classList.add('t-show');
-          setTimeout(function() {
-            typeCmd(cmds[1], function() {
-              setTimeout(function() {
-                outs[1].classList.add('t-show');
-                setTimeout(function() {
-                  outs[2].classList.add('t-show');
-                  setTimeout(showLive, 400);
-                }, 250);
-              }, 200);
-            });
-          }, 550);
-        }, 150);
-      });
-    }, 350);
+    /* Sequential steps: [delay_ms, fn(next)] — runner waits, fires, moves on when next() called */
+    var steps = [
+      [350, function(next) { typeCmd(cmds[0], next); }],
+      [150, function(next) { outs[0].classList.add('t-show'); next(); }],
+      [550, function(next) { typeCmd(cmds[1], next); }],
+      [200, function(next) { outs[1].classList.add('t-show'); next(); }],
+      [250, function(next) { outs[2].classList.add('t-show'); next(); }],
+      [400, function()     { showLive(); }]
+    ];
+    (function run(i) {
+      if (i >= steps.length) return;
+      setTimeout(function() { steps[i][1](function() { run(i + 1); }); }, steps[i][0]);
+    })(0);
   })();
 
   /* Interactive command palette */
@@ -5196,16 +5188,16 @@
     var loreHud = document.getElementById('loreHud');
     if (!items.length || !loreCount) return;
     var total = items.length;
-    var seen = [];
+    var seen = new Set();
     loreCount.textContent = 'LORE 0/' + total;
     items.forEach(function(d, i) {
       d.addEventListener('toggle', function() {
-        if (!d.open || seen.indexOf(i) !== -1) return;
-        seen.push(i);
-        loreCount.textContent = 'LORE ' + seen.length + '/' + total;
-        loreFill.style.width = (seen.length / total * 100) + '%';
+        if (!d.open || seen.has(i)) return;
+        seen.add(i);
+        loreCount.textContent = 'LORE ' + seen.size + '/' + total;
+        loreFill.style.width = (seen.size / total * 100) + '%';
         GAME.add(5);
-        if (seen.length === total) {
+        if (seen.size === total) {
           loreHud.classList.add('complete');
           loreCount.textContent = 'LORE COMPLETE :: ACHIEVEMENT UNLOCKED';
           termPrint('achievement unlocked: LORE MASTER :: all dialogue read', 't-sys');
