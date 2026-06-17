@@ -159,6 +159,13 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# Microsoft Bing AI / Copilot link preview and AI features
+User-agent: BingPreview
+Allow: /
+
+User-agent: Copilot-User
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
