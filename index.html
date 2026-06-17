@@ -4404,13 +4404,13 @@
   })();
 
   /* Parallax hero background on scroll */
-  const parallaxBg = document.getElementById('parallaxBg');
+  var parallaxBg = document.getElementById('parallaxBg');
   window.addEventListener('scroll', function() {
     if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
   }, { passive: true });
 
   /* Sticky nav */
-  const navbar = document.getElementById('navbar');
+  var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
@@ -4636,7 +4636,9 @@
     function applyLevel() {
       hudLv.textContent = 'GHOST LV ' + level;
       if (ghost) {
-        ghost.className = LEVEL_CLASSES[level - 1] + (ghost.classList.contains('flip') ? ' flip' : '');
+        LEVEL_CLASSES.forEach(function(cls) { if (cls) ghost.classList.remove(cls); });
+        var lvCls = LEVEL_CLASSES[level - 1];
+        if (lvCls) ghost.classList.add(lvCls);
       }
       if (navGhost) {
         navGhost.setAttribute('class', 'pixel-sprite nav-ghost' + (level > 1 ? ' glv' + level : ''));
@@ -5100,11 +5102,11 @@
       var parts = raw.split(/\s+/);
       var cmd = parts[0].toLowerCase();
       var arg = parts.slice(1).join(' ');
-      var entry = COMMANDS[cmd];
-      if (entry === undefined) {
+      if (!Object.prototype.hasOwnProperty.call(COMMANDS, cmd)) {
         termPrint("command not found: " + cmd + " :: try 'help'", 't-sys');
         return;
       }
+      var entry = COMMANDS[cmd];
       if (!seenCmds[cmd]) {
         seenCmds[cmd] = true;
         GAME.add(10);
@@ -5120,6 +5122,7 @@
         syncTermCursor();
         if (!raw) return;
         history.push(raw);
+        if (history.length > 100) history.shift();
         histIdx = history.length;
         termPrint('ninad@mumbai:~$ ' + raw, 't-echo');
         runCommand(raw);
