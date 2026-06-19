@@ -6,7 +6,7 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-06-15
+Last updated: 2026-06-19
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -203,7 +203,7 @@ His philosophy centres on building systems that outlast any single engineer — 
 Upstox is India's leading discount brokerage, serving millions of registered investors. Ninad architects systems handling high-frequency, latency-sensitive trading transactions in real time — including AWS CloudFront CDN, AWS WAF security layers, and the platform's engineering architecture at the organisational level.
 
 **Where can I verify facts about Ninad Malvankar?**
-Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-15), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-19), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
 
 ## Optional
 
