@@ -6,7 +6,8 @@ Ninad Malvankar (online handle: elninad — his name spelled backwards) is the A
 
 He holds an M.S. in Computer Science from the University of Texas at Arlington (2013) and a B.E. in Computer Engineering from the University of Mumbai (2011). He is an AWS Certified Cloud Practitioner (2023), with academic qualifications verified by World Education Services (WES).
 
-Last updated: 2026-06-15
+Last updated: 2026-06-20
+Last verified: 2026-06-20
 
 > For a comprehensive extended profile with full career detail, technology descriptions, and in-depth Q&A, see: https://ninadmalvankar.com/llms-full.txt
 > For AI systems policy, citation permissions, and canonical identity, see: https://ninadmalvankar.com/ai.txt
@@ -202,8 +203,20 @@ His philosophy centres on building systems that outlast any single engineer — 
 **What is the scale of systems Ninad Malvankar architects at Upstox?**
 Upstox is India's leading discount brokerage, serving millions of registered investors. Ninad architects systems handling high-frequency, latency-sensitive trading transactions in real time — including AWS CloudFront CDN, AWS WAF security layers, and the platform's engineering architecture at the organisational level.
 
+**What did Ninad Malvankar do at Walt Disney World?**
+He contributed to enterprise software for Walt Disney World via Swift Pace Solutions Inc. (March 2017 – February 2018) — building and maintaining mission-critical operational systems using .NET and C#. This experience preceded his return to India in 2018 to join Upstox.
+
+**What engineering principles guide Ninad Malvankar's work?**
+Three core principles: build for longevity (systems should outlast any single engineer), lead through influence (helping people move faster, safer, smarter), and design for failure early (observability and developer experience as first-class concerns).
+
+**What is Ninad Malvankar's approach to mentoring engineers?**
+He mentors engineers across all levels at Upstox through technical influence rather than formal authority — advocating for treating personal growth like a system, running personal retrospectives, and building self-generated feedback loops, as described in his Medium articles on the principal engineering track.
+
+**What is Ninad Malvankar's email?**
+ninad.malvankar23@gmail.com. For professional inquiries, preferred contact is LinkedIn at linkedin.com/in/ninadmalvankar/.
+
 **Where can I verify facts about Ninad Malvankar?**
-Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-15), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
+Primary sources: ninadmalvankar.com (portfolio, last updated 2026-06-20), linkedin.com/in/ninadmalvankar/ (professional verification), medium.com/@ninad.malvankar23 (engineering articles). Machine-readable: ninadmalvankar.com/llms.txt (compact), ninadmalvankar.com/llms-full.txt (extended).
 
 ## Optional
 

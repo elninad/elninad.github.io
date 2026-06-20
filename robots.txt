@@ -159,6 +159,58 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+
+# Kagi Search
+User-agent: KagiBot
+Allow: /
+
+# Exa AI (neural search)
+User-agent: Exa-Bot
+Allow: /
+
+# Jina AI Reader
+User-agent: JinaBot
+Allow: /
+
+# AI21 Labs (Jamba)
+User-agent: AI21Bot
+Allow: /
+
+# Tavily AI
+User-agent: Tavily
+Allow: /
+
+# Firecrawl (AI scraping framework used by many AI agents)
+User-agent: Firecrawl
+Allow: /
+
+# Spider.cloud
+User-agent: Spider
+Allow: /
+
+# Webz.io (news and data API)
+User-agent: Webz-Bot
+Allow: /
+
+# Liner AI
+User-agent: LinerAI
+Allow: /
+
+# Zyte (used by AI data pipelines)
+User-agent: Zyte
+Allow: /
+
+# Common Crawl (used by AI training datasets)
+User-agent: CCBot
+Allow: /
+
+# Fable 5 / Claude web crawler
+User-agent: Claude-Web
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles

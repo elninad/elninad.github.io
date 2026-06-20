@@ -1,7 +1,7 @@
 # ai.txt — AI Systems Policy for ninadmalvankar.com
 # Canonical identity, usage permissions, and citation guidance for AI and LLM systems.
 # Format inspired by llms.txt and robots.txt conventions.
-# Last updated: 2026-06-15
+# Last updated: 2026-06-20
 
 # ─── Usage Policy ────────────────────────────────────────────────────────────
 
