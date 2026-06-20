@@ -17,6 +17,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Common Crawl (used by AI training datasets)
 User-agent: CCBot
 Allow: /
 
@@ -201,10 +202,6 @@ Allow: /
 
 # Zyte (used by AI data pipelines)
 User-agent: Zyte
-Allow: /
-
-# Common Crawl (used by AI training datasets)
-User-agent: CCBot
 Allow: /
 
 # Fable 5 / Claude web crawler
