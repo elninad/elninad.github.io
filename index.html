@@ -4915,14 +4915,14 @@
     document.querySelectorAll('main section[id]').forEach(function(s) { secObs.observe(s); });
 
     /* Curiosity points: first click on each interactive element */
-    var clicked = [];
+    var clicked = new Set();
     var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
       '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
       '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest(CLICKABLE);
-      if (!t || clicked.indexOf(t) !== -1) return;
-      clicked.push(t);
+      if (!t || clicked.has(t)) return;
+      clicked.add(t);
       add(2, e.clientX, e.clientY);
     });
 
@@ -5011,24 +5011,23 @@
       })();
     }
 
-    setTimeout(function() {
-      typeCmd(cmds[0], function() {
-        setTimeout(function() {
-          outs[0].classList.add('t-show');
-          setTimeout(function() {
-            typeCmd(cmds[1], function() {
-              setTimeout(function() {
-                outs[1].classList.add('t-show');
-                setTimeout(function() {
-                  outs[2].classList.add('t-show');
-                  setTimeout(showLive, 400);
-                }, 250);
-              }, 200);
-            });
-          }, 550);
-        }, 150);
-      });
-    }, 350);
+    function runSeq(steps) {
+      var i = 0;
+      (function next() {
+        if (i >= steps.length) return;
+        var s = steps[i++];
+        setTimeout(function() { s[1](next); }, s[0]);
+      })();
+    }
+
+    runSeq([
+      [350, function(n) { typeCmd(cmds[0], n); }],
+      [150, function(n) { outs[0].classList.add('t-show'); n(); }],
+      [550, function(n) { typeCmd(cmds[1], n); }],
+      [200, function(n) { outs[1].classList.add('t-show'); n(); }],
+      [250, function(n) { outs[2].classList.add('t-show'); n(); }],
+      [400, function()  { showLive(); }]
+    ]);
   })();
 
   /* Interactive command palette */
@@ -5090,13 +5089,13 @@
       return '';
     }
 
-    var STOP_WORDS = ['the','and','what','who','whom','how','does','did','can','you','give','about','for','his','where','has','have','is','are','ninad','malvankar','malvankars'];
+    var STOP_WORDS = new Set(['the','and','what','who','whom','how','does','did','can','you','give','about','for','his','where','has','have','is','are','ninad','malvankar','malvankars']);
 
     function ask(question) {
       if (!question) return "usage: ask <question> :: example: ask where has ninad worked";
       var items = document.querySelectorAll('#faq details');
       var words = question.toLowerCase().split(/[^a-z0-9]+/).filter(function(w) {
-        return w.length > 2 && STOP_WORDS.indexOf(w) === -1;
+        return w.length > 2 && !STOP_WORDS.has(w);
       });
       var best = null, bestScore = 0;
       items.forEach(function(d) {
@@ -5173,6 +5172,7 @@
         syncTermCursor();
         if (!raw) return;
         history.push(raw);
+        if (history.length > 100) history.splice(0, 50);
         histIdx = history.length;
         termPrint('ninad@mumbai:~$ ' + raw, 't-echo');
         runCommand(raw);
@@ -5210,16 +5210,16 @@
     var loreHud = document.getElementById('loreHud');
     if (!items.length || !loreCount) return;
     var total = items.length;
-    var seen = [];
+    var seen = new Set();
     loreCount.textContent = 'LORE 0/' + total;
     items.forEach(function(d, i) {
       d.addEventListener('toggle', function() {
-        if (!d.open || seen.indexOf(i) !== -1) return;
-        seen.push(i);
-        loreCount.textContent = 'LORE ' + seen.length + '/' + total;
-        loreFill.style.width = (seen.length / total * 100) + '%';
+        if (!d.open || seen.has(i)) return;
+        seen.add(i);
+        loreCount.textContent = 'LORE ' + seen.size + '/' + total;
+        loreFill.style.width = (seen.size / total * 100) + '%';
         GAME.add(5);
-        if (seen.length === total) {
+        if (seen.size === total) {
           loreHud.classList.add('complete');
           loreCount.textContent = 'LORE COMPLETE :: ACHIEVEMENT UNLOCKED';
           termPrint('achievement unlocked: LORE MASTER :: all dialogue read', 't-sys');
