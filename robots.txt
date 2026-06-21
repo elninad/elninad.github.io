@@ -117,6 +117,17 @@ Allow: /
 User-agent: Brave-AI
 Allow: /
 
+# Microsoft Copilot / Edge AI
+User-agent: MsEdgeBot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
+# Gemini / Google AI Studio
+User-agent: Google-AI-DataCommons-Bot
+Allow: /
+
 # DataForSEO (used by AI research tools)
 User-agent: DataForSeoBot
 Allow: /
