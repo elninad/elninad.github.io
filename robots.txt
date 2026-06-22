@@ -159,6 +159,30 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# Vercel / Netlify OG image crawlers
+User-agent: Vercel-OGImageBot
+Allow: /
+
+# Notion link preview
+User-agent: notion-link-preview
+Allow: /
+
+# Warp AI / Warp terminal
+User-agent: WarpBot
+Allow: /
+
+# Hugging Face crawlers
+User-agent: HuggingFaceBot
+Allow: /
+
+# Scale AI / annotation crawlers
+User-agent: ScaleBot
+Allow: /
+
+# Apify / AI web scraping tools
+User-agent: ApifyBot
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
