@@ -133,6 +133,14 @@ Allow: /
 User-agent: LinkedInBot
 Allow: /
 
+# DeepSeek AI
+User-agent: DeepSeek-Bot
+Allow: /
+
+# Kagi Search
+User-agent: Kagi-Bot
+Allow: /
+
 # Qwen / Alibaba AI
 User-agent: Qwen
 Allow: /
