@@ -4487,16 +4487,13 @@
     });
   })();
 
-  /* Parallax hero background on scroll */
+  /* Parallax + sticky nav — one listener, one scrollY read per frame */
   const parallaxBg = document.getElementById('parallaxBg');
-  window.addEventListener('scroll', function() {
-    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
-  }, { passive: true });
-
-  /* Sticky nav */
   const navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    var y = window.scrollY;
+    if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (y * 0.35) + 'px)';
+    navbar.classList.toggle('scrolled', y > 40);
   }, { passive: true });
 
   /* Shared helper: instance a sprite from the pixel sprite sheet */
@@ -5042,24 +5039,24 @@
       })();
     }
 
-    setTimeout(function() {
-      typeCmd(cmds[0], function() {
-        setTimeout(function() {
-          outs[0].classList.add('t-show');
-          setTimeout(function() {
-            typeCmd(cmds[1], function() {
-              setTimeout(function() {
-                outs[1].classList.add('t-show');
-                setTimeout(function() {
-                  outs[2].classList.add('t-show');
-                  setTimeout(showLive, 400);
-                }, 250);
-              }, 200);
-            });
-          }, 550);
-        }, 150);
-      });
-    }, 350);
+    /* Step-runner: eliminates the nested setTimeout pyramid.
+       Each step calls next() when ready — delays via setTimeout, typeCmd via its done callback. */
+    (function() {
+      var step = 0;
+      var steps = [
+        function(n) { setTimeout(n, 350); },
+        function(n) { typeCmd(cmds[0], n); },
+        function(n) { setTimeout(n, 150); },
+        function(n) { outs[0].classList.add('t-show'); setTimeout(n, 550); },
+        function(n) { typeCmd(cmds[1], n); },
+        function(n) { setTimeout(n, 200); },
+        function(n) { outs[1].classList.add('t-show'); setTimeout(n, 250); },
+        function(n) { outs[2].classList.add('t-show'); setTimeout(n, 400); },
+        function()  { showLive(); }
+      ];
+      function next() { steps[step++](next); }
+      next();
+    })();
   })();
 
   /* Interactive command palette */
@@ -5178,7 +5175,7 @@
       }
     };
 
-    var history = [], histIdx = 0, seenCmds = {};
+    var cmdHistory = [], histIdx = 0, seenCmds = {};
 
     function runCommand(raw) {
       var parts = raw.split(/\s+/);
@@ -5203,20 +5200,20 @@
         termInput.value = '';
         syncTermCursor();
         if (!raw) return;
-        history.push(raw);
-        histIdx = history.length;
+        cmdHistory.push(raw);
+        histIdx = cmdHistory.length;
         termPrint('ninad@mumbai:~$ ' + raw, 't-echo');
         runCommand(raw);
       } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        if (histIdx > 0) termInput.value = history[--histIdx];
+        if (histIdx > 0) termInput.value = cmdHistory[--histIdx];
         syncTermCursor();
       } else if (e.key === 'ArrowDown') {
         e.preventDefault();
-        if (histIdx < history.length - 1) {
-          termInput.value = history[++histIdx];
+        if (histIdx < cmdHistory.length - 1) {
+          termInput.value = cmdHistory[++histIdx];
         } else {
-          histIdx = history.length;
+          histIdx = cmdHistory.length;
           termInput.value = '';
         }
         syncTermCursor();
@@ -5241,16 +5238,16 @@
     var loreHud = document.getElementById('loreHud');
     if (!items.length || !loreCount) return;
     var total = items.length;
-    var seen = [];
+    var seen = new Set();
     loreCount.textContent = 'LORE 0/' + total;
     items.forEach(function(d, i) {
       d.addEventListener('toggle', function() {
-        if (!d.open || seen.indexOf(i) !== -1) return;
-        seen.push(i);
-        loreCount.textContent = 'LORE ' + seen.length + '/' + total;
-        loreFill.style.width = (seen.length / total * 100) + '%';
+        if (!d.open || seen.has(i)) return;
+        seen.add(i);
+        loreCount.textContent = 'LORE ' + seen.size + '/' + total;
+        loreFill.style.width = (seen.size / total * 100) + '%';
         GAME.add(5);
-        if (seen.length === total) {
+        if (seen.size === total) {
           loreHud.classList.add('complete');
           loreCount.textContent = 'LORE COMPLETE :: ACHIEVEMENT UNLOCKED';
           termPrint('achievement unlocked: LORE MASTER :: all dialogue read', 't-sys');
@@ -5263,6 +5260,7 @@
   /* Konami code: dimension shift — the rift universe becomes the main theme */
   (function() {
     var SEQ = ['arrowup','arrowup','arrowdown','arrowdown','arrowleft','arrowright','arrowleft','arrowright','b','a'];
+    var SEQ_STR = SEQ.join(',');
     var buf = [];
     var busy = false;
 
@@ -5341,7 +5339,7 @@
       if (k === 'shift' || k === 'control' || k === 'alt' || k === 'meta' || k === 'capslock') return;
       buf.push(k);
       if (buf.length > SEQ.length) buf.shift();
-      if (buf.join(',') === SEQ.join(',')) dimensionShift();
+      if (buf.join(',') === SEQ_STR) dimensionShift();
     });
   })();
 </script>
