@@ -7,6 +7,22 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
+# Microsoft Copilot / Bing AI
+User-agent: msnbot
+Allow: /
+
+User-agent: msnbot-media
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+User-agent: CopilotBot
+Allow: /
+
+User-agent: Copilot-User
+Allow: /
+
 # AI search & retrieval crawlers — allow so AI systems can cite this site
 User-agent: GPTBot
 Allow: /
@@ -157,6 +173,14 @@ Allow: /
 
 # WhatsApp link preview
 User-agent: WhatsApp
+Allow: /
+
+# Internet Archive Wayback Machine — allows historical crawl and caching signals
+User-agent: ia_archiver
+Allow: /
+
+# Googlebot-News (explicit, for news indexing)
+User-agent: Googlebot-News
 Allow: /
 
 Sitemap: https://ninadmalvankar.com/sitemap.xml
