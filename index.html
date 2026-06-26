@@ -3074,7 +3074,7 @@
       </div>
 
       <div class="term-live" id="termLive" hidden>
-        <p class="t-hint" aria-hidden="true">type 'help' for commands :: secret code accepted</p>
+        <p class="t-hint" aria-hidden="true">type 'help' for commands :: try the konami code</p>
         <div id="termOutput" role="log" aria-live="polite"></div>
         <p class="t-line t-input-row">
           <span class="t-prompt" aria-hidden="true">ninad@mumbai:~$</span>
@@ -4425,13 +4425,13 @@
   })();
 
   /* Parallax hero background on scroll */
-  const parallaxBg = document.getElementById('parallaxBg');
+  var parallaxBg = document.getElementById('parallaxBg');
   window.addEventListener('scroll', function() {
     if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
   }, { passive: true });
 
   /* Sticky nav */
-  const navbar = document.getElementById('navbar');
+  var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
     navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
@@ -4772,16 +4772,17 @@
       hud.classList.add('bump');
     }
 
+    function flushScoreNow() {
+      displayed = score;
+      syncLevel();
+      updateText();
+    }
+
     /* Earn pipeline: coin spawns at the earn spot -> ghost eats it (chomp + "+N")
        -> a spark carries it into the HUD -> HUD bumps and the score rolls up */
     function add(n, x, y) {
       score += n;
-      if (rm) {
-        displayed = score;
-        syncLevel();
-        updateText();
-        return;
-      }
+      if (rm) { flushScoreNow(); return; }
       var g = ghostXY();
       if (x === undefined) {
         x = g[0] + (Math.random() * 60 - 30);
@@ -4811,12 +4812,7 @@
        wobbles, a big +N XP banner pops, then a spark volley fills the HUD */
     function feast(n, x, y) {
       score += n;
-      if (rm) {
-        displayed = score;
-        syncLevel();
-        updateText();
-        return;
-      }
+      if (rm) { flushScoreNow(); return; }
       var coins = Math.max(5, Math.min(12, Math.round(n / 900) + 4));
       var landed = 0;
       for (var i = 0; i < coins; i++) {
@@ -4883,14 +4879,14 @@
     document.querySelectorAll('main section[id]').forEach(function(s) { secObs.observe(s); });
 
     /* Curiosity points: first click on each interactive element */
-    var clicked = [];
+    var clicked = new WeakSet();
     var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
       '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
       '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest(CLICKABLE);
-      if (!t || clicked.indexOf(t) !== -1) return;
-      clicked.push(t);
+      if (!t || clicked.has(t)) return;
+      clicked.add(t);
       add(2, e.clientX, e.clientY);
     });
 
@@ -5178,16 +5174,17 @@
     var loreHud = document.getElementById('loreHud');
     if (!items.length || !loreCount) return;
     var total = items.length;
-    var seen = [];
+    var seen = {}, seenCount = 0;
     loreCount.textContent = 'LORE 0/' + total;
     items.forEach(function(d, i) {
       d.addEventListener('toggle', function() {
-        if (!d.open || seen.indexOf(i) !== -1) return;
-        seen.push(i);
-        loreCount.textContent = 'LORE ' + seen.length + '/' + total;
-        loreFill.style.width = (seen.length / total * 100) + '%';
+        if (!d.open || seen[i]) return;
+        seen[i] = true;
+        seenCount++;
+        loreCount.textContent = 'LORE ' + seenCount + '/' + total;
+        loreFill.style.width = (seenCount / total * 100) + '%';
         GAME.add(5);
-        if (seen.length === total) {
+        if (seenCount === total) {
           loreHud.classList.add('complete');
           loreCount.textContent = 'LORE COMPLETE :: ACHIEVEMENT UNLOCKED';
           termPrint('achievement unlocked: LORE MASTER :: all dialogue read', 't-sys');
