@@ -137,6 +137,54 @@ Allow: /
 User-agent: Qwen
 Allow: /
 
+# DeepSeek AI
+User-agent: DeepSeek-User
+Allow: /
+
+User-agent: DeepSeekBot
+Allow: /
+
+# Kagi AI search
+User-agent: Kagi-Search
+Allow: /
+
+User-agent: KagiBot
+Allow: /
+
+# Sonar (Perplexity search assistant)
+User-agent: Sonar
+Allow: /
+
+# Microsoft Copilot / Bing AI
+User-agent: BingPreview
+Allow: /
+
+User-agent: MicrosoftPreview
+Allow: /
+
+# Groq AI
+User-agent: Groq
+Allow: /
+
+# You.com AI
+User-agent: YouBot
+Allow: /
+
+User-agent: You-Bot
+Allow: /
+
+# Poe / Quora AI
+User-agent: PoeBot
+Allow: /
+
+# Baidu (for Asian market discoverability)
+User-agent: Baiduspider
+Allow: /
+
+# Naver (Korea)
+User-agent: Yeti
+Allow: /
+
 # WriteSonic AI
 User-agent: WriteSonic
 Allow: /
