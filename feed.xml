@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"
   xmlns:atom="http://www.w3.org/2005/Atom"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -6,74 +6,75 @@
   <channel>
     <title>Ninad Malvankar — Engineering Articles</title>
     <link>https://ninadmalvankar.com/</link>
-    <description>Engineering leadership, system design, and architecture insights by Ninad Malvankar, Architect at Upstox. AWS Certified cloud architect with 12+ years in FinTech platform engineering.</description>
+    <description>Engineering leadership, cloud architecture, system design, and principal-engineer-track articles by Ninad Malvankar, Architect at Upstox, India's leading fintech platform. Based in Mumbai, India.</description>
     <language>en-us</language>
-    <atom:link href="https://ninadmalvankar.com/feed.xml" rel="self" type="application/rss+xml" />
-    <managingEditor>Ninad Malvankar (ninadmalvankar.com)</managingEditor>
-    <webMaster>Ninad Malvankar (ninadmalvankar.com)</webMaster>
-    <lastBuildDate>Sun, 25 May 2026 00:00:00 +0530</lastBuildDate>
-    <pubDate>Sun, 25 May 2026 00:00:00 +0530</pubDate>
+    <copyright>© 2026 Ninad Malvankar</copyright>
+    <managingEditor>ninad.malvankar23@gmail.com (Ninad Malvankar)</managingEditor>
+    <webMaster>ninad.malvankar23@gmail.com (Ninad Malvankar)</webMaster>
+    <lastBuildDate>Fri, 27 Jun 2026 00:00:00 +0530</lastBuildDate>
+    <pubDate>Fri, 27 Jun 2026 00:00:00 +0530</pubDate>
     <ttl>10080</ttl>
     <image>
-      <url>https://ninadmalvankar.com/og-image.svg</url>
+      <url>https://ninadmalvankar.com/og-image.png</url>
       <title>Ninad Malvankar — Engineering Articles</title>
       <link>https://ninadmalvankar.com/</link>
+      <width>144</width>
+      <height>144</height>
     </image>
-    <category>Engineering Leadership</category>
-    <category>Cloud Architecture</category>
-    <category>FinTech Engineering</category>
-    <category>System Design</category>
+    <atom:link href="https://ninadmalvankar.com/feed.xml" rel="self" type="application/rss+xml" />
+    <dc:creator>Ninad Malvankar</dc:creator>
 
     <item>
-      <title>How a Bad Webpack Config Can Silently Destroy Frontend Performance</title>
-      <link>https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f</link>
-      <description>Misconfigured bundlers don't always throw errors — sometimes they just make your app slower in ways that are hard to detect. A deep dive into the subtle ways webpack config mistakes can silently kill frontend performance.</description>
-      <content:encoded><![CDATA[<p>Misconfigured bundlers don't always throw errors — sometimes they just make your app slower in ways that are hard to detect. A deep dive into the subtle ways webpack config mistakes can silently kill frontend performance.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f">Medium</a>.</p>]]></content:encoded>
-      <pubDate>Thu, 01 Jan 2025 00:00:00 +0530</pubDate>
-      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f</guid>
+      <title>The Role of a Principal Engineer — Leadership Without Authority</title>
+      <link>https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf</link>
+      <description>How Principal Engineers lead through influence, expertise, and trust rather than formal authority — driving clarity and moving teams faster, safer, and smarter. By Ninad Malvankar, Architect at Upstox.</description>
+      <content:encoded><![CDATA[<p>How Principal Engineers lead through influence, expertise, and trust rather than formal authority — driving clarity and moving teams faster, safer, and smarter.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf">Medium</a>.</p><p>By <a href="https://ninadmalvankar.com/">Ninad Malvankar</a>, Architect at Upstox.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Sep 2024 09:00:00 +0530</pubDate>
+      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf</guid>
       <dc:creator>Ninad Malvankar</dc:creator>
-      <category>Frontend Engineering</category>
-      <category>Webpack</category>
-      <category>Performance Optimization</category>
-    </item>
-
-    <item>
-      <title>Spring Security Meets Java 21: A Closer Look at Firewall Controls</title>
-      <link>https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897</link>
-      <description>Many backend engineers upgrade to the latest Java and Spring versions for performance gains — but overlook deeper security implications. A closer look at how Spring Security's firewall controls behave in a Java 21 environment.</description>
-      <content:encoded><![CDATA[<p>Many backend engineers upgrade to the latest Java and Spring versions for performance gains — but overlook deeper security implications. A closer look at how Spring Security's firewall controls behave in a Java 21 environment.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897">Medium</a>.</p>]]></content:encoded>
-      <pubDate>Fri, 01 Nov 2024 00:00:00 +0530</pubDate>
-      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897</guid>
-      <dc:creator>Ninad Malvankar</dc:creator>
-      <category>Backend Engineering</category>
-      <category>Spring Security</category>
-      <category>Java</category>
+      <category>Engineering Leadership</category>
+      <category>Principal Engineer</category>
+      <category>Technical Influence</category>
     </item>
 
     <item>
       <title>What Happens When You Outgrow Mentorship? Lessons from a Principal Engineer</title>
       <link>https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7</link>
-      <description>Outgrowing formal mentorship can feel isolating. Treating yourself like a system — running personal retrospectives each quarter and building your own feedback loop — is how growth continues at the principal level.</description>
-      <content:encoded><![CDATA[<p>Outgrowing formal mentorship can feel isolating. Treating yourself like a system — running personal retrospectives each quarter and building your own feedback loop — is how growth continues at the principal level.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7">Medium</a>.</p>]]></content:encoded>
-      <pubDate>Tue, 01 Oct 2024 00:00:00 +0530</pubDate>
+      <description>How to continue growing as a principal engineer after formal mentorship ends — personal retrospectives, self-built feedback loops, and treating yourself like a system. By Ninad Malvankar, Architect at Upstox.</description>
+      <content:encoded><![CDATA[<p>How to continue growing as a principal engineer after formal mentorship ends — personal retrospectives, self-built feedback loops, and treating yourself like a system.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7">Medium</a>.</p><p>By <a href="https://ninadmalvankar.com/">Ninad Malvankar</a>, Architect at Upstox.</p>]]></content:encoded>
+      <pubDate>Tue, 01 Oct 2024 09:00:00 +0530</pubDate>
       <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7</guid>
       <dc:creator>Ninad Malvankar</dc:creator>
       <category>Engineering Leadership</category>
-      <category>Principal Engineer</category>
       <category>Career Growth</category>
+      <category>Mentorship</category>
+      <category>Staff Engineering</category>
     </item>
 
     <item>
-      <title>The Role of a Principal Engineer — Leadership Without Authority</title>
-      <link>https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf</link>
-      <description>Embracing ambiguity, driving clarity, and working through influence — not authority. It's not about how much code you write, it's about how many people you help move faster, safer, and smarter.</description>
-      <content:encoded><![CDATA[<p>Embracing ambiguity, driving clarity, and working through influence — not authority. It's not about how much code you write, it's about how many people you help move faster, safer, and smarter.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf">Medium</a>.</p>]]></content:encoded>
-      <pubDate>Sun, 01 Sep 2024 00:00:00 +0530</pubDate>
-      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf</guid>
+      <title>Spring Security Meets Java 21: A Closer Look at Firewall Controls</title>
+      <link>https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897</link>
+      <description>Security implications backend engineers overlook when upgrading to Java 21 with Spring Security firewall controls. By Ninad Malvankar, Architect at Upstox.</description>
+      <content:encoded><![CDATA[<p>Security implications backend engineers overlook when upgrading to Java 21 with Spring Security firewall controls.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897">Medium</a>.</p><p>By <a href="https://ninadmalvankar.com/">Ninad Malvankar</a>, Architect at Upstox.</p>]]></content:encoded>
+      <pubDate>Fri, 01 Nov 2024 09:00:00 +0530</pubDate>
+      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897</guid>
       <dc:creator>Ninad Malvankar</dc:creator>
-      <category>Engineering Leadership</category>
-      <category>Principal Engineer</category>
-      <category>Technical Leadership</category>
+      <category>Backend Security</category>
+      <category>Java 21</category>
+      <category>Spring Security</category>
+    </item>
+
+    <item>
+      <title>How a Bad Webpack Config Can Silently Destroy Frontend Performance</title>
+      <link>https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f</link>
+      <description>Detecting and fixing silent frontend performance degradation from misconfigured webpack bundles. By Ninad Malvankar, Architect at Upstox.</description>
+      <content:encoded><![CDATA[<p>Detecting and fixing silent frontend performance degradation from misconfigured webpack bundles.</p><p>Read the full article on <a href="https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f">Medium</a>.</p><p>By <a href="https://ninadmalvankar.com/">Ninad Malvankar</a>, Architect at Upstox.</p>]]></content:encoded>
+      <pubDate>Sun, 01 Dec 2024 09:00:00 +0530</pubDate>
+      <guid isPermaLink="true">https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f</guid>
+      <dc:creator>Ninad Malvankar</dc:creator>
+      <category>Frontend Performance</category>
+      <category>Webpack</category>
+      <category>Build Tooling</category>
     </item>
 
   </channel>
