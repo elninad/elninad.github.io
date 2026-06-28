@@ -4399,20 +4399,22 @@
   })();
 
   /* Parallax hero background on scroll */
-  const parallaxBg = document.getElementById('parallaxBg');
+  var parallaxBg = document.getElementById('parallaxBg');
   window.addEventListener('scroll', function() {
     if (parallaxBg) parallaxBg.style.transform = 'translateY(' + (window.scrollY * 0.35) + 'px)';
   }, { passive: true });
 
   /* Sticky nav */
-  const navbar = document.getElementById('navbar');
+  var navbar = document.getElementById('navbar');
   window.addEventListener('scroll', function() {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
+    if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 40);
   }, { passive: true });
 
-  /* Shared helper: instance a sprite from the pixel sprite sheet */
+  /* Shared helpers */
+  var SVG_NS = 'http://www.w3.org/2000/svg';
+  /* Defer fn to the next paint frame so CSS transitions trigger on freshly-appended nodes */
+  function nextPaint(fn) { requestAnimationFrame(function() { requestAnimationFrame(fn); }); }
   function spriteSvg(id) {
-    var SVG_NS = 'http://www.w3.org/2000/svg';
     var svg = document.createElementNS(SVG_NS, 'svg');
     var use = document.createElementNS(SVG_NS, 'use');
     use.setAttribute('href', id);
@@ -4713,11 +4715,9 @@
       c.style.left = x + 'px';
       c.style.top = y + 'px';
       document.body.appendChild(c);
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          var g = ghostXY();
-          c.style.transform = 'translate(' + (g[0] - x) + 'px,' + (g[1] - y) + 'px) scale(.5)';
-        });
+      nextPaint(function() {
+        var g = ghostXY();
+        c.style.transform = 'translate(' + (g[0] - x) + 'px,' + (g[1] - y) + 'px) scale(.5)';
       });
       setTimeout(function() { c.remove(); done(); }, 470);
     }
@@ -4731,11 +4731,9 @@
       s.style.left = g[0] + 'px';
       s.style.top = g[1] + 'px';
       document.body.appendChild(s);
-      requestAnimationFrame(function() {
-        requestAnimationFrame(function() {
-          s.style.transform = 'translate(' + (r.left + 18 - g[0]) + 'px,' + (r.top + r.height / 2 - g[1]) + 'px) scale(.6)';
-          s.style.opacity = '.2';
-        });
+      nextPaint(function() {
+        s.style.transform = 'translate(' + (r.left + 18 - g[0]) + 'px,' + (r.top + r.height / 2 - g[1]) + 'px) scale(.6)';
+        s.style.opacity = '.2';
       });
       setTimeout(function() { s.remove(); done(); }, 430);
     }
@@ -4857,14 +4855,14 @@
     document.querySelectorAll('main section[id]').forEach(function(s) { secObs.observe(s); });
 
     /* Curiosity points: first click on each interactive element */
-    var clicked = [];
+    var clicked = new Set();
     var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
       '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
       '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest(CLICKABLE);
-      if (!t || clicked.indexOf(t) !== -1) return;
-      clicked.push(t);
+      if (!t || clicked.has(t)) return;
+      clicked.add(t);
       add(2, e.clientX, e.clientY);
     });
 
@@ -4953,24 +4951,20 @@
       })();
     }
 
-    setTimeout(function() {
-      typeCmd(cmds[0], function() {
-        setTimeout(function() {
-          outs[0].classList.add('t-show');
-          setTimeout(function() {
-            typeCmd(cmds[1], function() {
-              setTimeout(function() {
-                outs[1].classList.add('t-show');
-                setTimeout(function() {
-                  outs[2].classList.add('t-show');
-                  setTimeout(showLive, 400);
-                }, 250);
-              }, 200);
-            });
-          }, 550);
-        }, 150);
-      });
-    }, 350);
+    /* Step sequencer: each step receives `next` and must call it when done */
+    function seq(steps) {
+      var i = 0;
+      function next() { if (i < steps.length) steps[i++](next); }
+      next();
+    }
+    seq([
+      function(next) { setTimeout(function() { typeCmd(cmds[0], next); }, 350); },
+      function(next) { setTimeout(function() { outs[0].classList.add('t-show'); next(); }, 150); },
+      function(next) { setTimeout(function() { typeCmd(cmds[1], next); }, 550); },
+      function(next) { setTimeout(function() { outs[1].classList.add('t-show'); next(); }, 200); },
+      function(next) { setTimeout(function() { outs[2].classList.add('t-show'); next(); }, 250); },
+      function()     { setTimeout(showLive, 400); }
+    ]);
   })();
 
   /* Interactive command palette */
@@ -5032,13 +5026,13 @@
       return '';
     }
 
-    var STOP_WORDS = ['the','and','what','who','whom','how','does','did','can','you','give','about','for','his','where','has','have','is','are','ninad','malvankar','malvankars'];
+    var STOP_WORDS = new Set(['the','and','what','who','whom','how','does','did','can','you','give','about','for','his','where','has','have','is','are','ninad','malvankar','malvankars']);
 
     function ask(question) {
       if (!question) return "usage: ask <question> :: example: ask where has ninad worked";
       var items = document.querySelectorAll('#faq details');
       var words = question.toLowerCase().split(/[^a-z0-9]+/).filter(function(w) {
-        return w.length > 2 && STOP_WORDS.indexOf(w) === -1;
+        return w.length > 2 && !STOP_WORDS.has(w);
       });
       var best = null, bestScore = 0;
       items.forEach(function(d) {
@@ -5089,7 +5083,7 @@
       }
     };
 
-    var history = [], histIdx = 0, seenCmds = {};
+    var history = [], histIdx = 0, seenCmds = new Set();
 
     function runCommand(raw) {
       var parts = raw.split(/\s+/);
@@ -5100,8 +5094,8 @@
         termPrint("command not found: " + cmd + " :: try 'help'", 't-sys');
         return;
       }
-      if (!seenCmds[cmd]) {
-        seenCmds[cmd] = true;
+      if (!seenCmds.has(cmd)) {
+        seenCmds.add(cmd);
         GAME.add(10);
       }
       var result = (typeof entry === 'function') ? entry(arg) : entry;
@@ -5197,14 +5191,12 @@
         c.appendChild(spriteSvg(i % 2 ? '#px-star' : '#px-coin'));
         document.body.appendChild(c);
         (function(node) {
-          requestAnimationFrame(function() {
-            requestAnimationFrame(function() {
-              var dx = (Math.random() - .5) * 90;
-              var dy = (Math.random() - .5) * 90;
-              var rot = (Math.random() - .5) * 720;
-              node.style.transform = 'translate(' + dx + 'vw,' + dy + 'vh) rotate(' + rot + 'deg)';
-              node.style.opacity = '0';
-            });
+          nextPaint(function() {
+            var dx = (Math.random() - .5) * 90;
+            var dy = (Math.random() - .5) * 90;
+            var rot = (Math.random() - .5) * 720;
+            node.style.transform = 'translate(' + dx + 'vw,' + dy + 'vh) rotate(' + rot + 'deg)';
+            node.style.opacity = '0';
           });
           node.addEventListener('transitionend', function() { node.remove(); }, { once: true });
           setTimeout(function() { node.remove(); }, 2000);
