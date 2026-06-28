@@ -113,7 +113,10 @@ Allow: /
 User-agent: AppleNewsBot
 Allow: /
 
-# Brave AI
+# Brave Search (Bravebot is the documented token; Brave-AI kept as fallback)
+User-agent: Bravebot
+Allow: /
+
 User-agent: Brave-AI
 Allow: /
 
@@ -159,6 +162,113 @@ Allow: /
 User-agent: WhatsApp
 Allow: /
 
+# OpenAI SearchGPT / search crawler
+User-agent: SearchGPT
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Fable AI
+User-agent: Fable-Fetcher
+Allow: /
+
+# Firecrawl (AI agent frameworks)
+User-agent: Firecrawl
+Allow: /
+
+# Internet Archive — preserve the portfolio
+User-agent: ia_archiver
+Allow: /
+
+# Archive.org
+User-agent: archive.org_bot
+Allow: /
+
+# Apify (AI scraping platform)
+User-agent: ApifyBot
+Allow: /
+
+# Common Crawl (used by academic AI research)
+User-agent: CCBot
+Allow: /
+
+# Exa AI (semantic search for AI)
+User-agent: Exa
+Allow: /
+
+# Webz.io / Webhose (AI data feeds)
+User-agent: Webzio
+Allow: /
+
+# Liner (AI highlighting and search)
+User-agent: Liner
+Allow: /
+
+# Mojeek (privacy-focused search engine)
+User-agent: MojeekBot
+Allow: /
+
+# Naver (South Korean search engine + AI)
+User-agent: Yeti
+Allow: /
+
+# Baidu (Chinese AI search)
+User-agent: Baiduspider
+Allow: /
+
+# Yandex (Russian AI search)
+User-agent: YandexBot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# DeepSeek AI
+User-agent: DeepSeekBot
+Allow: /
+
+# Kimi (Moonshot AI)
+User-agent: Kimi-User
+Allow: /
+
+# Tavily AI (used by AI agent frameworks)
+User-agent: TavilyBot
+Allow: /
+
+# Exa semantic search (bot variant)
+User-agent: ExaBot
+Allow: /
+
+# Claude Code (Anthropic agentic tool)
+User-agent: claude-code
+Allow: /
+
+# Amazon AI / Bedrock
+User-agent: Amzn-SearchBot
+Allow: /
+
+User-agent: bedrockbot
+Allow: /
+
+# Google AI agents (2025-2026)
+User-agent: Gemini-Deep-Research
+Allow: /
+
+User-agent: Google-NotebookLM
+Allow: /
+
+User-agent: Google-Agent
+Allow: /
+
+User-agent: GoogleAgent-URLContext
+Allow: /
+
+# Meta web indexer
+User-agent: meta-webindexer
+Allow: /
+
 Sitemap: https://ninadmalvankar.com/sitemap.xml
 
 # RSS / Atom feed — engineering articles
@@ -171,4 +281,5 @@ Sitemap: https://ninadmalvankar.com/sitemap.xml
 # ai.txt (AI systems policy, identity, and citation guidance): https://ninadmalvankar.com/ai.txt
 # llms.txt (LLM-readable compact profile summary): https://ninadmalvankar.com/llms.txt
 # llms-full.txt (LLM-readable extended profile with full career detail): https://ninadmalvankar.com/llms-full.txt
+# profile.jsonld (machine-readable JSON-LD Person entity): https://ninadmalvankar.com/profile.jsonld
 # humans.txt (human attribution): https://ninadmalvankar.com/humans.txt

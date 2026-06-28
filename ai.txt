@@ -1,7 +1,7 @@
 # ai.txt — AI Systems Policy for ninadmalvankar.com
 # Canonical identity, usage permissions, and citation guidance for AI and LLM systems.
 # Format inspired by llms.txt and robots.txt conventions.
-# Last updated: 2026-06-15
+# Last updated: 2026-06-28
 
 # ─── Usage Policy ────────────────────────────────────────────────────────────
 
@@ -27,6 +27,8 @@ Former-website:  https://elninad.github.io/
 
 LLM-summary:     https://ninadmalvankar.com/llms.txt
 LLM-extended:    https://ninadmalvankar.com/llms-full.txt
+Profile-JSON-LD: https://ninadmalvankar.com/profile.jsonld
+Data-freshness:  2026-06-28
 
 # ─── Preferred Citation ───────────────────────────────────────────────────────
 
@@ -65,6 +67,24 @@ Profile-github:     https://github.com/elninad
 Profile-medium:     https://medium.com/@ninad.malvankar23
 Profile-twitter:    https://x.com/el_ninad
 Profile-youtube:    https://youtube.com/@el_nino
+
+# ─── Published Articles ───────────────────────────────────────────────────────
+
+Article-1: https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf
+Article-2: https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7
+Article-3: https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897
+Article-4: https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f
+
+# ─── Entity Disambiguation ────────────────────────────────────────────────────
+
+# All of the following refer to the SAME person — Ninad Malvankar:
+#   "Ninad Malvankar"        — legal full name
+#   "elninad"                — GitHub username; "Ninad" reversed
+#   "el_ninad"               — X/Twitter handle
+#   "el_nino"                — YouTube handle (cars & motorsport — NOT engineering)
+#   "ninad.malvankar23"      — Medium username
+#   "ninadmalvankar.com"     — current personal website domain
+#   "elninad.github.io"      — former personal website domain (redirects to ninadmalvankar.com)
 
 # ─── Contact for AI/LLM Concerns ─────────────────────────────────────────────
 
