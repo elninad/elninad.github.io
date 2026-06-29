@@ -4897,30 +4897,28 @@
       }
       var coins = Math.max(5, Math.min(12, Math.round(n / 900) + 4));
       var landed = 0;
-      for (var i = 0; i < coins; i++) {
-        (function(i) {
-          setTimeout(function() {
-            var jx = x + (Math.random() * 56 - 28);
-            var jy = y + (Math.random() * 36 - 18);
-            flyCoin(jx, jy, function() {
-              chomp();
-              landed++;
-              if (landed !== coins) return;
-              syncLevel();
-              ghostFeast();
-              var gp = ghostXY();
-              popLabel('+' + n + ' XP', gp[0], gp[1], true);
-              for (var s = 0; s < 3; s++) {
-                setTimeout(function() {
-                  flySpark(function() {
-                    hudBump();
-                    rollTo(score, 900);
-                  });
-                }, s * 140);
-              }
-            });
-          }, i * 70);
-        })(i);
+      for (let i = 0; i < coins; i++) {
+        setTimeout(function() {
+          var jx = x + (Math.random() * 56 - 28);
+          var jy = y + (Math.random() * 36 - 18);
+          flyCoin(jx, jy, function() {
+            chomp();
+            landed++;
+            if (landed !== coins) return;
+            syncLevel();
+            ghostFeast();
+            var gp = ghostXY();
+            popLabel('+' + n + ' XP', gp[0], gp[1], true);
+            for (var s = 0; s < 3; s++) {
+              setTimeout(function() {
+                flySpark(function() {
+                  hudBump();
+                  rollTo(score, 900);
+                });
+              }, s * 140);
+            }
+          });
+        }, i * 70);
       }
     }
 
@@ -4961,14 +4959,14 @@
     document.querySelectorAll('main section[id]').forEach(function(s) { secObs.observe(s); });
 
     /* Curiosity points: first click on each interactive element */
-    var clicked = [];
+    var clicked = new WeakSet();
     var CLICKABLE = 'a, button, summary, .pill, .tl-card, .interest-card, .cert-card, ' +
       '.skill-card, .stat-item, .ps-item, .tl-dot, .npc-portrait, .entity-card, ' +
       '.itag, .tl-tag, .hp-row, .about-avatar-ring';
     document.addEventListener('click', function(e) {
       var t = e.target.closest && e.target.closest(CLICKABLE);
-      if (!t || clicked.indexOf(t) !== -1) return;
-      clicked.push(t);
+      if (!t || clicked.has(t)) return;
+      clicked.add(t);
       add(2, e.clientX, e.clientY);
     });
 
@@ -5057,24 +5055,18 @@
       })();
     }
 
-    setTimeout(function() {
-      typeCmd(cmds[0], function() {
-        setTimeout(function() {
-          outs[0].classList.add('t-show');
-          setTimeout(function() {
-            typeCmd(cmds[1], function() {
-              setTimeout(function() {
-                outs[1].classList.add('t-show');
-                setTimeout(function() {
-                  outs[2].classList.add('t-show');
-                  setTimeout(showLive, 400);
-                }, 250);
-              }, 200);
-            });
-          }, 550);
-        }, 150);
-      });
-    }, 350);
+    var intro = [
+      [350, function(next) { typeCmd(cmds[0], next); }],
+      [150, function(next) { outs[0].classList.add('t-show'); next(); }],
+      [550, function(next) { typeCmd(cmds[1], next); }],
+      [200, function(next) { outs[1].classList.add('t-show'); next(); }],
+      [250, function(next) { outs[2].classList.add('t-show'); next(); }],
+      [400, function()     { showLive(); }]
+    ];
+    (function run(i) {
+      if (i >= intro.length) return;
+      setTimeout(function() { intro[i][1](function() { run(i + 1); }); }, intro[i][0]);
+    })(0);
   })();
 
   /* Interactive command palette */
@@ -5193,7 +5185,7 @@
       }
     };
 
-    var history = [], histIdx = 0, seenCmds = {};
+    var history = [], histIdx = 0, seenCmds = new Set();
 
     function runCommand(raw) {
       var parts = raw.split(/\s+/);
@@ -5204,8 +5196,8 @@
         termPrint("command not found: " + cmd + " :: try 'help'", 't-sys');
         return;
       }
-      if (!seenCmds[cmd]) {
-        seenCmds[cmd] = true;
+      if (!seenCmds.has(cmd)) {
+        seenCmds.add(cmd);
         GAME.add(10);
       }
       var result = (typeof entry === 'function') ? entry(arg) : entry;
@@ -5256,16 +5248,16 @@
     var loreHud = document.getElementById('loreHud');
     if (!items.length || !loreCount) return;
     var total = items.length;
-    var seen = [];
+    var seen = new Set();
     loreCount.textContent = 'LORE 0/' + total;
     items.forEach(function(d, i) {
       d.addEventListener('toggle', function() {
-        if (!d.open || seen.indexOf(i) !== -1) return;
-        seen.push(i);
-        loreCount.textContent = 'LORE ' + seen.length + '/' + total;
-        loreFill.style.width = (seen.length / total * 100) + '%';
+        if (!d.open || seen.has(i)) return;
+        seen.add(i);
+        loreCount.textContent = 'LORE ' + seen.size + '/' + total;
+        loreFill.style.width = (seen.size / total * 100) + '%';
         GAME.add(5);
-        if (seen.length === total) {
+        if (seen.size === total) {
           loreHud.classList.add('complete');
           loreCount.textContent = 'LORE COMPLETE :: ACHIEVEMENT UNLOCKED';
           termPrint('achievement unlocked: LORE MASTER :: all dialogue read', 't-sys');
