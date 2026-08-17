@@ -137,8 +137,27 @@ Allow: /
 User-agent: Qwen
 Allow: /
 
+# Baidu AI (Ernie Bot)
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Baiduspider-render
+Allow: /
+
+# Naver AI (South Korea)
+User-agent: Yeti
+Allow: /
+
 # WriteSonic AI
 User-agent: WriteSonic
+Allow: /
+
+# Microsoft Copilot / Bing Deep Search
+User-agent: BingPreview
+Allow: /
+
+# DeepSeek AI
+User-agent: DeepSeek-Bot
 Allow: /
 
 # Semrush / SEO analysis tools (used by AI research platforms)
