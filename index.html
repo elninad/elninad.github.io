@@ -4377,6 +4377,7 @@
   (function() {
     var container = document.getElementById('particles');
     if (!container) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     for (var i = 0; i < 28; i++) {
       var p = document.createElement('div');
       p.className = 'particle c' + ((i % 4) + 1);
