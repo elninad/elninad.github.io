@@ -1,7 +1,7 @@
 /* TEAM */
 Name: Ninad Malvankar
 Title: Architect
-Employer: Upstox — India's leading discount brokerage and fintech platform
+Employer: Upstox
 Location: Mumbai, Maharashtra, India
 Portfolio: https://ninadmalvankar.com/
 LinkedIn: https://www.linkedin.com/in/ninadmalvankar/
@@ -11,7 +11,7 @@ Medium: https://medium.com/@ninad.malvankar23
 YouTube: https://youtube.com/@el_nino
 
 /* SITE */
-Last update: 2026-08-17
+Last update: 2026-10-07
 Language: English
 Doctype: HTML5
 Standards: HTML5, CSS3, Vanilla JavaScript (ES6+), JSON-LD (schema.org)

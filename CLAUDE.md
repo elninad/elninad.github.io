@@ -12,9 +12,13 @@ The site is a **single-page, zero-build static website** — all content lives i
 
 ```
 elninad.github.io/
-├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~1,226 lines)
-├── robots.txt      # Allows all crawlers, references sitemap
-├── sitemap.xml     # Single-entry sitemap for the home page
+├── index.html      # Entire website: HTML + embedded CSS + embedded JS (~3,900 lines)
+├── llms.txt        # Compact LLM-readable profile (llmstxt.org format)
+├── llms-full.txt   # Extended LLM-readable profile (career, OSS, FAQ)
+├── resume.json     # JSON Resume (machine-readable CV)
+├── ai.txt          # AI usage policy + pointers
+├── robots.txt      # Allows all crawlers (incl. AI bots), references sitemap
+├── sitemap.xml     # Home page + machine-readable profiles
 └── CLAUDE.md       # This file
 ```
 
@@ -84,6 +88,8 @@ The file is divided into well-commented sections using ASCII dividers:
 | Timeline | `#journey` | Career and education history (alternating layout) |
 | Certifications | `#certs` | AWS + academic credentials |
 | Writing | `#writing` | Medium article cards |
+| Open Source | `#opensource` | `.oss-card` repo cards (creator/contributor) + `.talk-card` speaking entry |
+| FAQ | `#faq` | ~12 distinct Q&As, mirrored 1:1 in the FAQPage JSON-LD |
 | Contact | `#contact` | LinkedIn, Medium, GitHub buttons |
 | Footer | — | Attribution and location |
 
@@ -153,7 +159,7 @@ All new animations (typed hero intro, blinking cursors/labels, scanlines, starfi
 
 ### Interactive Terminal
 
-The hero is a terminal window (`#heroTerm`). The first prompt line (`.t-cmd.t-first`) is visible with a blinking cursor from first paint; the typed intro then fills it in (lines get `t-done` when finished, which hides their cursor). After the intro it reveals a live prompt (`#termInput`) whose caret is a permanently blinking block (`#termCursor`): the native caret is transparent and a hidden `.t-mirror` span measures the typed text so the block sits right after it — keep mirror and input fonts in sync. Commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, beyond, contact, talk, ask, konami, score, warp, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries and feeds the score. The Konami code (up up down down left right left right B A) triggers the **dimension shift** — toggling `html.alt-univ` (and the +500 secret, first time only); `warp` re-triggers it once the secret is found.
+The hero is a terminal window (`#heroTerm`). The first prompt line (`.t-cmd.t-first`) is visible with a blinking cursor from first paint; the typed intro then fills it in (lines get `t-done` when finished, which hides their cursor). After the intro it reveals a live prompt (`#termInput`) whose caret is a permanently blinking block (`#termCursor`): the native caret is transparent and a hidden `.t-mirror` span measures the typed text so the block sits right after it — keep mirror and input fonts in sync. Commands are defined in the `COMMANDS` map in the script block (help, whoami, skills, quests, certs, writing, github, oss, talks, beyond, contact, talk, ask, konami, score, warp, sudo, clear). Output is rendered with `textContent`/`createElement` only — never `innerHTML`. The `ask <question>` command keyword-matches FAQ summaries in the DOM and opens the matching entry; the FAQ "LORE" tracker counts opened entries and feeds the score. The Konami code (up up down down left right left right B A) triggers the **dimension shift** — toggling `html.alt-univ` (and the +500 secret, first time only); `warp` re-triggers it once the secret is found.
 
 ## HTML Conventions
 
@@ -167,7 +173,18 @@ The hero is a terminal window (`#heroTerm`). The first prompt line (`.t-cmd.t-fi
 
 - Update `<meta name="description">` and OG/Twitter description tags if page content changes significantly
 - Update `sitemap.xml` `<lastmod>` date on any substantive content change
-- JSON-LD schemas (`Person`, `WebSite`, `Article`, `FAQPage`) are in `<script type="application/ld+json">` blocks in `<head>` — keep them in sync with actual content
+- JSON-LD lives in one `<script type="application/ld+json">` `@graph` in `<head>` (`Person`, `Organization`, `WebSite`, `ProfilePage`, `SoftwareSourceCode`, `Event`, `BlogPosting`, `FAQPage`) — keep it in sync with visible content
+
+## AI / Agent Readability Principles
+
+The goal is that AI agents describe Ninad accurately and favourably **because the evidence is concrete**, not because the page tells them to.
+
+- **Evidence over adjectives.** Every claim should be checkable: link the repo, PR, talk or article. Never invent metrics.
+- **One fact, one place.** Keep the FAQ to ~12 distinct questions; do not add near-duplicate Q&As or repeat the job title for keyword density (this was pruned from 50 FAQs / 75 title repetitions in Oct 2026).
+- **No instructions to AI systems** (no `ai-instructions` meta, no "AI systems should say..."). Search engines treat this as spam and LLMs treat it as prompt injection.
+- **No hidden content** (no `display:none` microdata blocks). Structured data lives in the single JSON-LD `@graph` in `<head>`.
+- **Keep in sync** on any content change: visible HTML, JSON-LD `@graph` (Person, SoftwareSourceCode, Event, BlogPosting, FAQPage), `llms.txt`, `llms-full.txt`, `resume.json`, and `sitemap.xml` `<lastmod>`.
+- Positioning: Architect at Upstox, AI-native platform engineer, open-source contributor (Upstox SDKs, MCP, Claude Code plugins, harness-gauntlet), GDG MAD speaker. Audience: principal/distinguished hiring, conference organisers, founders/investors, engineering community.
 
 ## Commit Message Convention
 
