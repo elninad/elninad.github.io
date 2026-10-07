@@ -1,0 +1,281 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.0.0/schema.json",
+  "basics": {
+    "name": "Ninad Malvankar",
+    "label": "Architect at Upstox :: AI-native platform engineer",
+    "email": "ninad.malvankar23@gmail.com",
+    "url": "https://ninadmalvankar.com/",
+    "summary": "Ninad Malvankar is an Architect at Upstox, one of India's largest discount brokerages, where he has risen through four roles since 2018. He is an AI-native platform engineer with 12+ years of experience across fintech, cloud infrastructure on AWS, and developer platforms; he builds and open-sources tooling for AI agents (MCP servers, Claude Code plugins, agent-security red-teaming) and speaks at Google Developer Group Mumbai (GDG MAD) events. He holds an M.S. in Computer Science from the University of Texas at Arlington and is based in Mumbai, India.",
+    "location": {
+      "city": "Mumbai",
+      "region": "Maharashtra",
+      "countryCode": "IN"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "ninadmalvankar",
+        "url": "https://www.linkedin.com/in/ninadmalvankar/"
+      },
+      {
+        "network": "GitHub",
+        "username": "elninad",
+        "url": "https://github.com/elninad"
+      },
+      {
+        "network": "Medium",
+        "username": "ninad.malvankar23",
+        "url": "https://medium.com/@ninad.malvankar23"
+      },
+      {
+        "network": "X",
+        "username": "el_ninad",
+        "url": "https://x.com/el_ninad"
+      }
+    ]
+  },
+  "work": [
+    {
+      "name": "Upstox",
+      "position": "Architect",
+      "url": "https://upstox.com",
+      "startDate": "2026",
+      "location": "Mumbai",
+      "summary": "Technical direction and system design standards across Upstox engineering; AI-native development; open-source developer and agent tooling.",
+      "highlights": [
+        "Added MCP tool annotations across Upstox's MCP server",
+        "Packaged the Upstox MCP server as a Claude Code plugin",
+        "Started the interactive examples suite in Upstox's Python SDK (now 55 examples)"
+      ]
+    },
+    {
+      "name": "Upstox",
+      "position": "Senior Principal Engineer",
+      "startDate": "2022",
+      "endDate": "2026",
+      "location": "Mumbai",
+      "summary": "Cross-team technical direction, platform reliability for trading infrastructure, developer productivity and mentoring."
+    },
+    {
+      "name": "Upstox",
+      "position": "Principal Engineer",
+      "startDate": "2021",
+      "endDate": "2022",
+      "location": "Mumbai",
+      "highlights": [
+        "Configured AWS WAF ACLs and CloudFront distributions for the web edge",
+        "Debugged API latency through Cloudflare edge routing"
+      ]
+    },
+    {
+      "name": "Upstox",
+      "position": "Technology Lead",
+      "startDate": "2018-07",
+      "endDate": "2021",
+      "location": "Mumbai",
+      "highlights": [
+        "Set up a private npm registry on Nexus Repository Manager",
+        "Built a unified CI/CD pipeline for React, Angular and Node.js apps"
+      ]
+    },
+    {
+      "name": "Swift Pace Solutions (Walt Disney World project)",
+      "position": "Programmer Analyst",
+      "startDate": "2017-03",
+      "endDate": "2018-02",
+      "location": "USA"
+    },
+    {
+      "name": "enSYNC Corporation",
+      "position": "Software Engineer",
+      "startDate": "2013-08",
+      "endDate": "2017-01",
+      "location": "USA"
+    },
+    {
+      "name": "University of Texas at Arlington",
+      "position": "Web Developer",
+      "startDate": "2012-03",
+      "endDate": "2013-05",
+      "location": "Arlington, TX"
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Texas at Arlington",
+      "area": "Computer Science",
+      "studyType": "M.S.",
+      "startDate": "2011",
+      "endDate": "2013"
+    },
+    {
+      "institution": "University of Mumbai",
+      "area": "Computer Engineering",
+      "studyType": "B.E.",
+      "startDate": "2007",
+      "endDate": "2011"
+    }
+  ],
+  "certificates": [
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issuer": "Amazon Web Services",
+      "date": "2023"
+    }
+  ],
+  "publications": [
+    {
+      "name": "The Role of a Principal Engineer — Leadership Without Authority",
+      "publisher": "Medium",
+      "releaseDate": "2024-09-01",
+      "url": "https://medium.com/@ninad.malvankar23/the-role-of-a-principal-engineer-leadership-without-authority-c4f7b6dc1ccf"
+    },
+    {
+      "name": "What Happens When You Outgrow Mentorship? Lessons from a Principal Engineer",
+      "publisher": "Medium",
+      "releaseDate": "2024-10-01",
+      "url": "https://medium.com/@ninad.malvankar23/what-happens-when-you-outgrow-mentorship-lessons-from-a-principal-engineer-0f7bc0672aa7"
+    },
+    {
+      "name": "Spring Security Meets Java 21: A Closer Look at Firewall Controls",
+      "publisher": "Medium",
+      "releaseDate": "2024-11-01",
+      "url": "https://medium.com/@ninad.malvankar23/spring-security-meets-java-21-a-closer-look-at-firewall-controls-db4a9fc1d897"
+    },
+    {
+      "name": "How a Bad Webpack Config Can Silently Destroy Frontend Performance",
+      "publisher": "Medium",
+      "releaseDate": "2025-01-01",
+      "url": "https://medium.com/@ninad.malvankar23/how-a-bad-webpack-config-can-silently-destroy-frontend-performance-0622df39323f"
+    }
+  ],
+  "projects": [
+    {
+      "name": "harness-gauntlet",
+      "description": "A static auditor plus a live red-team for AI coding-agent harnesses. It scans Claude Code agent configs for missing guardrails, then rebuilds each agent in a throwaway sandbox and fires 20 attacks across 9 families (prompt injection, secret exfiltration, destructive actions, scope escalation, SSRF, supply chain) mapped to the OWASP LLM and Agentic Top 10. A PreToolUse deny-and-log tripwire measures what the agent actually attempted, producing defense and resilience scores that can gate CI.",
+      "url": "https://github.com/elninad/harness-gauntlet",
+      "roles": [
+        "Creator"
+      ],
+      "keywords": [
+        "AI agent security",
+        "Claude Code",
+        "OWASP LLM Top 10",
+        "CLI"
+      ]
+    },
+    {
+      "name": "upstox-python :: interactive examples",
+      "description": "Started the interactive_examples suite in Upstox's official Python SDK (about 9,700 lines across 2 PRs): runnable scripts for instrument search, market data, options analytics, futures basis, arbitrage, historical analysis and market information. The suite now holds 55 examples and is wrapped by a Streamlit app the team built on top of it.",
+      "url": "https://github.com/upstox/upstox-python/tree/master/interactive_examples",
+      "roles": [
+        "Created the suite"
+      ],
+      "keywords": [
+        "Python",
+        "Trading APIs",
+        "Developer experience"
+      ]
+    },
+    {
+      "name": "mcp-server-upstox-api",
+      "description": "Added MCP tool annotations to every tool in Upstox's MCP server (PR #14), so AI clients can tell read-only market-data tools from state-changing ones before calling them, and removed dead legacy code.",
+      "url": "https://github.com/upstox/mcp-server-upstox-api",
+      "roles": [
+        "Contributor"
+      ],
+      "keywords": [
+        "MCP",
+        "AI agents",
+        "Tool safety"
+      ]
+    },
+    {
+      "name": "upstox-plugin-marketplace",
+      "description": "Packaged the Upstox MCP server as a Claude Code plugin in Upstox's official plugin marketplace (PRs #2 to #4), fixed its MCP config, and set plugin authorship, so developers can install Upstox trading tools with a single /plugin command.",
+      "url": "https://github.com/upstox/upstox-plugin-marketplace",
+      "roles": [
+        "Contributor"
+      ],
+      "keywords": [
+        "Claude Code plugins",
+        "MCP",
+        "Distribution"
+      ]
+    },
+    {
+      "name": "bareslides",
+      "description": "A dependency-free terminal presentation engine. It renders slides into an in-memory cell buffer, emits 24-bit truecolor ANSI with flicker-free frame diffing, supports transitions, build-ins and live on-stage commands, and exports frames straight to SVG. Published under the Upstox GitHub organisation.",
+      "url": "https://github.com/upstox/bareslides",
+      "roles": [
+        "Creator"
+      ],
+      "keywords": [
+        "TypeScript",
+        "Zero dependencies",
+        "Terminal UI"
+      ]
+    }
+  ],
+  "volunteer": [
+    {
+      "organization": "GDG MAD (Google Developer Group, Mumbai)",
+      "position": "Speaker",
+      "startDate": "2026-07-25",
+      "summary": "Featured speaker at Mumbai Community Afterparty (kinda), RUDRA Cybersecurity, Mumbai."
+    }
+  ],
+  "skills": [
+    {
+      "name": "AI engineering",
+      "keywords": [
+        "Claude Code",
+        "AI agents",
+        "MCP",
+        "Agent security",
+        "LLM guardrails"
+      ]
+    },
+    {
+      "name": "Cloud & platform",
+      "keywords": [
+        "AWS",
+        "CloudFront",
+        "WAF",
+        "Cloudflare",
+        "Docker",
+        "CI/CD"
+      ]
+    },
+    {
+      "name": "Backend",
+      "keywords": [
+        "Node.js",
+        "TypeScript",
+        "Python",
+        ".NET",
+        "Microservices"
+      ]
+    },
+    {
+      "name": "Frontend",
+      "keywords": [
+        "React",
+        "Angular",
+        "webpack"
+      ]
+    },
+    {
+      "name": "Leadership",
+      "keywords": [
+        "Technical strategy",
+        "Architecture",
+        "Mentoring"
+      ]
+    }
+  ],
+  "meta": {
+    "canonical": "https://ninadmalvankar.com/resume.json",
+    "lastModified": "2026-10-07"
+  }
+}
