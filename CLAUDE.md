@@ -147,7 +147,9 @@ The Konami code performs a **dimension shift**: `html.alt-univ` swaps every `:ro
 
 ### Responsive Breakpoint
 
-Single breakpoint at `768px`. The site is mobile-first — the desktop layout is the enhancement.
+Layout breakpoint at `768px`. The site is mobile-first — the desktop layout is the enhancement.
+
+The nav has its own breakpoint at `1100px`: below it the links collapse into the hamburger menu (nine links don't fit in one row on smaller screens). If you add or lengthen a nav link, re-check the desktop row at 1101px. The scrolled nav backdrop is drawn on `nav::before` on purpose: putting `backdrop-filter` on `<nav>` itself makes the nav the containing block for the fixed full-screen mobile menu and squashes the menu into the bar.
 
 ### Animation Conventions
 

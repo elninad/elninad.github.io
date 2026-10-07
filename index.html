@@ -209,13 +209,17 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 18px 5%;
-      transition: background .4s, backdrop-filter .4s, box-shadow .4s;
     }
-    nav.scrolled {
+    /* The scrolled backdrop lives on a pseudo-element: backdrop-filter on <nav> itself would
+       make it the containing block for the fixed full-screen mobile menu and squash it */
+    nav::before {
+      content: ''; position: absolute; inset: 0; z-index: -1;
+      opacity: 0; transition: opacity .4s;
       background: rgba(var(--nav-rgb),.9);
-      backdrop-filter: blur(18px);
+      backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
       box-shadow: 0 1px 0 var(--border);
     }
+    nav.scrolled::before { opacity: 1; }
     .nav-logo {
       display: inline-flex; align-items: center; gap: 9px;
       font-family: var(--pixel);
@@ -230,7 +234,7 @@
       color: var(--muted); text-decoration: none;
       font-family: var(--mono);
       font-size: .8rem; font-weight: 500;
-      letter-spacing: .03em; text-transform: uppercase;
+      letter-spacing: .03em; text-transform: uppercase; white-space: nowrap;
       transition: color .25s;
       position: relative; padding-left: 14px;
     }
@@ -1186,16 +1190,19 @@
       .px-twinkle { animation: none !important; opacity: .35; }
     }
 
-    @media (max-width: 768px) {
+    /* Nav collapses earlier than the layout breakpoint: nine links stop fitting below ~1100px */
+    @media (max-width: 1100px) {
       .nav-links { display: none; }
       .nav-links.open {
         display: flex; flex-direction: column;
         position: fixed; inset: 0;
         background: rgba(var(--nav-rgb),.97); backdrop-filter: blur(20px);
-        align-items: center; justify-content: center;
-        gap: 40px; z-index: 999;
+        align-items: center; justify-content: safe center;
+        gap: 28px; z-index: 999; padding: 80px 0 40px;
+        overflow-y: auto; overscroll-behavior: contain;
         list-style: none;
       }
+      body:has(.nav-links.open) { overflow: hidden; }
       .nav-links.open a { font-size: 1.4rem; color: var(--text); }
       .nav-links.open .nav-cta {
         background: var(--accent) !important;
@@ -1215,6 +1222,9 @@
       .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
       .nav-hamburger.open span:nth-child(2) { opacity: 0; }
       .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    }
+
+    @media (max-width: 768px) {
       section { padding: 80px 5%; }
       .about-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-visual { display: none; }
